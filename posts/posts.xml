@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<posts>
+	<post>
+		<title>Here is a new begining, and a new site</title>
+		<date>2015-11-25T22:08-05:00</date>
+		<content>This is pretty boring, but lord knows I need some context to use as filler to work on perfecting the design. Nothing but a bunch of text junk pertaining to a more than likely pointless topic that I at some point, no doubt I was lit, was compelled to write down these worthless words of thoughts in hopes sharing them somehow attributes them value and worth. Rather, its more so the words are filler, a mere canvas for the artistic outlet of web development I so struggle with like a bought of diarrhea.</content>
+		<tags>webdesign</tags>
+	</post>
+	<post>
+		<title>Happy Turkey Day!</title>
+		<date>2015-11-26T18:42-05:00</date>
+		<content>Cheers to celebrating!</content>
+		<tags>family,holiday</tags>
+	</post>
+</posts>

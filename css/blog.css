@@ -1,0 +1,32 @@
+/* Blog format */
+#content > #blog {
+	padding: 10px;
+	width: 80%;
+	border-right: 1px solid #ccc;
+}
+	#blog > article {
+		position: relative;
+		margin: 20px 0 0;
+	}
+	#blog > article > h5 {
+		border-bottom: 1px solid #ccc;
+		padding: 0 0 5px;
+		margin: 0 0 5px;
+	}
+	#blog > article > h6 {
+		text-align: right;
+	}
+	#blog > article > section {
+		
+	}
+	#blog > article > title {
+		
+	}
+	#blog > article > ul {
+		list-style: none;
+	}
+	#blog > article > ul > li {
+		background: white;
+		padding: 3px 5px;
+		margin: 0 5px 0 0;
+	}
