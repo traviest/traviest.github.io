@@ -1,22 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8"/>
-	<meta name="description" content="" />
-	<meta name="keywords" content="traviest, designer, portfolio, thoughts, rambles, rants" />
+	<meta charset="UTF-8"/>
+	<meta name="keywords" content="traviest, designer, portfolio"/>
+	<meta name="description" content=""/>
 	<title>Traviest</title>
-	<link rel="stylesheet" href="styles.css" media="screen" />
+
+	<link rel="icon" type="image/png" href="imgs/icon.png" sizes="200x200">
+	<link rel="apple-touch-icon" href="imgs/icon.png" sizes="200x200">
+
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800">
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="css/styles.css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('a#to_the_top').click(function(event) {
+			$(window).scrollTop(500);
+		});
+		$('#main h1').delay(10000).fadeOut(300);
+	});
+	</script>
+
 </head>
 <body>
-<header>
-	<h1><a href="index.php">traviest</a></h1>
-	<h5>somethin' witty</h5>
+
+<header class="main">
+	<a href="" title="share_icon"><i class="fa fa-share-alt"></i></a>
+
+	<section id="logo">
+		<article class="icon">
+			<i class="fa fa-star-o"></i>
+		</article>
+	  <h1>traviest</h1>
+	  <h5><i class="fa fa-code"></i>&nbsp;Full-Stack Developer&nbsp;<i class="fa fa-code"></i></h5>
+		<a href="/index.html"></a>
+	</section>
+
+	<section id="lineNav">
+		<nav>
+			<a href="index.html" class="current">Home</a>
+			<a href="blog.html">Blog</a>
+			<a href="portfolio.html">Portfolio</a>
+	    <a href="photos.html">Photos</a>
+	    <a href="lab.html">Lab</a>
+			<a href="about.html">About</a>
+		</nav>
+	</section>
 </header>
+
+<main class="main">
+	<section id="sidebar">
+
+		<article>
+
+		</article>
+
+		<h5>Recent Posts</h5>
+		<ul id="sidebar_posts">
+			<li><a href="">Post</a></li>
+			<li><a href="">Post</a></li>
+			<li><a href="">Link Text</a></li>
+		</ul>
+
+		<h5>Tags<i class="fa fa-tags"></i></h5>
+		<ul id="sidebar_tags">
+			<li><a href="">Tag</a></li>
+			<li><a href="">Tag</a></li>
+			<li><a href="">Tag</a></li>
+			<li><a href="">Tag</a></li>
+			<li><a href="">Tag</a></li>
+		</ul>
+
+		<h5>Links<i class="fa fa-link"></i></h5>
+		<ul id="sidebar_links">
+			<li><a href="">NetTuts+</a></li>
+			<li><a href="">Link</a></li>
+			<li><a href="">Link</a></li>
+		</ul>
+
+		<h5>Social</h5>
+		<ul id="sidebar_social">
+			<li><a href=""><i class="fa fa-instagram"></i></a></li>
+			<li><a href=""><i class="fa fa-twitter"></i></a></li>
+			<li><a href=""><i class="fa fa-snapchat">snapchat</i></a></li>
+			<li><a href=""><i class="fa fa-soundcloud"></i></a></li>
+			<li><a href=""><i class="fa fa-facebook-official"></i></a></li>
+			<li><a href=""><i class="fa fa-pinterest"></i></a></li>
+			<li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+			<li><a href=""><i class="fa fa-500px"></i></a></li>
+			<li><a href=""><i class="fa fa-get-pocket"></i></a></li>
+			<li><a href=""><i class="fa fa-github"></i></a></li>
+			<li><a href=""><i class="fa fa-codepen"></i></a></li>
+			<li><a href=""><i class="fa fa-dribbble"></i></a></li>
+			<li><a href=""><i class="fa fa-steam"></i></a></li>
+		</ul>
+
+		<a href="https://www.instagram.com/traviest/?ref=badge" class="ig-b- ig-b-v-24"><img src="https://badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a>
+
+		<h5>Code Inspiration - TODO</h5>
+		<ul id="sidebar_code">
+			<li><a href="http://codepen.io/ChynoDeluxe/pen/bdXeqQ">Blog Cards</a> - blog post preview block</li>
+			<li><a href="http://codepen.io/littlesnippets/pen/rxYara">Image Hover</a></li>
+			<li><a href="http://codepen.io/robbi093/pen/wKBWWd">CSS3 Timeline</a> - about page</li>
+			<li><a href="http://codepen.io/MightyShaban/pen/LqrCK">Sexy Accordion</a> - collapsable menu</li>
+			<li><a href="http://codepen.io/mfritsch/pen/KdKoKQ">Footer Animation</a> - slide transition footer</li>
+			<li><a href=""></a></li>
+		</ul>
+
+		<span id="to_the_top"><i class="fa fa-chevron-up"></i></span>
+	</section><!-- end sidebar -->
+
+	<section id="main">
+	 	<h1> REWORK ALL AS ONE PAGE WITH TABS?? // USE JAVASCRIPT AND AJAX INSTEAD OF PHP // LOAD NECESSARY PARTS AS USER NAVIGATES</h1>
+
+	 	<article id="preview_work">
+	 		<h3>I work occassionally</h3>
+	 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat pellentesque ultricies. Donec pellentesque at odio ac aliquet. Nullam mollis ut ipsum sed euismod. I have tried to keep it organzied as best I can, but I do have a full <a href="portfolio.html">portfolio</a> you can check out. Aliquam commodo quam nec sapien vehicula. Morbi viverra quis mi id volutpat. Suspendisse dictum mauris ac mi consequat vestibulum. Praesent erat augue, consequat vel dapibus sit amet, pretium vel lorem. Donec ut quam odio. Donec non leo lacus. Curabitur quis dapibus tortor. Praesent in lectus quis lacus varius tempus vel at risus.</p>
+	 	</article>
+
+	 	<article id="preview_blog">
+	 		<h3><i class="amp">&amp;</i> I share my thoughts</h3>
+	 		<p>Phasellus vitae faucibus magna, eget semper urna. Praesent non mattis ligula. Etiam laoreet viverra diam et porta. Duis vitae leo eget dolor volutpat euismod vitae et justo. I unfortunately <a href="blog.html">blog</a>. Donec quis mi sit amet ante viverra tincidunt in id ante. Aenean tristique elit in erat ultricies efficitur eleifend ac dui. Aliquam convallis et ipsum quis varius. In aliquam, sem vel fringilla laoreet, metus diam viverra mauris, et ultrices nulla magna at sem. Etiam auctor commodo aliquam. Proin nec sollicitudin dolor. Vivamus viverra purus augue, non lacinia leo pulvinar a. Suspendisse vel elit blandit, iaculis quam eu, ullamcorper elit. Etiam dictum augue imperdiet blandit tristique.</p>
+	 	</article>
+
+		<article id="preview_photo">
+			<h3><i class="amp">&amp;</i> I have these to remember the memories</h3>
+			<p>Curabitur est magna, ultricies a volutpat sit amet, auctor a orci. Vestibulum nisi urna, iaculis a massa eget, eleifend finibus erat. Nullam tempor quam lacus, tempus luctus risus lobortis et. Pellentesque finibus bibendum sem. Vestibulum eu erat scelerisque, eleifend odio eget, condimentum lacus. Donec vel porttitor dui. Morbi cursus arcu risus, at efficitur velit lobortis et. Quisque ornare euismod ante, eu congue neque gravida non. Morbi tincidunt vitae eros a posuere. The sad truth, I take way too many photos but just love having them to reflect on. You can head over here to see all my <a href="photos.html">photos</a>. Phasellus eu arcu lacus. Maecenas imperdiet, sem a pellentesque malesuada, velit justo sollicitudin odio, in maximus est dui non dui.</p>
+		</article>
+
+		<article id="preview_lab">
+			<h3><i class="amp">&amp;</i> I enjoy the little things</h3>
+			<p>Integer vestibulum velit tortor, at ultricies nulla feugiat sed. Pellentesque venenatis neque odio, nec bibendum augue sagittis at. Sed eu neque turpis. Proin molestie consequat felis iaculis porttitor. Nulla aliquet egestas purus semper maximus. Etiam laoreet consectetur dolor sit amet feugiat. Praesent cursus nibh non tortor dapibus, sed blandit nulla bibendum. Morbi massa sapien, dictum nec urna sed, dictum commodo felis. Phasellus finibus purus a lorem porttitor consequat. Maecenas ornare nisi libero, eu lacinia elit accumsan at.</p>
+		</article>
+
+		<article id="preview_about">
+	 		<h3><i class="amp">&amp;</i> I had a little help getting here</h3>
+	 		<p>Vestibulum imperdiet elit porta lectus pellentesque faucibus. Sed lobortis lorem nec erat ultricies gravida. Cras id tincidunt mauris, id viverra sapien. Fusce scelerisque tortor dui, eget convallis metus semper in. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat lorem lectus. Fusce aliquet ullamcorper libero, vitae porta turpis facilisis quis. Ut ut pretium turpis, sed egestas ipsum. Quisque euismod ante non hendrerit auctor. Quisque malesuada sollicitudin pulvinar. I continue my rambles even further and a much more in debth look at my skills over on my <a href="about.html">about</a> page. Vivamus eu erat pellentesque, convallis tellus nec, pretium nisi.</p>
+	 	</article>
+	</section><!-- end main section -->
+</main><!-- end main -->
+
+<footer class="main">
+	<h6>Travis Leonard<i class="fa fa-copyright"></i>2015</h6>
+		Version 1: Flat &#8226; <a href=""><i class="fa fa-html5"></i></a>
+		&#8226; <a href=""><i class="fa fa-css3"></i></a>
+</footer>
+
 </body>
-
-<script>
-window.location = "index.php";
-</script>
-
-<script src="js/jquery.js"></script>
 </html>

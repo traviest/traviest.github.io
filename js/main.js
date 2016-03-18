@@ -7,8 +7,8 @@ $(document).ready(function() {
 		$("body,html").animate({scrollTop: 0}, 500);
 		return false;
 	});
-	
-	
+
+
 	$(".sidebar_toggle").click(function() {
 		if ($(this).hasClass('hidden_bar')) {
 			$(this).removeClass('hidden_bar');
@@ -20,24 +20,24 @@ $(document).ready(function() {
 			$("#main").css("width",'100%');
 		}
 	});
-	
+
 });
 
 
 /* Line Nav hover effect */
-function lineNav() {	
+function lineNav() {
 	$("#lineNav").append("<div id='magic_line'><span></span></div>");
-	    
+
 	var $magicLine = $("#magic_line");
 	$magicLine
-		.width($("li.current").width())
-		.css("left", $("li.current").position().left)
+		.width($(".current").width())
+		.css("left", $(".current").position().left)
 		.data("origLeft", $magicLine.position().left)
 		.data("origWidth", $magicLine.width());
-		        
-	$("#lineNav li").hover(function() {	
+
+	$("#lineNav a").hover(function() {
 		$magicLine.stop().animate({left: $(this).position().left, width: $(this).width()});
 	}, function() {
-		$magicLine.stop().animate({left: $("li.current").position().left, width: $("li.current").width()});
+		$magicLine.stop().animate({left: $(".current").position().left, width: $(".current").width()});
 	});
 }
