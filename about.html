@@ -5,55 +5,132 @@
 	<meta name="keywords" content="traviest, designer, portfolio, thoughts, rambles, rants" />
 	<meta name="description" content="" />
 	<title>Traviest | About</title>
-	<link rel="icon" href="imgs/favicon.png" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="imgs/appleicon.png" />
-	<link rel="stylesheet" href="css/styles.css" media="all" />
-	<link rel="stylesheet" href="css/about.css" media="all" />
 
-	<script src="js/jquery.js" type="text/javascript"></script>
-	<script src="js/main.js" type="text/javascript"></script>
+	<link rel="icon" type="image/png" href="imgs/icon.png" sizes="200x200"/>
+	<link rel="apple-touch-icon" href="imgs/icon.png" sizes="200x200"/>
+
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800"/>
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+	<link type="text/css" rel="stylesheet" href="css/styles.css"/>
+	<link type="text/css" rel="stylesheet" href="css/about.css"/>
+
+	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
+	<script type="text/javascript" src="js/dug.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/about.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+	  dug({
+	    endpoint: 'http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=traviest&api_key=1e4073c181a4694757f19048d0ca5228&limit=10&format=json',
+	    target: 'lastfm',
+	    template: '{{#recenttracks}}\
+	      <ul class="lastfm_photos">\
+	        {{#track}}\
+	          <li>\
+	            <img src="{{image.2.#text|dug.photo}}">\
+	            <a href="{{url}}">\
+	              <span>{{artist.#text}} - <i>{{name}}</i></span>\
+	              <em>{{date.#text|dug.ago}}</em>\
+	            </a>\
+	          </li>\
+	        {{/track}}\
+	      </ul>\
+	      {{/recenttracks}}\
+				<h6>{{recenttracks.@attr.user}}&apos;s Recent Last.fm Tracks</h6>\
+				<small>{{recenttracks.@attr.total|dug.total}} Tracks Scrobbled</small>'
+	  });
+	});
+	</script>
 
 </head>
 <body>
+<!-- Site Header / Banner -->
+<header class="main">
+	<section id="logo">
+		<div class="icon">
+			<i class="fa fa-info-circle fa-fw"></i>
+		</div>
+	  <h1>traviest</h1>
+	  <h5><i class="fa fa-code"></i>&nbsp;Full-Stack Developer&nbsp;<i class="fa fa-code"></i></h5>
+	</section>
 
-<header>
-	<article><a href="index.html"></a></article>
-	<ul id="lineNav">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="blog.html">Blog</a></li>
-		<li class="current"><a href="about.html">About</a></li>
-		<li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="photos.html">Photos</a></li>
-        <li><a href="lab.html">Lab</a></li>
-	</ul>
+</header>
+<!--			end header / main page content 		-->
 
-<section id="content">
+<figure id="profile">
+	<div></div>
+	<figcaption>
+		<h2>Travis Leonard</h2>
+		<p>Something witty</p>
+	</figcaption>
+</figure>
 
-	<section id="sidebar">
+<main class="main">
+	<aside>
+		<h5>Socialize</h5>
+		<ul id="sidebar_social">
+			<li><a href=""><i class="fa fa-instagram"></i></a></li>
+			<li><a href=""><i class="fa fa-twitter"></i></a></li>
+			<li><a href=""><i class="fa fa-soundcloud"></i></a></li>
+			<li><a href=""><i class="fa fa-facebook-official"></i></a></li>
+			<li><a href=""><i class="fa fa-pinterest"></i></a></li>
+			<li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+			<li><a href=""><i class="fa fa-get-pocket"></i></a></li>
+			<li><a href=""><i class="fa fa-github"></i></a></li>
+			<li><a href=""><i class="fa fa-codepen"></i></a></li>
+			<li><a href=""><i class="fa fa-dribbble"></i></a></li>
+			<li><a href=""><i class="fa fa-steam"></i></a></li>
+		</ul>
 
-		<a href="#" id="to_the_top">
-			<img src="imgs/topper.png" />
-		</a>
-	</section><!-- end sidebar -->
+		<h5>Recent Tunes <i class="fa fa-headphones"></i></h5>
+		<div id="lastfm">Loading...</div>
 
+		<h5>Instagram Feed</h5>
+		<ul>
+			<li>User ID: 357448</li>
+			<li>Username: traviest</li>
+			<li>Name: Travis</li>
+		</ul>
+
+		<h5>Fun Facts <i class="fa fa-hand-spock-o"></i></h5>
+		<ul id="sidebar_facts">
+			<li>I have two kids, Boozie and Miley, most people might refer to them as cats though.</li>
+			<li>I have an addiction to any and all types of music.</li>
+			<li>I am damn good at making memories.</li>
+			<li>I made up of 1 part imagination, 2 parts humor, a gallon of sarcasm, a GB of creativity, a jar of passion, and a splash of drama.</li>
+		</ul>
+
+		<h5>Contact Me</h5>
+		<form method="post" action="process/send_email.php">
+			<p>
+				<label for="name">Name</label>
+				<input type="text" name="name" required/>
+			</p><p>
+				<label for="email">Email</label>
+				<input type="email" name="email" required/>
+			</p><p>
+				<label for="message">Message</label>
+				<textarea name="message" rows="5" required></textarea>
+			</p>
+			<button name="Send">Send</button>
+		</form>
+
+		<div id="to_the_top"><i class="fa fa-arrow-circle-up"></i></div>
+	</aside>
+	<!-- end sidebar / start main -->
 	<section id="main">
-
-
-		<h4>Sometimes I get Connected...</h4>
-
-		<style>.ig-b- { display: inline-block; }
-		.ig-b- img { visibility: hidden; }
-		.ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
-		.ig-b-v-24 { width: 137px; height: 24px; background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
-		@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-		.ig-b-v-24 { background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; } }</style>
-		<a href="https://www.instagram.com/traviest/?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a>
-
-		<a href="https://www.linkedin.com/pub/travis-leonard/16/211/1b"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Travis Leonard's profile on LinkedIn"></a>
-
-
-
-		<h4>I did some tinkering on these sites</h4>
+		<h3>This muh sh!t</h3>
+		<h5>I've had a pretty boring life</h5>
+		<p>The name is Travis. Born in eastern Tennessee, moved to California with my mother at 11. After that, traveling became a must. I contribute my mindset, morals, goals, and ambition to being fortunate enough to been exposed to such diverse places.</p>
+		<p>I attended elementary schools, middle-schools, and high schools in both California and Tennessee. After the initial move I bounced between living in Southern Cali with my mother and with my father in the mountains of Tennesee. I graduated from Daniel Boone High School in my hometown of TN. I then progressed to a regional state college, East Tennessee State University, where I am currently a senior in the Information Technology program.</p>
+		<p>After my final year at ETSU, I plan on continuing my education in pursuit of a graduate degree in computer science. My dream career revolves around web-design but I enjoy numerous aspects of the realm.</p>
+		<p>I have a weakness for passion and love and find myself constantly attached to those around me.</p>
+		<p>If you are truly interested in the credentials, I do have a <a href="resume.html">resume</a>.</p>
+		<!--  end about / start sites  -->
+		<hr />
+		<h3>I did some tinkering on these sites</h3>
+		<h6>display as click 'list' with side section showing full preview and link</h6>
 		<ol id="sites_list">
 			<li class="work in_progress"><a href="">traviest</a></li>
 			<li class="work in_progress"><a href="">tune.box</a></li>
@@ -61,40 +138,111 @@
 			<li class="work complete"><a href="">Stop Light Stained Glass</a></li>
 			<li class="work complete school"><a href="">Favorites</a></li>
 		</ol>
+		<!--  end work [sites] / start skills  -->
+		<hr />
+		<h3>I have some skills</h3>
+		<h6>display as dynamic sizing centered inline blocks</h6>
 
-
-
-		<h4>Shit I Like...</h4>
+		<div id="cols">
+			<section class="skills">
+				<h5>Master</h5>
+				<ul>
+					<li>HTML5</li>
+					<li>CSS3</li>
+				</ul>
+			</section>
+			<section class="skills">
+				<h5>Proffecient</h5>
+				<ul>
+					<li>jQuery / Javascript</li>
+					<li>PHP</li>
+					<li>XML</li>
+				</ul>
+			</section>
+			<section class="skills">
+				<h5>Learning</h5>
+				<ul>
+					<li>Mustache - templating</li>
+					<li>C++ / C#</li>
+					<li>Drupal</li>
+					<li>Ruby</li>
+					<li>Haml</li>
+					<li>Sass &amp; Less</li>
+					<li>Coffeescript</li>
+				</ul>
+			</section>
+		</div>
+		<!--   end skills [end serious]
+		start credits [start fun]  -->
+		<hr />
+		<h3 id="credits">I had some help with this here site</h3>
+		<ul>
+			<li>
+				<h6>Plug-Ins <i class="fa fa-plug"></i></h6>
+				<ol>
+					<li></li>
+					<li></li>
+				</ol>
+			</li>
+			<li>
+				<h6>Fonts <i class="fa fa-font"></i></h6>
+				<ol>
+					<li><a href="">FiraSans</a> - main site font</li>
+					<li><a href="">Raleway / Oswald</a> - titles and headers</li>
+				</ol>
+			</li>
+			<li>Icons - <a href="http://fontawesome.io"><i class="fa fa-fort-awesome"></i> Font Awesome</a></li>
+		</ul>
+		<!--  end credits / start likes  -->
+		<hr />
+		<h3>Shit I Like...</h3>
+		<h5>display as mutliple columns</h5>
 		<ul id="likes_list">
 			<li>
-				<h6>Web Gods</h6>
+				<h6>Inspiration - Code, Design &amp; Illustration</h6>
 				<ul>
-					<li><a href="http://katydecorah.com">Katy DeCorah</a></li>
+					<li><a href="http://codepin.io">CodePen</a> - A front end web development playground</li>
+					<li><a href="http://neonmob.com/traviest">NeonMob</a> - A worldwide network of creators and designers making original trading card series for everyone to discover and enjoy. <a href="https://www.neonmob.com/r/VBhir">Sign Up</a></li>
+					<li><a href="http://rog.ie">Rog.ie</a> - ?</li>
+					<li><a href="http://www.sara.io">Sara Cope</a> - ?</li>
+					<li><a href="http://cargocollective.com/jrschmidt/">JR Schmidt</a> - 3D Artist &amp; Motion Designer</li>
+					<li><a href="http://katydecorah.com">Katy DeCorah</a> - ?</li>
+					<li><a href="http://www.bioworkz.com">BioWorkZ</a> -  Visual Designer &amp; Illustrator</li>
+				</ul>
+			</li>
+			<!-- create new section for 'Interests'???? -->
+			<li>
+				<h6>Music <i class="fa fa-music"></i></h6>
+				<ul>
+					<li><a href="">Kaskade</a></li>
+					<li><a href="">Halsey</a></li>
 				</ul>
 			</li>
 			<li>
-				<h6>Graphic Designers</h6>
-				<ul>
-					<li><a href="http://www.bioworkz.com">BioWorkZ</a>: Visual Designer &amp; Illustrator</li>
-				</ul>
-			</li>
-			<li>
-				<h6>Games</h6>
+				<h6>Games <i class="fa fa-gamepad"></i></h6>
 				<ul>
 					<li><a href="">Final Fantasy X | X-2</a></li>
 					<li><a href="">Bastion</a></li>
 				</ul>
 			</li>
 		</ul>
+		<!--  end likes / start social  -->
 
+		<hr/>
+
+		<h3>Sometimes I get connected with others...</h3>
 
 
 	</section><!-- end main -->
-
-</section><!-- end content -->
-
-<footer>
-	<h6>Travis Leonard &copy; 2015</h6>
+</main>
+<!--  end main / start footer  -->
+<footer class="main">
+	<h6>Travis Leonard<i class="fa fa-copyright"></i>2015</h6>
+	<p>Version 1 - Flat
+		&#8226; <a href="about.html#credits">Credits</a>
+		&#8226; <a href=""><i class="fa fa-html5"></i></a>
+		&#8226; <a href=""><i class="fa fa-css3"></i></a>
+	</p>
 </footer>
 
 </body>

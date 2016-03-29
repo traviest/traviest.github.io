@@ -1,8 +1,148 @@
-/* Instagram Badge */
-.ig-b- { display: inline-block; }
-.ig-b- img { visibility: hidden; }
-.ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
-.ig-b-v-24 { width: 137px; height: 24px; background: url(//badges.instagram.com/static/imgs/ig-badge-view-sprite-24.png) no-repeat 0 0; }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .ig-b-v-24 { background-image: url(//badges.instagram.com/static/imgs/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; }
+/***** Main Profile ****************************/
+#profile {
+  margin: 80px auto;
+  width: 70%;
+  display: table;
+  text-align: center;
+
+  border: 1px solid white;
+}
+  #profile > div, #profile > figcaption {
+    display: table-cell;
+  }
+  #profile > div {
+    margin: 0 auto;
+    padding: 0;
+    height: 200px;
+    width: 200px;
+    background:#CCC url(../imgs/me/me6.jpg) center no-repeat;
+    background-size: 100% 100%;
+    border: 3px solid #f1f1f1;
+    border-radius: 5%;
+    box-shadow: inset rgba(0,0,0,0.7) 0 3px 10px, rgba(0,0,0,0.3) 0 1px 5px;
+  }
+  #profile > figcaption {
+
+    background: rgba(0,0,0,0.3);
+  }
+  #profile > figcaption > h2 {
+    margin: 0 auto 10px;
+  }
+  #profile > figcaption > p {}
+
+
+
+
+/***** Aside ************************************/
+/* social links */
+ul#sidebar_social {text-align: center;}
+  ul#sidebar_social > li {display: inline-block; margin: 0 5px;}
+
+
+/* last.fm */
+#lastfm {margin-bottom: 40px;}
+  #lastfm > h6 {font-size: 0.9em}
+  #lastfm > small {font-size: 0.8em}
+  #lastfm > ul.lastfm_photos {text-align: center;}
+  #lastfm > ul.lastfm_photos > li {
+    margin: 0 1% 10px;
+    position: relative;
+    font-size: 0.7em;
+    display: inline-block;
+
+    width: 100px;
+    overflow: hidden;
+    border: 3px solid transparent;
+
+    transition: all 0.3s;
+  }
+  #lastfm > ul.lastfm_photos > li:hover {
+    border: 3px solid #f1f1f1;
+    box-shadow: rgba(0,0,0,0.2) 0 1px 5px;
+
+
+  }
+  #lastfm > ul.lastfm_photos > li,
+  #lastfm > ul.lastfm_photos > li > img {
+      height: 100px;
+  }
+  #lastfm > ul.lastfm_photos > li > img {}
+  #lastfm > ul.lastfm_photos > li > a {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.65);
+    border-top: 1px solid rgba(255,255,255,0.7);
+    z-index: 1;
+    display: block;
+    color: #c1c1c1;
+    text-shadow: black 0 1px 1px;
+  }
+
+
+    #lastfm > ul.lastfm_photos > li:hover > a {
+
+      color: #f1f1f1;
+    }
+    #lastfm > ul.lastfm_photos > li > a > span { /* Artist */
+      font-weight: 500;
+    }
+    #lastfm > ul.lastfm_photos > li > a > span > i { /* Title */
+
+    }
+    #lastfm > ul.lastfm_photos > li > a > em { /* time */
+      display: block;
+      font-weight: 100;
+    }
+
+
+/* facts */
+ul#sidebar_facts {
+  list-style-type:  square;
+  list-style-position: inside;
+}
+  ul#sidebar_facts > li {}
+
+/* email me */
+.main > aside > form {
+  border: 1px solid white;
+}
+.main > aside input, .main > aside textarea {
+  width: 100%;
+}
+.main > aside textarea {
+  resize: vertical;
+}
+  .main > aside > form > p {
+    margin: 10px auto;
+  }
+  .main > aside > form > button {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 1em;
+
+    color: #f1f1f1;
+    background: rgb(74,149,172)
+     linear-gradient(to bottom,
+      rgba(0,0,0,0.2) 0%,
+      rgba(0,0,0,0.1) 5%,
+      rgba(0,0,0,0) 15%,
+      rgba(0,0,0,0.5) 80%,
+      rgba(0,0,0,0.7) 100%);
+
+    border: none;
+    border-radius: 12px;
+
+  }
+
+
+/***** Content *********************************/
+#main > hr {
+  margin: 40px auto;
+}
+
+#cols {
+  column-count: 3;
+  column-rule: 1px solid red;
+  column-gap: 20px;
 }

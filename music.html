@@ -4,7 +4,7 @@
 	<meta charset="UTF-8"/>
 	<meta name="keywords" content="traviest, designer, portfolio"/>
 	<meta name="description" content=""/>
-	<title>Traviest | Photos</title>
+	<title>Traviest | Lab</title>
 
 	<link rel="icon" type="image/png" href="imgs/icon.png" sizes="200x200"/>
 	<link rel="apple-touch-icon" href="imgs/icon.png" sizes="200x200"/>
@@ -12,43 +12,12 @@
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800"/>
 	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 	<link type="text/css" rel="stylesheet" href="css/styles.css"/>
-	<link type="text/css" rel="stylesheet" href="css/photos.css"/>
-
+	<link type="text/css" rel="stylesheet" href="css/music.css"/>
 
 	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
-
 	<script type="text/javascript">
-	$(document).ready(function() {
-		$('#sort_opt').hover(function() {
-			$(this).find('span').fadeIn(150);
-		}, function() {
-			clearTimeout(timer);
-			var timer = setTimeout(function() {$('#sort_opt').find('span').fadeOut(250);}, 500);
-		});
 
-		$('#sort_opt').click(function() {
-			if ($(this).hasClass('sort_alpha')) {
-				$(this).find('span').hide().delay(250).text('count').fadeIn(250);
-				$(this).addClass('sort_count').removeClass('sort_alpha')
-					.find('small').animate({'left': '11px'}, 250);
-
-				$('#alpha_sort').fadeOut(250, function() {
-					$(this).css('display','none'|'opacity',0);
-					$('#count_sort').css('display','block').animate({'opacity': 1}, 500);
-				});
-			} else if ($(this).hasClass('sort_count')) {
-				$(this).find('span').hide().delay(250).text('alphabetical').fadeIn(250);
-				$(this).addClass('sort_alpha').removeClass('sort_count')
-					.find('small').animate({'left': '1px'}, 250);
-
-				$('#count_sort').fadeOut(250, function() {
-					$(this).css('display','none'|'opacity',0);
-					$('#alpha_sort').css('display','block').animate({'opacity': 1}, 500);
-				});
-			}
-		});
-	});
 	</script>
 </head>
 <body>
@@ -56,15 +25,14 @@
 <header class="main">
 	<section id="logo">
 		<div class="icon">
-			<i class="fa fa-camera-retro fa-fw"></i>
+			<i class="fa fa-music fa-fw"></i>
 		</div>
 	  <h1>traviest</h1>
 	  <h5><i class="fa fa-code"></i>&nbsp;Full-Stack Developer&nbsp;<i class="fa fa-code"></i></h5>
 	</section>
 
 </header>
-<!--			end header
-					main page body and content 		-->
+<!--  end header / start main page content  -->
 <main class="main">
 
 	<aside>
@@ -73,13 +41,10 @@
 
 	<section id="main">
 
-		<span id="sort_opt" class="sort_alpha">
-			<small></small>
-			<span>alphabetical</span>
-		</span>
-
 	</section><!-- end main -->
-</main>
+
+</main><!-- end content -->
+
 <!--  end main / start footer  -->
 <footer class="main">
 	<h6>Travis Leonard<i class="fa fa-copyright"></i>2015</h6>

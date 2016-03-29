@@ -1,0 +1,40 @@
+
+/* Site Icon Links */
+#site_icons {
+	padding: 20px 10px 20px;
+	position: absolute;
+	right: 20px;
+	top: -50px;
+	opacity: 0.5;
+	text-shadow: black 0 1px;
+	background: rgba(0,0,100,0.2);
+	border: 1px solid #f1f1f1;
+	border-top: none;
+	border-radius: 0 0 5px 5px;
+	box-shadow: inset rgba(0,0,0,0.1) 0 1px,
+		rgba(0,0,0,0.1) 0 1px, rgba(0,0,0,0.2) 0 0 5px;
+	transition: all 0.3s ease-in-out;
+}
+	#site_icons:hover {
+		padding: 7px 10px;
+		top: 0px;
+		opacity: 1;
+		background: rgba(0,0,50,0.3);
+		box-shadow: inset rgba(0,0,0,0.2) 0 1px,
+			rgba(0,0,0,0.2) 0 1px, rgba(0,0,0,0.4) 0 0 5px;
+	}
+	#site_icons a {
+		color: #f1f1f1;
+		margin: 0 5px;
+		opacity: 0.5;
+		transition: opacity 0.3s ease;
+	}
+	#site_icons a:hover {opacity: 1;}
+
+
+/* Main Content */
+/* home page preview articles */
+#main > article[id^='preview'] {}
+  #main > article[id^='preview'] p {text-indent: 20px;}
+  #main > article[id^='preview'] h3 {margin-bottom: 20px;}
+  #main > article[id^='preview']:not(:first-of-type) {margin-top: 40px;}
