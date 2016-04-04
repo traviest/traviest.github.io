@@ -9,7 +9,10 @@
 	<link rel="apple-touch-icon" href="imgs/icon.png" sizes="200x200">
 
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800">
+
+	<link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 	<link type="text/css" rel="stylesheet" href="css/styles.css">
 	<link type="text/css" rel="stylesheet" href="css/blog.css">
 
@@ -19,45 +22,29 @@
 
 	<script>
 	$(document).ready(function() {
+	  // makes all posts array global.......
+		var all_posts = [], start = 0, finish = 5;
+		loadPosts(all_posts, start, finish);
 
-		loadPosts(10);
+		$('#load_more').click(function(e) {
+			alert(start+':start - '+finish+':finish');
 
-
-
-
-		$('ul#sidebar_tags').fadeOut(300).delay(300);
-
-
-
-		var all_tags = new Array();
-	  var get_tags = $.get("posts/posts.xml", function(posts){
-	    $(posts).find('post').each(function(i) {
-
-				$(this).find('tags').find('tag').each(function() {
-
-					for (var i = 0; i < all_tags.length; i++) {
-
-						var tag_found = false;
-						if (all_tags[i]['name'] == $(this).text()) {
-							all_tags[i]['count']++;
-							tag_found == true;
-							break;
-						}
-						if (i-1 == all_tags.length && !tag_found) {
-							alltags.push(['name' = tag, 'count' = 1]);
-						}
-
-					}
-
-				});
-
-			});
-		});
-		get_tags.complete(function(){
-
-			$('ul#sidebar_tags').append(all_tags.toString());
+			start += finish; finish +=10; // load 10 more posts from array
+			buildPosts(all_posts,start,finish);
 		});
 
+		// load all sidebar information
+		loadSidebar();
+
+
+		setTimeout(function() {
+			$('#notice').slideUp(500);
+		}, 10000);
+	});
+
+	$(document).on('click', '#featured_post img', function(e) {
+		var source = $(this);
+		alert(source.toString());
 	});
 	</script>
 
@@ -73,14 +60,16 @@
 
 </header>
 
+<section id="notice">
+	<p>	This is mainly a collection of things I find interesting. There isn't much of a theme other then that, so sad.</p>
+</section>
+
 <main class="main">
 	<aside>
-
 		<h5>Featured</h5>
-		<p> cycling block [like my_pic] changes thru recent posts with images </p>
+		<article id="featured_post"></article>
 
-
-		<h5>Categories <i class="fa fa-filter"></i></h5>
+		<h5>Categories <i class="ion-folder"></i></h5>
 		<ul id="sidebar_categories">
 			<li>Web Development</li>
 			<li>Work</li>
@@ -90,19 +79,18 @@
 			<li>Bucket List</li>
 		</ul>
 
-		<h5>Tags <i class="fa fa-tags"></i></h5>
+		<h5>All Tags <i class="ion-pricetags"></i></h5>
 		<ul id="sidebar_tags">
 			<li>Tag 1</li><li>Tag 2</li><li>Tag 3</li>
 		</ul>
 
-		<h5>Archive <i class="fa fa-archive"></i></h5>
+		<h5>Archive <i class="ion-archive"></i></h5>
 		<ul id="sidebar_archives">
 			<li>March - 9</li>
 			<li>February - 12</li>
 			<li>January - 15</li>
 		</ul>
 
-		<div id="to_the_top"><i class="fa fa-arrow-circle-up"></i></div>
 	</aside><!-- end sidebar -->
 
 	<section id="main">
@@ -113,6 +101,8 @@
 			<i class="fa fa-cog fa-stack-4x"></i>
 		</article>
 
+		<a id="load_more">Load More Posts</a>
+
 	</section><!-- end main section -->
 </main>
 <!--  end main / start footer  -->
@@ -120,8 +110,8 @@
 	<h6>Travis Leonard<i class="fa fa-copyright"></i>2015</h6>
 	<p>Version 1 - Flat
 		&#8226; <a href="about.html#credits">Credits</a>
-		&#8226; <a href=""><i class="fa fa-html5"></i></a>
-		&#8226; <a href=""><i class="fa fa-css3"></i></a>
+		&#8226; <a href=""><i class="ion-html5"></i></a>
+		&#8226; <a href=""><i class="ion-css3"></i></a>
 	</p>
 </footer>
 

@@ -1,9 +1,105 @@
-/* aside */
+/***** COLORS *****/
+
+
+
+/***** Aside ************************************************************/
+.main > aside > h5:first-of-type {
+	border-bottom: none;}
+
+#feaured_post {}
 ul#sidebar_categories {}
 ul#sidebar_tags {}
 ul#sidebar_archives {}
 
+/***** Featured Post *****/
+#featured_post {
+	margin-bottom: 40px;
+	position: relative;
+	background: rgba(0,0,100,0.3);
+}
+	#featured_post h5 {margin-bottom: 10px; border-bottom: none;}
+	#featured_post img, #featured_post iframe {
+		width: 100%;
+		border: 3px solid #f1f1f1;
+		box-shadow: rgba(0,0,0,0.2) 0 1px 1px;
+	}
+	#featured_post img {}
+	#featured_post iframe {}
+	#featured_post > a  {
+		display: block;
+		position: absolute;
+		bottom: calc(100% + 5px);
+		left: 0; right: 0;
+		padding: 5px 10px;
+		background: #f1f1f1;
+		box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
+		border-radius: 3px;
 
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+	}
+	#featured_post:hover > a {opacity: 0.9;}
+	#featured_post > a:before, #featured_post > a:after {
+		content: '';
+		display: block;
+		position: absolute;
+		background: #f1f1f1;
+	}
+	#featured_post > a:before {
+		height: 5px;
+		width: 12px;
+		left: calc(50% - 6px);
+		bottom: 0;
+		z-index: 1;
+	}
+	#featured_post > a:after {
+		height: 6px;
+		width: 6px;
+		bottom: -3px;
+		left: calc(50% - 3px);
+		box-shadow: rgba(0,0,0,0.2) 1px 1px 3px;
+		transform: rotate(45deg);
+	}
+	#featured_post > a > span {}
+	.feat_title, .feat_date {
+		font-size: 0.8em;
+		line-height: 1.2;
+	}
+	#featured_post .feat_title {}
+	#featured_post .feat_date {}
+	#featured_post .feat_date:after {
+		font-family: 'ionicons';
+		content: '\f208';
+		display: inline-block;
+		position: relative;
+		top: 0;
+		font-size: 0.7em;
+		margin: 0 5px 0;
+	}
+
+/* Sidebar Categories */
+ul#sidebar_categories {}
+		ul#sidebar_categories li {
+			text-transform: capitalize;
+		}
+		ul#sidebar_categories li:not(:last-of-type) {
+			border-bottom: 1px dotted rgba(0,0,0,0.2);
+		}
+		ul#sidebar_categories li a {
+		}
+		ul#sidebar_categories li a span {
+			float: right;
+		}
+
+/* Sidebar Tags */
+ul#sidebar_tags {text-align: center;}
+	ul#sidebar_tags > li {display:inline-block;}
+	ul#sidebar_tags > li:not(:last-of-type) {margin-right: 10px;}
+ul#sidebar_archives {}
+
+
+
+/***** Main *************************************************************/
 /* posts loading icons */
 #main > .fa-stack {display: block; margin: 20px auto 0;}
 	#main > .fa-stack > i {}
@@ -15,97 +111,175 @@ ul#sidebar_archives {}
 		position:relative; top:30px; right:-10px;}
 
 
-
-/* Posts */
-main.main > section#main > article.post {position: relative;}
-
-	.post:not(:last-of-type) {
-		border-bottom: 1px solid rgb(32,70,118);
-		margin-bottom: 40px;
-		padding-bottom: 40px;
+main.main > section#main {
+	position: relative;
+	padding-bottom: 60px;
+}
+	#load_more {
+		position: absolute;
+		bottom: 0; right: 0;
 	}
+
+/***** Posts ************************************************************/
+main.main > section#main > article.post {position: relative;}
+	.post {
+		overflow: hidden;
+		padding: 10px 20px 20px;
+		background: #f1f1f1;
+		box-shadow: rgba(0,0,0,0.2) 0 1px 1px;
+		border-radius: 3px;
+	}
+	.post:not(:last-of-type) {margin-bottom: 40px;}
+
+	/* post icons */
+	.post > small > a:before, .post > time:before,
+		.post_tags:before, .post_links:before {
+		font-family: "ionicons";
+		margin-right: 10px;
+	}
+	.post_tags:before, .post_links:before {}
+	.post > small > a:before {content: '\f139'; }
+	.post > time:before {content: '\f117';}
+	.post > .post_tags:before {content: '\f2aa';}
+	.post > .post_links:before {content: '\f1fe';
+		position: absolute;
+		left: 0;
+	}
+
+	/* post info items size */
+	.post > time, .post > .post_tags, .post > .post_links {
+		font-size: 0.85em;
+		line-height: 1.3;
+	}
+
 	/* category */
 	.post > small {
 		text-transform: capitalize;
 
-		padding: 3px 5px;
-		margin-left: 10px;
-		background: #f1f1f1;
-		float: right;
+		position: absolute;
+		right: 0px;
+		top: -50px;
+		padding: 5px 10px;
 
+		background: white;
+		border-radius: 3px 0 0 3px;
+		box-shadow: rgba(0,0,0,0.2) 0 0 1px;
+
+		z-index: 1;
+		float: right;
+		opacity: 0;
 	}
-		.post > small > a {color: rgb(74,149,172);}
+		.post:hover > small {
+			opacity: 1;
+		  animation: post-hover 0.4s ease;
+		  animation-fill-mode: forwards;
+		}
+		@keyframes post-hover {
+		  0% {top: -50px;}
+			10% {top: 0px;}
+			30% {top: 25px;}
+		  70% {top: 0px;}
+			100% {top: 12px;}
+		}
 
 	/* title */
-	.post > h3 {}
+	.post > h3 {
+		margin: 10px -20px 0;
+		padding: 20px 20px 0;
+		border-top: 1px solid rgba(0,0,0,0.2);
+		box-shadow: inset white 0 1px 0;
+	}
 
 	/* date */
-	.post > time {}
+	.post > time {margin-top: -10px;}
+
+	/* tags */
+	.post > .post_tags {}
+	.post > .post_tags li {display: inline-block;}
+	.post > .post_tags li:not(:last-of-type) {margin-right: 5px;}
+	.post > .post_tags li:not(:last-of-type):after {content: ", ";}
 
 	/* embed/external element */
 	.post > section {margin: 20px auto 0;}
 		.post > section > img, .post > section > iframe {
 			width: 100%;
-			box-shadow: rgba(0,0,0,0.2) 0 1px 5px;
+			box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
 		}
-		.post > section > img {border: 3px solid #f1f1f1;}
+		.post > section > img {border: 3px solid white;}
 		.post > section > iframe {}
 
 	/* post info - content */
 	.post > article {margin: 20px auto 0;}
-		/* post headers */
+		/* post sub headers */
 		.post > article h6 {}
 		/* post lists */
-			.post > article ul {}
-			.post > article ul > li {
-				text-indent:-20px;
-				margin-left:20px;
-			}
-			.post > article ul > li i {font-weight: 400;}
-			.post > article ul > li em {color: black;}
+		.post > article ul {}
+		.post > article ul > li {
+			text-indent:-20px;
+			margin-left:20px;
+		}
+		.post > article ul > li i {font-weight: 400;}
+		.post > article ul > li em {color: black;}
 		/* post desc */
 		.post > article p {text-indent: 10px;}
 		.post > article p:not(:last-of-type) {margin-bottom: 20px;}
 		/* post quotes */
 		.post > article > blockquote {}
-			.post > article > blockquote:not(:last-of-type) {margin-bottom: 20px;}
-			.post > article > blockquote > small {font-weight: 400;}
-			.post > article > blockquote > small > cite {font-style: italic;}
+		.post > article > blockquote:not(:last-of-type) {margin-bottom: 20px;}
+		.post > article > blockquote > small {font-weight: 400;}
+		.post > article > blockquote > small > cite {font-style: italic;}
 
-
-	/* post lists - tags and links */
-	.post_tags:before, .post_links:before {
-		font-family: "FontAwesome";
-		margin-right: 10px;
-		color: #f1f1f1;
-		text-shadow: rgba(0,0,0,0.1) 0 1px 1px;
+	/* links */
+	.post > .post_links {
+		margin-top: 20px;
+		padding-left: 20px;
+		position: relative;
 	}
-	.post_tags, .post_links {margin-top: 20px;}
-	.post_tags li, .post_links li {display: inline-block;}
-	.post > .post_tags li:not(:last-of-type),
-	.post > .post_links li:not(:last-of-type) {margin-right: 10px;}
+	.post_links li {display: inline-block;}
+	.post_links li:not(:last-of-type):after {
+		content: '\f401';
+		font-family: 'ionicons';
+		font-size: 0.5em;
+		color:  rgb(32,70,118);
 
-	/* post tags */
-	.post > .post_tags {}
-	.post > .post_tags:before {content: '\f02c';}
-	.post > .post_tags li {}
-	.post > .post_tags li:not(:last-of-type) {margin-right: 10px;}
-	.post > .post_tags li:not(:last-of-type):after {content: ", ";}
+		margin-left: 5px;
+		position: relative;
+		top: -1px;
+	}
+	.post_links li:not(:last-of-type) {margin-right: 5px;}
+	.post_links li a {}
 
-	/* post links */
-	.post > .post_links:before {content: '\f0c1';}
-	.post a[href*="instagram"]:before,
-	.post a[href*="soundcloud"]:before,
-	.post a[href*="facebook"]:before,
-	.post a[href*="twitter"]:before,
-	.post a[href*="youtube"]:before {font-family: 'FontAwesome';}
+
+	/* post links icons */
+	.post a[href*="instagram"]:before, .post a[href*="soundcloud"]:before,
+	.post a[href*="facebook"]:before, .post a[href*="twitter"]:before,
+	.post a[href*="youtube"]:before {
+		font-family: 'FontAwesome';
+		margin-right: 5px;
+	}
 	.post a[href*="instagram"]:before {content: '\f16d';}
 	.post a[href*="soundcloud"]:before {content: '\f1be';}
 	.post a[href*="facebook"]:before {content: '\f230';}
 	.post a[href*="twitter"]:before {content: '\f099';}
-	.post a[href*="youtube"]:before {content: '\f16a';}
+	.post a[href*="youtu"]:before, .post a[href*="youtube"]:before {content: '\f16a';}
 
 
+	/* link on long posts to read in full */
+	.read_full {
+		margin-top: 10px;
+		display: block;
+	}
+	.read_full a:after {
+		content: '\f0da';
+		font-family: 'FontAwesome';
+		font-size: 1.3em;
+		margin-left: 5px;
+		position: relative;
+		top: 2px;
+	}
+
+
+/* load more link */
 a.load_more {
 	display: block;
 	margin-top: 40px;

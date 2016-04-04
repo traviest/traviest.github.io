@@ -1,55 +1,39 @@
+#page_nav {
+  padding: 20px;
 
-
-
-
-
-.instagram-media {
-
-  background:#FFF;
-  border:0;
-  border-radius:3px;
-  box-shadow:0 0 1px 0 rgba(0,0,0,0.5),
-    0 1px 10px 0 rgba(0,0,0,0.15);
-  margin: 10px auto;
-  max-width:658px;
-  padding:0;
-  width:99.375%;
-  width:-webkit-calc(100% - 2px);
-  width:calc(100% - 2px);
-
-  width: 300px;
+  background: rgba(0,0,0,0.5);
 }
-.instagram-media > div {padding:8px;}
-  .instagram-media > div > div {
-    background:#F8F8F8;
-    line-height:0;
-    margin-top:40px;
-    padding:50.0% 0;
-    text-align:center;
-    width:100%;
-  }
-    .instagram-media > div > div > div {
 
-      display:block;
-      height:44px;
-      margin:0 auto -44px;
-      position:relative;
-      top:-22px;
-      width:44px;
-    }
-  .instagram-media > div > p {
-    margin:8px 0 0 0; padding:0 4px;
 
-    background: red;
-  }
-  .instagram-media > div > p + p {
-    color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;
-  }
-    .instagram-media > div > p > a {
-      color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;
-    }
-    .instagram-media > div > p > time {
-      background: red;
 
-       font-family:Arial,sans-serif; font-size:14px; line-height:17px;
-    }
+
+
+main.main {
+  display: block;
+}
+main.main h3 {
+  text-align: center;
+  margin-bottom: 20px;
+
+  -webkit-box-reflect: below -3px linear-gradient(transparent 90%, white);
+}
+
+
+
+#todo_list {}
+#todo_list ol {
+  list-style-position: inside;
+}
+#todo_list ol li {
+  text-indent: -20px;
+  margin-left: 20px;
+}
+  .spacer {list-style-type: none;}
+
+
+
+.concoction {
+  border-top: 1px solid;
+  margin-top: 100px;
+  padding-top: 20px;
+}

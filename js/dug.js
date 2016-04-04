@@ -72,7 +72,7 @@ var dug = function( opts ){
 	},
 	photo = function(url){
 		if (url == "" || url == undefined) {
-			return "imgs/blank-cd.png";
+			return "imgs/cd.png";
 		} else {
 			return url;
 		}

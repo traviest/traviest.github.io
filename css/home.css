@@ -1,11 +1,8 @@
-
 /* Site Icon Links */
 #site_icons {
-	padding: 20px 10px 20px;
 	position: absolute;
-	right: 20px;
-	top: -50px;
-	opacity: 0.5;
+	right: 20px; top: -50px;
+	padding: 20px 10px 20px;
 	text-shadow: black 0 1px;
 	background: rgba(0,0,100,0.2);
 	border: 1px solid #f1f1f1;
@@ -14,6 +11,7 @@
 	box-shadow: inset rgba(0,0,0,0.1) 0 1px,
 		rgba(0,0,0,0.1) 0 1px, rgba(0,0,0,0.2) 0 0 5px;
 	transition: all 0.3s ease-in-out;
+	opacity: 0.5;
 }
 	#site_icons:hover {
 		padding: 7px 10px;
@@ -23,18 +21,24 @@
 		box-shadow: inset rgba(0,0,0,0.2) 0 1px,
 			rgba(0,0,0,0.2) 0 1px, rgba(0,0,0,0.4) 0 0 5px;
 	}
-	#site_icons a {
+	#site_icons i {
 		color: #f1f1f1;
 		margin: 0 5px;
 		opacity: 0.5;
 		transition: opacity 0.3s ease;
 	}
-	#site_icons a:hover {opacity: 1;}
+	#site_icons i:hover {opacity: 1;}
+
+/* Aside */
+/* Speicific Lists */
+ul#sidebar_posts {}
+ul#sidebar_tags {text-align: center;}
+	ul#sidebar_tags > li {display: inline-block; margin: 0 5px;}
 
 
 /* Main Content */
 /* home page preview articles */
-#main > article[id^='preview'] {}
-  #main > article[id^='preview'] p {text-indent: 20px;}
-  #main > article[id^='preview'] h3 {margin-bottom: 20px;}
-  #main > article[id^='preview']:not(:first-of-type) {margin-top: 40px;}
+#main {}
+	#main > h3 {margin-bottom: 20px;}
+  #main > p {text-indent: 20px;}
+	#main > p:not(:last-of-type) {margin-bottom: 20px;}

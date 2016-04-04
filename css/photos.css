@@ -5,20 +5,64 @@ $seafoamblue = #4A95AC - rgb(74,149,172);
 $oceanblue = #1E739D - rgb(30,115,157);
 $nightblue = #204676 - rgb(32,70,118);
 */
-
+.main > aside, .main > #main {
+  border: 1px solid white;
+}
 /* Aside */
 .main > aside {
-  background: rgba(32,70,118,0.5);
 
 }
 
 /* Main Content */
 #main {
   position: relative;
-  background: rgba(74,149,172,0.5);
-
-
 }
+
+#instafeed {text-align: center;}
+  #instafeed article {
+    max-width: 300px;
+    overflow: hidden;
+    position: relative;
+
+    background: red;
+    margin: 0;
+    padding: 0;
+  }
+  #instafeed img {
+  }
+  #instafeed img:hover{
+    filter: blur(30%);
+  }
+  #instafeed a {
+    font-size: 0.8em;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    padding: 50% 5% 0;
+
+
+    color: #f1f1f1;
+    text-shadow: black 0 1px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 70%);
+
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+  }
+  #instafeed a span {display: block;}
+  #instafeed a span:first-of-type {  }
+  #instafeed a span:last-of-type {  }
+  #instafeed a:hover {
+    opacity: 1;
+  }
+
+
+
+
+
+
 
 /* Sort Options */
 #sort_opt, #sort_opt > small {

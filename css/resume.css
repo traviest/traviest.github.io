@@ -1,0 +1,59 @@
+ul.trail {}
+
+/***** Resume *****/
+#resume {
+	width: 100%;
+	padding: 10px;
+	text-shadow: white 0 1px;
+	background: #f1f1f1;
+	box-shadow: rgba(0,0,0,0.2) 0 1px 1px;
+	border-radius: 5px;
+}
+#resume > section.sup {margin-bottom: 80px;}
+#resume > section.sup > h3 {margin-bottom: 10px;}
+/*
+#resume > section.sup > article {}
+#resume > section.sup > article > aside {}
+#resume > section.sup > article > .what {}
+*/
+#resume article {display: table;}
+#resume aside, #resume .what {display: table-cell; vertical-align: top;}
+#resume .what {width: 60%;} /* Content */
+#resume aside {width: 39%;} /* Info */
+#resume h3, #resume h5 {color: #555;}
+#resume article {
+	border-top: 1px solid rgb(30,115,157);
+	margin-bottom: 40px;
+}
+#resume aside{
+	border-top: 1px solid rgb(30,115,157);
+	padding-top: 10px;
+}
+#resume section article:first-of-type aside {
+	border-top: 2px solid rgb(30,115,157);
+}
+#resume ol {
+	list-style-position: inside;
+	list-style-type: disc;
+	list-style-image: url();
+	list-style: none;
+}
+#resume .when{
+	display: block;
+	margin-top: 5px;
+}
+#resume .what{
+	padding-top: 16px;
+	line-height: 1.5;
+}
+
+
+#claims {
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	padding-top: 20px;
+	text-align: right;
+}
+	#claims > a#down {float: left;}
+	#claims > p {text-align: center; margin-top: 10px;}

@@ -18,6 +18,27 @@
 	<script type="text/javascript" src="js/functions.js"></script>
 
 	<script type="text/javascript">
+	$(document).ready(function() {
+
+		var blues = ['rgb(74,149,172)',
+			'rgb(30,115,157)',
+			'rgb(32,70,118)'
+		];
+
+		var count = 0;
+
+		setInterval(function() {
+
+			var gradient = 'radial-gradient( '+ blues[count%3];
+			count++;
+			gradient+= ' 0%, '+ blues[count%3];
+			count++;
+			gradient+= ' 50%, '+ blues[count%3] +' 100%)';
+
+			$('header.main').css({'background': gradient, 'opacity': 0.6});
+		}, 500);
+
+	});
 	</script>
 </head>
 <body>
@@ -33,47 +54,63 @@
 
 </header>
 <!--  end header / start main page content  -->
+<nav id="page_nav">
+	<a href="#con1">Concoction 1</a>
+	<a href="#con2">Concoction 2</a>
+	<a href="#con3">Concoction 3</a>
+</nav>
+
 <main class="main">
 
-	<aside>
-		<h1 class="fa fa-circle-o-notch fa-spin fa-2x"></h1>
-
-		<p><i class="fa fa-quote-left fa-3x fa-pull-left fa-border"></i>...tomorrow we will run faster, stretch out our arms farther...And then one fine morning — So we beat on, boats against the current, borne back ceaselessly into the past.</p>
-
-		<div id="to_the_top"><i class="fa fa-arrow-circle-up"></i></div>
-	</aside><!-- end sidebar -->
-
-	<section id="main">
-
-		<h2>I play around here <i class="fa fa-magic"></i></h2>
+		<h3>I play around here <i class="fa fa-magic"></i></h2>
 
 		<article id="todo_list">
 		 	<h4>To Do List <i class="fa fa-list-ul"></i></h4>
 			<ol>
-				<li>REWORK ALL AS ONE PAGE WITH TABS?? // USE JAVASCRIPT AND AJAX INSTEAD OF PHP // LOAD NECESSARY PARTS AS USER NAVIGATES</li>
-				<li>RESUMÉ - check old site's one</li>
-				<li>Rework Main.css - pull out home page specific stylings to Home.css</li>
+				<li>REWORK ALL AS ONE PAGE WITH TABS?? // USE JAVASCRIPT AND AJAX // LOAD NECESSARY PARTS AS USER NAVIGATES</li>
+
+				<li>RESUMÉ - finish stylinge</li>
+
+				<li>Finalize Sidebar - specific per page [ <br/>
+					HOME: social - instagram &amp; last.fm | <br/>
+					BLOG: featured, categories, tags, archive | <br/>
+					PORTFOLIO: | <br/>
+					ABOUT: me_pic, fun facts, social links | <br/>
+					MUSIC: AT TOP (sorts songs) - categories / tags | <br/>
+					PHOTOS: AT TOP (sorts photos) -  type / | <br/>
+					LAB: AT TOP - list of 'concoctions' (click will scroll to on page)<br/>
+				]</li>
+
+				<li>Rework IonIcons from FontAwesome</li>
+				<li>Incorporate use of <code>Cookies</code> ()</li>
 				<li>Wrapper - Include to stop page stretch for extra large screens</li>
 				<li>CSS Media Queries - Research to adjust site based on window width (only use wrapper for large screen)</li>
 			</ol>
+
+			<ol>
+				<li class="spacer"><li>
+				<li><a href="http://codepen.io/ChynoDeluxe/pen/bdXeqQ">Blog Cards</a> - blog post preview block</li>
+				<li><a href="http://codepen.io/littlesnippets/pen/rxYara">Image Hover</a></li>
+				<li><a href="http://codepen.io/robbi093/pen/wKBWWd">CSS3 Timeline</a> - about page</li>
+				<li><a href="https://codyhouse.co/demo/horizontal-timeline/index.html">Amazing CSS Timeline</a></li>
+				<li><a href="http://codepen.io/MightyShaban/pen/LqrCK">Sexy Accordion</a> - collapsable menu</li>
+				<li><a href="http://codepen.io/mfritsch/pen/KdKoKQ">Footer Animation</a> - slide transition footer</li>
+			</ol>
 		</article>
 
-		<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="6">
-			<div>
-				<div>
-					<div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC);">
-					</div>
-				</div>
-				<p>
-					<a href="https://www.instagram.com/p/BC3z3J_pkQf/" style=" " target="_blank">#👍🏼🏞</a>
-				</p>
-				<p style=" ">A photo posted by Travis (@traviest) on <time  datetime="2016-03-12T23:50:26+00:00">Mar 12, 2016 at 3:50pm PST</time>
-				</p>
-			</div>
-		</blockquote>
-		<script async defer src="http://platform.instagram.com/en_US/embeds.js"></script>
 
-	</section><!-- end main -->
+		<article class="concoction" id="con1">
+			<h4>concoction 1</h4>
+			<p data-height="268" data-theme-id="22821" data-slug-hash="MyENjy" data-default-tab="result" data-user="traviest" class="codepen">See the Pen <a href="http://codepen.io/traviest/pen/MyENjy/">Pic Rotation</a> by Travis (<a href="http://codepen.io/traviest">@traviest</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+	<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+		</article>
+		<article class="concoction" id="con2">
+			<h4>concoction 2</h4>
+		</article>
+		<article class="concoction" id="con3">
+			<h4>concoction 3</h4>
+		</article>
+
 
 </main><!-- end content -->
 

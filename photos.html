@@ -14,42 +14,38 @@
 	<link type="text/css" rel="stylesheet" href="css/styles.css"/>
 	<link type="text/css" rel="stylesheet" href="css/photos.css"/>
 
-
 	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
+	<script type="text/javascript" src="js/instafeed.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
+	<script>
+	var userFeed = new Instafeed({
+		get: 'user',
+		userId: '357448',
+		clientId: '2d460779eb934209b6384ae31961e55f',
+		// resolution: 'standard_resolution',
+		limit: '5',
+		template: '<article>'
+			+ '<a href="{{link}}">'
+				+ '<span>{{caption}}</span>'
+				+ '<span class="instatime">{{model.created_time}}</span>'
+			+ '</a>'
+			+ '<img src="{{image}}" alt="{{caption}}" />'
+			+ '</article>',
+		after: function() {
+			$('.instatime').each(function(i,o) {
+				var date = new Date(parseInt( $(this).text() ) * 1000);
+				var newDate = convertMonthNum((date.getMonth()+1).toString())
+						+ ' ' + date.getDate()
+						+ ', \'' + date.getFullYear().toString().substring(2,4);
+				$(this).text(newDate);
+			});
+		}
+	 });
+	 userFeed.run();
 
-	<script type="text/javascript">
-	$(document).ready(function() {
-		$('#sort_opt').hover(function() {
-			$(this).find('span').fadeIn(150);
-		}, function() {
-			clearTimeout(timer);
-			var timer = setTimeout(function() {$('#sort_opt').find('span').fadeOut(250);}, 500);
-		});
-
-		$('#sort_opt').click(function() {
-			if ($(this).hasClass('sort_alpha')) {
-				$(this).find('span').hide().delay(250).text('count').fadeIn(250);
-				$(this).addClass('sort_count').removeClass('sort_alpha')
-					.find('small').animate({'left': '11px'}, 250);
-
-				$('#alpha_sort').fadeOut(250, function() {
-					$(this).css('display','none'|'opacity',0);
-					$('#count_sort').css('display','block').animate({'opacity': 1}, 500);
-				});
-			} else if ($(this).hasClass('sort_count')) {
-				$(this).find('span').hide().delay(250).text('alphabetical').fadeIn(250);
-				$(this).addClass('sort_alpha').removeClass('sort_count')
-					.find('small').animate({'left': '1px'}, 250);
-
-				$('#count_sort').fadeOut(250, function() {
-					$(this).css('display','none'|'opacity',0);
-					$('#alpha_sort').css('display','block').animate({'opacity': 1}, 500);
-				});
-			}
-		});
-	});
 	</script>
+
+
 </head>
 <body>
 <!-- Site Header / Banner -->
@@ -68,7 +64,13 @@
 <main class="main">
 
 	<aside>
-		<div id="to_the_top"><i class="fa fa-arrow-circle-up"></i></div>
+		<h5>Instagram Feed</h5>
+
+		<div id="instafeed"></div>
+
+		<a href="http://instagram.com/traviest">
+			<i class="fa fa-instagram fa-fw"></i></a>
+
 	</aside><!-- end sidebar -->
 
 	<section id="main">
@@ -77,6 +79,9 @@
 			<small></small>
 			<span>alphabetical</span>
 		</span>
+
+
+
 
 	</section><!-- end main -->
 </main>

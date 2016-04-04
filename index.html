@@ -20,32 +20,42 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 
+
+		$('.fa-adjust').click(function() {
+			alert('this will eventually let you change the theme colors');
+		});
+		$('.fa-share-alt').click(function() {
+			alert('this will eventually allow you to spam my website on your social media');
+		});
+
 		// cycying pic
-		var pic_counter = 0, total_pics = 7
-				pic_titles = [	"Mellow Muggin\'", "Lush at the Lake", "Festi Frantic",
-						"Kitty Cuddles", "Fancy Faker", "Rave Reactions", "Party Partners"	];
-		//set initial values
-		var img_link = "url(imgs/me/me"+pic_counter+".jpg)";
-		$('#my_pic_top').css('background-image', img_link);
-		$('#my_pic_inner_frame > p > span').empty().html( pic_titles[pic_counter]);
+		var pic_counter = 1, total_pics = 10,
+				pic_titles = [	"Mellow Muggin\'", "Lush at the Lake", "Festi Fanatic", "Kitty Cuddles", "Fancy Faker", "Rave Reactions", "Party Partners"	];
+
+
+		//set initial values - imgs/me/me
+		$('#my_pic_top').css('background-image', 'url(http://lorempixel.com/g/500/500/cats/' + pic_counter +')');
+		//$('#my_pic_inner_frame > p > span').empty().html( pic_titles[pic_counter]);
 
 		// interval function to transition pics
 		setInterval(function() {
 			pic_counter++
 			var top_pic = $('#my_pic_top'),
-					back_pic = $('#my_pic_back'),
-					pic_title = $('#my_pic_inner_frame > p > span');
+					back_pic = $('#my_pic_back'); /*,
+					pic_title = $('#my_pic_inner_frame > p > span');*/
 			// set 'background' image
 			var last_pic = top_pic.css('background-image');
 			back_pic.css('background-image', last_pic);
-			top_pic.animate({'opacity': 0});
+			top_pic.css({'opacity': 0});
 			// give top image new properties and animate in
-			var img_link = "url(imgs/me/me"+ pic_counter%total_pics +".jpg)";
-			top_pic.css('background-image', img_link);
+			var new_pic = 'url(http://lorempixel.com/g/500/500/cats/'+ pic_counter%total_pics +')';
+			top_pic.css('background-image', new_pic);
 			top_pic.animate({'opacity': 1}, 1000);
 			// adjust pic title
+			/*
 			var img_title = pic_titles[ pic_counter%total_pics ];
 			pic_title.css('opacity', 0).text(img_title).animate({'opacity': 1}, 750);
+			*/
 		}, 5*1000);
 
 	});
@@ -56,8 +66,8 @@
 <!-- Site Header / Banner -->
 <header class="main">
 	<article id="site_icons">
-		<a href=""><i class="fa fa-adjust"></i></a>
-		<a href=""><i class="fa fa-share-alt"></i></a>
+		<i class="fa fa-adjust"></i>
+		<i class="fa fa-share-alt"></i>
 	</article>
 
 	<section id="logo">
@@ -86,21 +96,21 @@
 	<aside>
 
 		<section>
-			<article id="my_pic_back"></article>
-			<article id="my_pic_top"></article>
-			<article id="my_pic_inner_frame">
-				<p><span>shit fuck tit goddamn</span></p>
-			</article>
+			<div id="my_pic_back"></div>
+			<div id="my_pic_top"></div>
+			<div id="my_pic_inner_frame">
+				<p><span>shit tit damn</span></p>
+			</div>
 		</section>
 
-		<h5>Recent Posts</h5>
+		<h5>Top Posts</h5>
 		<ul id="sidebar_posts">
-			<li><a href="">Post</a></li>
-			<li><a href="">Post</a></li>
-			<li><a href="">Link Text</a></li>
+			<li><a href="">Post Title</a></li>
+			<li><a href="">Post Title</a></li>
+			<li><a href="">Post Title</a></li>
 		</ul>
 
-		<h5>Tags<i class="fa fa-tags"></i></h5>
+		<h5>Top Tags</h5>
 		<ul id="sidebar_tags">
 			<li><a href="">Tag</a></li>
 			<li><a href="">Tag</a></li>
@@ -109,54 +119,25 @@
 			<li><a href="">Tag</a></li>
 		</ul>
 
-		<h5>Links<i class="fa fa-link"></i></h5>
-		<ul id="sidebar_links">
-			<li><a href="">NetTuts+</a></li>
-			<li><a href="">Link</a></li>
-			<li><a href="">Link</a></li>
+		<h5>MOVE ITEMS HERE</h5>
+		<ul>
+			<li>Instagram Feed</li>
+			<li>Last.fm Scrobbles</li>
 		</ul>
 
-		<h5>Code TODO</h5>
-		<ul id="sidebar_code">
-			<li><a href="http://codepen.io/ChynoDeluxe/pen/bdXeqQ">Blog Cards</a> - blog post preview block</li>
-			<li><a href="http://codepen.io/littlesnippets/pen/rxYara">Image Hover</a></li>
-			<li><a href="http://codepen.io/robbi093/pen/wKBWWd">CSS3 Timeline</a> - about page</li>
-			<li><a href="https://codyhouse.co/demo/horizontal-timeline/index.html">Amazing CSS Timeline</a></li>
-			<li><a href="http://codepen.io/MightyShaban/pen/LqrCK">Sexy Accordion</a> - collapsable menu</li>
-			<li><a href="http://codepen.io/mfritsch/pen/KdKoKQ">Footer Animation</a> - slide transition footer</li>
-			<li><a href=""></a></li>
-		</ul>
-
-		<div id="to_the_top"><i class="fa fa-arrow-circle-up"></i></div>
 	</aside>
 	<!--  end sidebar / start main  -->
 	<section id="main">
 
 
-	 	<article id="preview_blog">
-	 		<h3>I share my thoughts</h3>
-	 		<p>Phasellus vitae faucibus magna, eget semper urna. Praesent non mattis ligula. Etiam laoreet viverra diam et porta. Duis vitae leo eget dolor volutpat euismod vitae et justo. I unfortunately <a href="blog.html">blog</a>. Donec quis mi sit amet ante viverra tincidunt in id ante. Aenean tristique elit in erat ultricies efficitur eleifend ac dui. Aliquam convallis et ipsum quis varius. In aliquam, sem vel fringilla laoreet, metus diam viverra mauris, et ultrices nulla magna at sem. Etiam auctor commodo aliquam. Proin nec sollicitudin dolor. Vivamus viverra purus augue, non lacinia leo pulvinar a. Suspendisse vel elit blandit, iaculis quam eu, ullamcorper elit. Etiam dictum augue imperdiet blandit tristique.</p>
-	 	</article>
+		<h3>Welcome</h3>
 
-		<article id="preview_work">
-	 		<h3><i class="amp">&amp;</i> I work occassionally</h3>
-	 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat pellentesque ultricies. Donec pellentesque at odio ac aliquet. Nullam mollis ut ipsum sed euismod. I have tried to keep it organzied as best I can, but I do have a full <a href="portfolio.html">portfolio</a> you can check out. Aliquam commodo quam nec sapien vehicula. Morbi viverra quis mi id volutpat. Suspendisse dictum mauris ac mi consequat vestibulum. Praesent erat augue, consequat vel dapibus sit amet, pretium vel lorem. Donec ut quam odio. Donec non leo lacus. Curabitur quis dapibus tortor. Praesent in lectus quis lacus varius tempus vel at risus.</p>
-	 	</article>
+		<p>This is one of those 'dark places' of the internet. You will gain nothing here, well you may get an insight into who I am and that earn you a big fat 👍</p>
+		<p>
+			It is to your and my dismay that I share with you... I do have a <a href="blog.html">blog</a>, a collection of pointless things. I am also a huge <a href="music.html">music</a> fanatic, take some <a href="photos">pictures</a> from time to time, and will always enjoy learning and playing with code, all contained in my world class <a href="lab.html">lab</a>.
+		</p>
 
-		<article id="preview_photo">
-			<h3><i class="amp">&amp;</i> I have these to remember the memories</h3>
-			<p>Curabitur est magna, ultricies a volutpat sit amet, auctor a orci. Vestibulum nisi urna, iaculis a massa eget, eleifend finibus erat. Nullam tempor quam lacus, tempus luctus risus lobortis et. Pellentesque finibus bibendum sem. Vestibulum eu erat scelerisque, eleifend odio eget, condimentum lacus. Donec vel porttitor dui. Morbi cursus arcu risus, at efficitur velit lobortis et. Quisque ornare euismod ante, eu congue neque gravida non. Morbi tincidunt vitae eros a posuere. The sad truth, I take way too many photos but just love having them to reflect on. You can head over here to see all my <a href="photos.html">photos</a>. Phasellus eu arcu lacus. Maecenas imperdiet, sem a pellentesque malesuada, velit justo sollicitudin odio, in maximus est dui non dui.</p>
-		</article>
 
-		<article id="preview_lab">
-			<h3><i class="amp">&amp;</i> I enjoy the little things</h3>
-			<p>Integer vestibulum velit tortor, at ultricies nulla feugiat sed. Pellentesque venenatis neque odio, nec bibendum augue sagittis at. Sed eu neque turpis. I might be nearing my 30s, but I still like to play like a child, I have a <a href="lab.html">lab</a> to try and contain it all though. Proin molestie consequat felis iaculis porttitor. Nulla aliquet egestas purus semper maximus. Etiam laoreet consectetur dolor sit amet feugiat. Praesent cursus nibh non tortor dapibus, sed blandit nulla bibendum. Morbi massa sapien, dictum nec urna sed, dictum commodo felis. Phasellus finibus purus a lorem porttitor consequat. Maecenas ornare nisi libero, eu lacinia elit accumsan at.</p>
-		</article>
-
-		<article id="preview_about">
-	 		<h3><i class="amp">&amp;</i> I had a little help getting here</h3>
-	 		<p>Vestibulum imperdiet elit porta lectus pellentesque faucibus. Sed lobortis lorem nec erat ultricies gravida. Cras id tincidunt mauris, id viverra sapien. Fusce scelerisque tortor dui, eget convallis metus semper in. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat lorem lectus. Fusce aliquet ullamcorper libero, vitae porta turpis facilisis quis. Ut ut pretium turpis, sed egestas ipsum. Quisque euismod ante non hendrerit auctor. Quisque malesuada sollicitudin pulvinar. I continue my rambles even further and a much more in debth look at my skills over on my <a href="about.html">about</a> page. Vivamus eu erat pellentesque, convallis tellus nec, pretium nisi.</p>
-	 	</article>
 	</section><!-- end main section -->
 </main>
 <!--  end main / start footer  -->
