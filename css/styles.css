@@ -27,21 +27,16 @@ $mainshadow: rgba(0,0,0,0.2) 0 1px 3px;
 
 /***** Main Styles *****************************/
 /* general styling and colors */
-html {background: #333;}
 body {
-	background: #95d3db; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, #95d3db , #acd3db); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, #95d3db , #acd3db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	color: rgb(32,70,118);
+	background: #f1f1f1;
 	color: rgb(30,115,157);
 	font: 16px/24px 'Fira Sans', Arial, Helvetica, Geneva, sans-serif;
-	font-weight: 300;
+	/* font-weight: 300; */
 }
 h1, h2, h3, h4, h5, h6 {color: #f1f1f1;}
 a {
 	color: rgb(32,70,118);
 	text-decoration: none;
-	font-weight: 400;
 	transition: color 0.2s ease-in-out;
 }
 a:visited {}
@@ -50,22 +45,31 @@ a:active {color: rgb(223,103,110);}
 ul {list-style: none;}
 code {
 	font-family: monospace;
+	background: #f1f1f1;
+	margin: 0 3px;
+	padding: 3px 3px 0;
 }
 ::selection {color: #f1f1f1; background-color: rgb(32,70,118);}
 
 /* specific element colors */
-header.main {
+header {
 	background: radial-gradient(rgb(74,149,172) 0%, rgb(30,115,157) 50%, rgb(32,70,118) 100%);
 }
-footer.main {
+main {
+	background: #95d3db;
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #95d3db 10%, #acd3db 100%); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #95d3db 10%, #acd3db 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+footer {
 	color: #c1c1c1;
 	background: linear-gradient(to top, rgb(30,115,157) 0%, rgb(32,70,118) 100%);
 	border-top: 1px solid rgb(32,70,118);
 	border-bottom: 1px solid rgb(32,70,118);
-	box-shadow: inset rgba(0,0,0,0.5) 0 3px 10px,
-		rgba(255,255,255,0.5) 0 -1px 3px;}
-footer.main a {color:rgb(149,211,219);}
-footer.main a:hover {color:#f1f1f1;}
+	box-shadow: inset rgba(0,0,0,0.5) 0 3px 7px;
+}
+footer a {color:rgb(149,211,219);}
+footer a:hover {color:#f1f1f1;}
 
 #line_nav a {color: rgb(74,149,172);}
 #line_nav a.current, #line_nav a:hover {color: rgb(32,70,118);}
@@ -74,13 +78,27 @@ footer.main a:hover {color:#f1f1f1;}
 ul.trail a {color: rgb(32,70,118);}
 ul.trail a:hover {color: rgb(74,149,172);}
 
-#main > h3 {text-shadow: rgba(0,0,0,0.1) 0 1px 1px;}
-main.main > aside > h5 {border-bottom: 1px solid rgba(0,0,0,0.2);}
+
+
+
+
+/***** Main Body Elements **********************/
+/* size and spacing */
+header, main, footer, #page_nav, .trail {width: 100%;}
+header {}
+main {display: table; padding: 40px; min-width: 400px;}
+main, #page_nav, .trail {max-width: 1200px; margin: 0 auto;}
+#page_nav, .trail {margin-bottom: 40px;}
+main > #main, main > aside {display: table-cell; vertical-align: top;}
+main > #main {width: 70%; padding-left: 40px;}
+main > aside {width: 30%;}
+main, footer {}
+footer {margin: 0 auto; padding: 20px;}
 
 
 /***** Fonts ***********************************/
-h1, h2, h3, h4, h5, h6 {font-family: 'Oswald', Arial, sans-serif; font-weight: bold;}
-h1 {font-size: 2.5em; }
+h2, h3, h4, h5, h6 {font-family: 'Crushed','Oswald', Arial, sans-serif; } /*font-weight:bold */
+h1 {font-family: 'Kristi'; font-size: 10em; line-height: 1em;}
 h2 {font-size: 2em;}
 h3 {font-size: 1.75em; line-height: 110%;}
 h4 {font-size: 1.5em;}
@@ -88,95 +106,49 @@ h5 {font-size: 1.25em;}
 h6 {font-size: 1.1em;}
 
 
-/***** Shared Classes **************************/
+/***** Shared Styles **************************/
 .amp {font: italic 110% Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;}
 
 
-/***** Main Body Elements **********************/
-/* size, spacing, and coloring */
-header.main, main.main > aside, main.main > #main, footer.main {
-/* border: 1px solid #f1f1f1; */
-}
-header.main, main.main, footer.main,
-#notice, #page_nav, .trail {width: 100%;}
-#notice, #page_nav, .trail, main.main {margin: 40px auto; padding: 0 40px;}
-main.main, footer.main {}
-main.main {display: table; min-width: 400px; max-width: 1200px;}
-main.main > #main, main.main > aside {display: table-cell; vertical-align: top;}
-main.main > #main {width: 70%; padding-left: 40px;}
-main.main > aside {width: 30%; }
-footer.main {margin: 80px auto 0px; padding: 20px;}
-
-
 /***** Header **********************************/
-header.main {
-	padding-top: 90px; /* room for rotated logo */
-	position: relative;
-}
-
-/* Logo */
-#logo {
-  position: relative;
-  width: 300px;
-  margin: 0 auto 100px;
-	color: #f1f1f1;
+header {position: relative; padding: 10px 0 0;}
+header h1 {
+	margin: 20px auto 50px;
   text-align: center;
-  box-sizing: border-box;
+  text-shadow: rgba(0,0,0,0.2) 0 1px 1px;
+  z-index: 50;
 }
-	#logo h1 {position: relative; margin-bottom: 10px;}
-	#logo h1, #logo h5 {text-transform: uppercase;}
-	#logo h1:before, #logo a {
-		position: absolute;
-		width: 180px; height: 180px;
-		top: 50%; left: 50%;
-		border-radius: 10%;
-		transform-origin: 0 0;
-		transform: rotate(45deg) translate(-50%, -50%);
-	}
-	#logo h1:before {content: ''; border: 5px solid #f1f1f1;}
-	#logo a {top: calc(50% + 12px); z-index: 100;}
-	#logo h5 {
-	  font-size: 0.7em;
-	  font-weight: 800;
-	  position: relative;
-	}
-	#logo h5:after {
-	  position: absolute; content: '';
-	  width: 132px; height: 3px;
-	  bottom: -15px; left: 50%;
-	  background-color: #f1f1f1;
-	  transform: translateX(-50%);
-	}
-	#logo h5 i {position: relative; top: -1px;}
-	#logo .icon {
-		position: relative;
-		top: -20px;
-		display: inline-block;
-		font-size: 3em;
-	}
-	#logo .icon:before, #logo .icon:after {
-	  position: absolute; content: '';
-		background-color: #f1f1f1;
-	  height: 3px;
-	  top: 50%; width: 40px;
-	}
-	#logo .icon:before {left: -40px;}
-	#logo .icon:after {right: -40px;}
-
-
+/* icon to change themes */
+#settings_icons {
+	position: absolute;
+	top: 25px; right: 25px;
+	padding: 2px 5px 1px;
+	font-size: 25px;
+	color: color: rgb(74,149,172);
+	background: rgba(255,255,255,0.85);
+	border-radius: 3px;
+	box-shadow: rgba(0,0,0,0.5) 0 1px 3px;
+	transition: all 0.3s;
+	z-index: 100;
+}
+#settings_icons:hover {
+	color: rgb(32,70,118);
+	top: 20px; right: 20px;
+	padding: 7px 10px 6px;
+}
+/* main site nav */
 #line_nav {
 	position: relative;
 	width: 100%;
 	padding: 0 40px;
 	text-transform: uppercase;
 	background: #f1f1f1;
+	background: linear-gradient(#fff, #ddd);
 	border-top: 3px solid rgb(74,149,172);
 	border-bottom: 3px solid rgb(74,149,172);
-
-	box-shadow: rgba(0,0,0,0.25) 0 -1px 5px;
+	box-shadow: rgba(0,0,0,0.2) 0 -1px 5px,
+		rgba(0,0,0,0.2) 0 1px 5px;
 	z-index: 100;
-
-	position: relative;
 }
 	#line_nav a {
 		display: inline-block;
@@ -194,25 +166,29 @@ header.main {
 	}
 
 
-/***** Mid Content *****************************/
-#notice {}
-	#notice p {
-		display: block;
-		max-width: 1000px;
-		width: 75%;
-		margin: 0 auto;
-		padding: 5px 10px;
-		font-size: 0.75em;
-		text-align: center;
-		color: #f1f1f1;
-		background: rgba(0,0,30,0.5);
-		border: 1px solid #e1e1e1;
-		border-radius: 3px;
-		box-shadow: inset rgba(0,0,0,0.7) 0 1px 1px,
-			rgba(0,0,0,0.2) 0 1px 1px;
-	}
 
+/***** Mid Content *****************************/
+
+
+/* links to jump between page sections */
 #page_nav {}
+  #page_nav nav {
+    width: 100%;
+    padding: 7px 10px;
+    text-shadow: rgba(0,0,0,0.8) 0 1px;
+    background: linear-gradient(to bottom, #444 40%, #555);
+		border-radius: 2px;
+    box-shadow: inset rgba(0,0,0,0.75) 0 1px 5px,
+      rgba(255,255,255,0.75) 0 1px 1px;
+  }
+  #page_nav nav a {color: #AAA; position: relative;}
+  #page_nav nav a:hover {color: #f1f1f1}
+  #page_nav nav a:not(:last-of-type) {margin-right: 5px;}
+  #page_nav nav a:not(:last-of-type):after {
+    content: '\2022';
+    color: #f1f1f1;
+    margin-left: 10px;
+  }
 
 ul.trail {
 	text-align: center;
@@ -227,43 +203,24 @@ ul.trail {
 	}
 
 
+
+
 /***** Main Content ****************************/
-main.main {}
+main {}
 
 /***** Sidebar *****/
-main.main > aside {}
-	/* profile pic */
-	main.main > aside > section {
-		position: relative;
-		width: 100%;
-		height: 250px;
-		color: #f1f1f1;
-		border: 3px solid #f1f1f1;
-		box-shadow: rgba(0,0,0,0.2) 0 1px 5px;
+main > aside {}
+main > aside > h5 { /* Sidebar Headers and Lists */
+	position: relative;
+	text-align: center;
+	padding-bottom: 3px;
+}
+	main > aside > h5:not(:first-of-type) {margin-top: 40px;}
+	main > aside > h5 > i {position: absolute; bottom: 3px; right: 3px;}
+	main > aside > ul {
+		border-top: 1px solid rgba(0,0,0,0.2);
+		border-bottom: 1px solid rgba(0,0,0,0.2);
 	}
-	#my_pic_back, #my_pic_top, #my_pic_inner_frame {
-		position: absolute; width: 100%; height: 100%;}
-	#my_pic_back, #my_pic_top {background-size: cover;}
-	#my_pic_inner_frame {box-shadow: inset rgba(0,0,0,0.3) 0 -1px 5px;}
-	#my_pic_inner_frame > p {
-		position: absolute;
-		bottom: 0; left: 0; right: 0;
-		padding: 5px 0;
-		font-size: 12px;
-		text-align: center;
-		background: rgba(0,0,0,0.7);
-	}
-	main.main > aside > section + h5 {margin-top: 40px;}
-
-	/* Sidebar Lists */
-	main.main > aside > h5 {
-		position: relative;
-		text-align: center;
-		margin-bottom: 10px;
-		padding-bottom: 3px;
-	}
-	main.main > aside > h5:not(:first-of-type) {margin-top: 40px;}
-	main.main > aside > h5 > i {position: absolute; bottom: 3px; right: 3px;}
 
 
 /***** Main *****/
@@ -271,7 +228,7 @@ main.main > aside {}
 
 
 /***** Footer **********************************/
-footer.main {
+footer {
 	text-align: center;
 	position: relative;
 } /*
@@ -284,31 +241,26 @@ footer.main {
 		position: absolute;
 	}
 	/* dropdown to jump between pages */
-	#quick_links {top: 20px; right: 20px;}
+	#quick_links {top: 20px; right: 40px;}
 	/* name and version info */
 	#site_info {
 		display: block;
+		margin: 0 200px;
 	}
 		#site_info h6 > i {
-			position: relative;
-			top: -2px;
 			margin: 0 5px;
+			font-size: 1.4em;
 		}
 	/* to the top button */
-	#to_the_top {top: 30px; left: 20px;}
+	#to_the_top {top: 30px; left: 40px; cursor: pointer;}
 	#to_the_top i {
 		width: 30px;
 		height: 30px;
 		padding-top: 7px;
 		color: black;
-
-		background: linear-gradient(
-			rgba(255,255,255,0.9) 0%,
-			rgba(255,255,255,0.8) 40%,
-			rgba(255,255,255,0.7) 100%
-		);
-		box-shadow: inset rgba(255,255,255,0.5) 0 1px 5px,
-			rgba(0,0,0,0.3) 0 1px 3px;
+		background: linear-gradient(rgba(255,255,255,0.9) 0%,
+			rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.7) 100%);
+		box-shadow: inset rgba(255,255,255,0.5) 0 1px 5px, rgba(0,0,0,0.3) 0 1px 3px;
 		border: 1px solid #f1f1f1;
 		border-radius: 50%;
 		opacity: 0.75;

@@ -1,0 +1,104 @@
+/***** COLORS *****/
+/*
+$skyblue = #95d3db - rgb(149,211,219);
+$seafoamblue = #4A95AC - rgb(74,149,172);
+$oceanblue = #1E739D - rgb(30,115,157);
+$nightblue = #204676 - rgb(32,70,118);
+*/
+
+/***** Supplemental Posts Pages *****************************************/
+body {}
+header {}
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+}
+main > h3 {
+  margin-bottom: 20px;
+  color: #777;
+  text-shadow: white 0 1px 1px;
+}
+
+
+
+
+
+/* Posts Sub Nav - to show different organization of posts */
+#show_post_nav {
+  display: block;
+  position: absolute;
+  top: 110px; right: 40px;
+  color: #f1f1f1;
+  font-size: 1.5em;
+  font-family: 'ionicons';
+  text-shadow: rgba(0,0,0,0.1) 0 1px 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#show_post_nav.showing{
+  background: #f1f1f1;
+  padding: 5px 7px 5px 10px;
+  color: #777;
+  text-shadow: white 0 1px;
+  top: 105px;
+  border-radius: 0 3px 3px 0;
+}
+.sub_nav {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+
+  padding: 5px 10px;
+  background: #f1f1f1;
+  border-radius: 3px 0 3px 3px;
+
+  opacity: 0;
+  display: none;
+}
+  .sub_nav h6 {color: rgb(74,149,172); margin-bottom: 5px;}
+  .sub_nav a {display: block;}
+  .sub_nav a.current {color: rgb(74,149,172);}
+
+
+
+/* Posts Lists - different organized lists of posts */
+.full_tag_list, .full_category_list, .full_archive_list {}
+.full_tag_list li, .full_category_list li, .full_archive_list li {
+  border-bottom: 1px dashed rgba(0,0,0,0.2);
+}
+.full_tag_list span, .full_category_list span, .full_archive_list span {
+  float: right;
+}
+
+
+.full_tag_list {
+
+}
+.full_category_list {
+
+}
+.full_archive_list {
+
+}
+
+
+
+
+
+
+
+/***** All Posts *****/
+#all_posts {
+  max-width: 800px;
+  background: grey;
+  display: none;
+}
+.post {
+
+
+}
+  .post > small {
+
+  }

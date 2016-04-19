@@ -9,119 +9,115 @@
 	<link rel="icon" type="image/png" href="imgs/icon.png" sizes="200x200"/>
 	<link rel="apple-touch-icon" href="imgs/icon.png" sizes="200x200"/>
 
-	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800"/>
-	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-	<link type="text/css" rel="stylesheet" href="css/styles.css"/>
-	<link type="text/css" rel="stylesheet" href="css/lab.css"/>
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800|Kristi">
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+	<link type="text/css" rel="stylesheet" href="css/styles.css">
+	<link type="text/css" rel="stylesheet" href="css/lab.css">
+	<link type="text/css" rel="stylesheet" href="css/white_theme.css" id="theme">
 
 	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
+	<script type="text/javascript" src="js/jquery.firefly.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
 
 	<script type="text/javascript">
 	$(document).ready(function() {
 
-		var blues = ['rgb(74,149,172)',
-			'rgb(30,115,157)',
-			'rgb(32,70,118)'
-		];
 
-		var count = 0;
-
-		setInterval(function() {
-
-			var gradient = 'radial-gradient( '+ blues[count%3];
-			count++;
-			gradient+= ' 0%, '+ blues[count%3];
-			count++;
-			gradient+= ' 50%, '+ blues[count%3] +' 100%)';
-
-			$('header.main').css({'background': gradient, 'opacity': 0.6});
-		}, 500);
+		$('#page_nav a').click(function() {
+			var position = $($(this).attr('href')).offset().top
+						- $('#line_nav').height();
+			$('html,body').animate({scrollTop: parseInt(position)}, 1000);
+			return false;
+		});
 
 	});
 	</script>
 </head>
 <body>
 <!-- Site Header / Banner -->
-<header class="main">
-	<section id="logo">
-		<div class="icon">
-			<i class="fa fa-flask fa-fw"></i>
-		</div>
-	  <h1>traviest</h1>
-	  <h5><i class="fa fa-code"></i>&nbsp;Full-Stack Developer&nbsp;<i class="fa fa-code"></i></h5>
-	</section>
+<header>
+	<h1><i class="ion-code-working"></i>traviest<i class="ion-code-working"></i></h1></header>
+<!--  End Header / Start Main Page Content  -->
+<main>
+	<div id="page_nav">
+		<nav>
+			<a href="#con1" title="Photo Fader">Concoction 1</a>
+			<a href="#con2">Concoction 2</a>
+			<a href="#con3">Concoction 3</a>
+		</nav>
+	</div>
 
-</header>
-<!--  end header / start main page content  -->
-<nav id="page_nav">
-	<a href="#con1">Concoction 1</a>
-	<a href="#con2">Concoction 2</a>
-	<a href="#con3">Concoction 3</a>
-</nav>
+	<h3>I play around here <i class="ion-ios-color-wand-outline"></i></h3>
+	<article id="todo_list">
+	 	<h4><i class="ion-ios-list-outline"></i>To-Do List</h4>
+		<ol>
+			<li>Rework icons - IonIcons vs FontAwesome</li>
+			<li>Incorporate use of <code>Cookies()</code></li>
+			<li>Resizing - make sure two column (home, blog, portfolio, about) and single column (music, photos, lab, resume, tags, categories, archives) windows show well on all screens</li>
+			<li>Wrapper - Include to stop page stretch for extra large screens</li>
+			<li>CSS Media Queries - Research to adjust site based on window width (only use wrapper for large screen?)</li>
+			<li>RESUMÉ - finish stylinge</li>
 
-<main class="main">
+			<li>Colors - main blue, diff highlights per page (
+				<i style="color:pink">pink</i>,
+				<i style="color:orange">orange</i>,
+				<i style="color:yellow">yellow</i>,
+				<i style="color:green">green</i>,
+				<i style="color:purple">purple</i>, etc...)</li>
 
-		<h3>I play around here <i class="fa fa-magic"></i></h2>
+			<li>Finalize Sidebar - specific per page
+				<ul>
+					<li>HOME: social??? - instagram &amp; last.fm / blog - top posts, recent posts &amp; top tags</li>
+					<li><i class="ion-ios-checkmark-empty"></i>BLOG: featured, categories, tags, archive</li>
+					<li>PORTFOLIO: ?</li>
+					<li><i class="ion-ios-checkmark-empty"></i>ABOUT: me_pic, fun facts, social links</li>
+					<li>MUSIC: AT TOP (sorts songs) - categories / tags</li>
+					<li>PHOTOS: AT TOP (sorts photos) -  type /</li>
+					<li><i class="ion-ios-checkmark-empty"></i>LAB: AT TOP - list of 'concoctions' (click scroll to)</li>
+				</ul>
+			</li>
 
-		<article id="todo_list">
-		 	<h4>To Do List <i class="fa fa-list-ul"></i></h4>
-			<ol>
-				<li>REWORK ALL AS ONE PAGE WITH TABS?? // USE JAVASCRIPT AND AJAX // LOAD NECESSARY PARTS AS USER NAVIGATES</li>
+			<li><i class="ion-ios-checkmark-empty"></i>Blog Page: link in header to 'All' Posts (with works/posts.html page?)</li>
+			<li>Blog Page: under featured?? - add links to load all photos or all music (soundcloud - playable songs, not just category)</li>
+		</ol>
 
-				<li>RESUMÉ - finish stylinge</li>
-
-				<li>Finalize Sidebar - specific per page [ <br/>
-					HOME: social - instagram &amp; last.fm | <br/>
-					BLOG: featured, categories, tags, archive | <br/>
-					PORTFOLIO: | <br/>
-					ABOUT: me_pic, fun facts, social links | <br/>
-					MUSIC: AT TOP (sorts songs) - categories / tags | <br/>
-					PHOTOS: AT TOP (sorts photos) -  type / | <br/>
-					LAB: AT TOP - list of 'concoctions' (click will scroll to on page)<br/>
-				]</li>
-
-				<li>Rework IonIcons from FontAwesome</li>
-				<li>Incorporate use of <code>Cookies</code> ()</li>
-				<li>Wrapper - Include to stop page stretch for extra large screens</li>
-				<li>CSS Media Queries - Research to adjust site based on window width (only use wrapper for large screen)</li>
-			</ol>
-
-			<ol>
-				<li class="spacer"><li>
-				<li><a href="http://codepen.io/ChynoDeluxe/pen/bdXeqQ">Blog Cards</a> - blog post preview block</li>
-				<li><a href="http://codepen.io/littlesnippets/pen/rxYara">Image Hover</a></li>
-				<li><a href="http://codepen.io/robbi093/pen/wKBWWd">CSS3 Timeline</a> - about page</li>
-				<li><a href="https://codyhouse.co/demo/horizontal-timeline/index.html">Amazing CSS Timeline</a></li>
-				<li><a href="http://codepen.io/MightyShaban/pen/LqrCK">Sexy Accordion</a> - collapsable menu</li>
-				<li><a href="http://codepen.io/mfritsch/pen/KdKoKQ">Footer Animation</a> - slide transition footer</li>
-			</ol>
-		</article>
+		<ol>
+			<li><a href="http://codepen.io/ChynoDeluxe/pen/bdXeqQ">Blog Cards</a> - blog post preview block</li>
+			<li><a href="http://codepen.io/littlesnippets/pen/rxYara">Image Hover</a></li>
+			<li><a href="http://codepen.io/robbi093/pen/wKBWWd">CSS3 Timeline</a> - about page</li>
+			<li><a href="https://codyhouse.co/demo/horizontal-timeline/index.html">Amazing CSS Timeline</a></li>
+			<li><a href="http://codepen.io/MightyShaban/pen/LqrCK">Sexy Accordion</a> - collapsable menu</li>
+			<li><a href="http://codepen.io/mfritsch/pen/KdKoKQ">Footer Animation</a> - slide transition footer</li>
+		</ol>
+	</article>
 
 
-		<article class="concoction" id="con1">
-			<h4>concoction 1</h4>
-			<p data-height="268" data-theme-id="22821" data-slug-hash="MyENjy" data-default-tab="result" data-user="traviest" class="codepen">See the Pen <a href="http://codepen.io/traviest/pen/MyENjy/">Pic Rotation</a> by Travis (<a href="http://codepen.io/traviest">@traviest</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-	<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-		</article>
-		<article class="concoction" id="con2">
+	<article class="concoction" id="con1">
+		<section>
+			<h4><a href="http://codepen.io/traviest/pen/MyENjy/" target="_blank">Cycle Photo Fade</a> on <a href="http://codepen.io" target="_blank">CodePen</a></h4>
+
+			<p data-height="360" data-theme-id="22821" data-slug-hash="MyENjy" data-default-tab="result" data-user="traviest" class="codepen">See the Pen <a href="http://codepen.io/traviest/pen/MyENjy/">Cycle Photo Fade</a> by Travis (<a href="http://codepen.io/traviest">@traviest</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+			<script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+		</section>
+	</article>
+	<article class="concoction" id="con2">
+		<section>
 			<h4>concoction 2</h4>
-		</article>
-		<article class="concoction" id="con3">
+
+		</section>
+	</article>
+	<article class="concoction" id="con3">
+		<section>
 			<h4>concoction 3</h4>
-		</article>
 
+		</section>
+	</article>
 
-</main><!-- end content -->
-
-<!--  end main / start footer  -->
-<footer class="main">
-	<h6>Travis Leonard<i class="fa fa-copyright"></i>2015</h6>
-	<p>Version 1 - Flat
-		&#8226; <a href="about.html#credits">Credits</a>
-		&#8226; <a href=""><i class="fa fa-html5"></i></a>
-		&#8226; <a href=""><i class="fa fa-css3"></i></a>
-	</p>
+</main>
+<!-- End Main / Start Footer -->
+<footer>
 </footer>
 
 </body>

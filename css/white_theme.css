@@ -1,0 +1,159 @@
+/*
+$skyblue = #95d3db - rgb(149,211,219);
+$seafoamblue = #4A95AC - rgb(74,149,172);
+$oceanblue = #1E739D - rgb(30,115,157);
+$nightblue = #204676 - rgb(32,70,118);
+*/
+/***** ALT THEME ********************************************************/
+body {background: #AAA; color: #333;}
+a {color: rgb(74,149,172);}
+a:visited {}
+a:hover {color: rgb(32,70,118);}
+a:active {color: rgb(223,103,110);}
+h2,h3,h4,h5,h6 {color: #555;}
+
+
+/***** Header *****/
+header {
+  background: #555 url(../imgs/dark-grey-tile.png) repeat;
+  background: #555;
+  animation: bkg-grey-fade 1s ease-in-out alternate infinite;
+  overflow: hidden;
+  box-shadow: inset 0 -1px 7px rgba(0,0,0,0.65);
+}
+@keyframes bkg-grey-fade {
+  from {background-color: #555}
+  to {background-color: #4f4f4f}
+}
+
+header {text-align: center;}
+header h1 {
+  display: inline-block;
+  margin: 20px auto 50px;
+  position: relative;
+  color: white;
+  text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
+  margin-top: 60px;
+
+}
+  header h1:before, header h1:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 90px;
+    width: 20%;
+    height: 7px;
+    background: #f1f1f1;
+    border-radius: 1px;
+    border-top-left-radius: 20px 5px;
+    border-top-right-radius: 20px 5px;
+    border-bottom-right-radius: 20px 5px;
+    border-bottom-left-radius: 20px 5px;
+    box-shadow: rgba(0,0,0,0.5) 0 1px 1px;
+  }
+  header h1:before {left:-30%;}
+  header h1:after {right:-30%;}
+
+
+#settings_icons {position: fixed; top: 10px;}
+#settings_icons:hover {top: 5px;}
+
+
+#line_nav {
+  text-align: left;
+  position: fixed;
+  top: 0;
+  border: none;
+  box-shadow: rgba(0,0,0,0.1) 0 1px, rgba(0,0,0,0.3) 0 1px 3px;
+}
+#magic_line {top: 0;}
+
+
+/***** Mid Content *****/
+ul.trail {}
+ul.trail a {color: rgb(74,149,172)}
+ul.trail a:hover {color: rgb(32,70,118)}
+#page_nav {}
+
+
+/***** Main *****/
+main {
+  background:#f1f1f1;
+
+}
+  main > aside {}
+  main > #main {}
+
+/***** Footer *****/
+footer {
+  background: #555;
+  border-top: none;
+  border-bottom: none;
+  box-shadow: inset rgba(0,0,0,0.3) 0 3px 7px,
+    inset rgba(0,0,0,0.1) 0 -1px 3px, rgba(255,255,255,0.35) 0 1px 1px;
+}
+  footer h6 {color: #f1f1f1;font-weight: 100; }
+  footer p {color: #e1e1e1;}
+  footer a {color: rgb(74,149,172); text-shadow: rgba(0,0,0,0.5) 0 1px;}
+  footer a:hover {color:  rgb(30,115,157);}
+
+
+
+
+
+
+/***** Home Page ********************************************************/
+#elephant {bottom: -50px; display: none;}
+#elephant svg {color: #f1f1f1; fill: currentColor;}
+
+.blob h3 {color: rgb(74,149,172);}
+.blob-content {background: white;}
+.blob-connector:before, .blob-connector:after {
+  box-shadow: 0 0 0 16px white;}
+
+#instafeed, #lastfmfeed {
+
+}
+
+
+/***** Blog Page ******************************************************/
+#load_all_posts { /* tag link slider to link to all posts page */
+
+  bottom: -45px;
+  padding: 20px 10px 10px;
+	background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(200,200,200,0.7) );
+  box-shadow: inset rgba(255,255,255,0.5) 0 1px 3px,
+    inset rgba(0,0,0,0.3) 0 -1px 3px, rgba(0,0,0,0.5) 0 1px 5px;
+}
+#load_all_posts:hover {
+  bottom: -5px;
+  padding: 5px 10px 7px;
+}
+
+
+#featured_post img {border: 3px solid white;}
+#featured_post figcaption {background: white;}
+#featured_post figcaption:before {border-bottom-color: white;}
+li.hvr-bounce-to-right a:before {background: white;}
+
+#main h4 span {color: #777;} /* specific posts loaded header count */
+
+.post {
+  background: white;
+}
+  .post > h3 {}
+  .post > small {background: #f1f1f1;}
+  .post > section > img {border: 3px solid #e1e1e1;}
+
+
+/***** Posts Sub Pages ****/
+#show_post_nav {color: #555;text-shadow: white 0 1px;}
+#show_post_nav.showing{background: white;}
+.sub_nav {background: white;}
+.sub_nav h6, .sub_nav a.current {color: rgb(32,70,118);}
+
+
+/***** About Page *******************************************************/
+#profile figure  {
+
+}

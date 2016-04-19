@@ -1,91 +1,103 @@
+/* colors
+
+$skyblue = #95d3db - rgb(149,211,219);
+$seafoamblue = #4A95AC - rgb(74,149,172);
+$oceanblue = #1E739D - rgb(30,115,157);
+$nightblue = #204676 - rgb(32,70,118);
+*/
 /***** Main Profile ****************************/
 #profile {
-  margin: 80px auto;
-  width: 70%;
-  display: table;
-  text-align: center;
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
 
-  border: 1px solid white;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
-  #profile > div, #profile > figcaption {
-    display: table-cell;
-  }
-  #profile > div {
-    margin: 0 auto;
-    padding: 0;
-    height: 200px;
-    width: 200px;
-    background:#CCC url(../imgs/me/me6.jpg) center no-repeat;
-    background-size: 100% 100%;
+#profile > figure {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #e1e1e1;
+  border-radius: 3px;
+  box-shadow: inset rgba(0,0,0,0.2) 0 0 2px,
+    inset rgba(0,0,0,0.2) 0 3px 5px;
+}
+  #profile section, #profile figcaption {display: table-cell;}
+  #profile section {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    color: #f1f1f1;
     border: 3px solid #f1f1f1;
-    border-radius: 5%;
-    box-shadow: inset rgba(0,0,0,0.7) 0 3px 10px, rgba(0,0,0,0.3) 0 1px 5px;
+    box-shadow: rgba(0,0,0,0.5) 0 1px 5px;
   }
-  #profile > figcaption {
-
-    background: rgba(0,0,0,0.3);
+  #my_pic_back, #my_pic_top, #my_pic_inner_frame {
+    position: absolute; width: 100%; height: 100%;}
+  #my_pic_back, #my_pic_top {background-size: cover;}
+  #my_pic_inner_frame {box-shadow: inset rgba(0,0,0,0.5) 0 1px 5px;}
+  #my_pic_inner_frame > p {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 5px 0;
+    font-size: 12px;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
   }
-  #profile > figcaption > h2 {
+  #profile figcaption {text-align: center; padding: 10px;}
+  #profile figcaption > h2 {
     margin: 0 auto 10px;
+    color: white;
+    text-shadow: rgba(0,0,0,0.1) 0 1px 1px;
   }
-  #profile > figcaption > p {}
-
-
+  #profile figcaption > p {}
 
 
 /***** Aside ************************************/
 /* social links */
 ul#sidebar_social {text-align: center;}
-  ul#sidebar_social > li {display: inline-block; margin: 0 5px; font-size: 1.5em;}
-
-
-/* last.fm */
-#lastfm {margin-bottom: 40px; text-align: center;}
-  #lastfm > h6 {font-size: 0.9em;}
-  #lastfm > small {font-size: 0.8em;}
-  #lastfm > ul.lastfm_photos {}
-  #lastfm > ul.lastfm_photos > li {
-    margin: 0 1% 10px;
+  ul#sidebar_social > li {display: inline-block; margin: 0 5px;}
+  ul#sidebar_social a {
     position: relative;
-    font-size: 0.7em;
-    line-height: 12px;
-    display: inline-block;
-    height: 100px;
-    width: 100px;
-    border: 3px solid transparent;
-    transition: all 0.3s ease-in-out;
-  }
-  #lastfm > ul.lastfm_photos > li:before {
-    content: ''; display: block;
-    position: absolute;
-    height: 100%; width: 100%;
-    border: 1px solid white;
-  }
-  #lastfm > ul.lastfm_photos > li > img {
-    height: 100%;
-    background: rgba(100,100,100,0.7);
-  }
-  #lastfm > ul.lastfm_photos > li > a {
     display: block;
-    position: absolute;
-    top: 0; bottom: 0; left: 0;
-    width: 100%;
-    padding: 10px;
-    color: #f1f1f1;
-    background: rgba(0,0,0,0.5);
-    border: 3px solid #f1f1f1;
-    z-index: 1;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
+    width: 30px;
+    height: 25px;
+    margin: 0 3px;
+    font-size: 1.5em;
+    color:rgb(30,115,157);
+    text-align: center;
+    font-family: 'ionicons'
   }
-  #lastfm > ul.lastfm_photos > li:hover > a {opacity: 1;}
-  /* artist */
-  #lastfm > ul.lastfm_photos > li > a > span {font-weight: 500;}
-  /* title */
-  #lastfm > ul.lastfm_photos > li > a > span > i { }
-  /* time */
-  #lastfm > ul.lastfm_photos > li > a > em {display: block; font-weight: 200;}
+  ul#sidebar_social i {display: none;}
 
+
+  ul#sidebar_social a[href*='soundcloud'] i {display:block;}
+  ul#sidebar_social a[href*='soundcloud'] i:before {
+    position: absolute;top:0px;left:0;}
+
+  .hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: transform 0.3s;
+    transition: transform 0.3s;
+  }
+  .hvr-grow:nth-of-type(even):hover, .hvr-grow:nth-of-type(even):focus, .hvr-grow:nth-of-type(even):active {
+    -webkit-transform: scale(1.3) rotate(10deg);
+    transform: scale(1.5) rotate(10deg);
+  }
+  .hvr-grow:nth-of-type(odd):hover, .hvr-grow:nth-of-type(odd):focus, .hvr-grow:nth-of-type(odd):active {
+    -webkit-transform: scale(1.3) rotate(-10deg);
+    transform: scale(1.5) rotate(-10deg);
+  }
 
 /* facts */
 ul#sidebar_facts {
@@ -94,20 +106,21 @@ ul#sidebar_facts {
 }
   ul#sidebar_facts > li {}
 
+
 /* email me */
-.main > aside > form {
+main > aside > form {
   border: 1px solid white;
 }
-.main > aside input, .main > aside textarea {
+main > aside input, main > aside textarea {
   width: 100%;
 }
-.main > aside textarea {
+main > aside textarea {
   resize: vertical;
 }
-  .main > aside > form > p {
+  main > aside > form > p {
     margin: 10px auto;
   }
-  .main > aside > form > button {
+  main > aside > form > button {
     width: 60%;
     margin: 0 auto;
     font-size: 1em;
@@ -116,10 +129,10 @@ ul#sidebar_facts {
     background: rgb(74,149,172)
      linear-gradient(to bottom,
       rgba(0,0,0,0.2) 0%,
-      rgba(0,0,0,0.1) 5%,
-      rgba(0,0,0,0) 15%,
-      rgba(0,0,0,0.5) 80%,
-      rgba(0,0,0,0.7) 100%);
+      rgba(0,0,0,0.1) 10%,
+      rgba(0,0,0,0) 20%,
+      rgba(0,0,0,0.3) 80%,
+      rgba(0,0,0,0.5) 100%);
 
     border: none;
     border-radius: 12px;
@@ -133,6 +146,9 @@ ul#sidebar_facts {
   background: rgb(32,70,118);
   height: 5px;
 }
+#main i:not(.fa) {font-family: 'ionicons';}
+
+
 
 #cols {
   column-count: 3;

@@ -1,39 +1,69 @@
-#page_nav {
-  padding: 20px;
+/***** COLORS *****/
+/*
+$skyblue = #95d3db - rgb(149,211,219);
+$seafoamblue = #4A95AC - rgb(74,149,172);
+$oceanblue = #1E739D - rgb(30,115,157);
+$nightblue = #204676 - rgb(32,70,118);
+*/
 
-  background: rgba(0,0,0,0.5);
+header h1:before, header h1:after {display: none; opacity: 0;}
+header h1 i {
+  font-size: 0.3em;
+  position: absolute;
+  top: 10px;
 }
+header h1 i:before{width: 50px; text-align: center;}
+header h1 i:first-of-type {left: calc(-30% + (5%/2));}
+header h1 i:nth-of-type(2) {right: calc(-30% + (5%/2));}
 
 
 
 
+/***** Main Content *****************************************************/
+#page_nav nav a, main a {color: #7dab46;}
+#page_nav nav a:hover, main a:hover {color: #557530;}
 
-main.main {
-  display: block;
-}
-main.main h3 {
+
+main {}
+
+
+main h3 {
+  position: relative;
   text-align: center;
-  margin-bottom: 20px;
-
-  -webkit-box-reflect: below -3px linear-gradient(transparent 90%, white);
+  margin: 0 auto 20px;
+  -webkit-box-reflect: below 5px linear-gradient(transparent 50%, white);
 }
-
+  main > h3 i {font-size: 2em; position: absolute; bottom: -10px; right: 5px;}
 
 
 #todo_list {}
-#todo_list ol {
-  list-style-position: inside;
-}
-#todo_list ol li {
-  text-indent: -20px;
-  margin-left: 20px;
-}
-  .spacer {list-style-type: none;}
+#todo_list h4 {}
+  #todo_list h4 i {margin-right: 10px;}
+#todo_list ol {margin-left: 20px;}
+#todo_list ol li {}
+  #todo_list ol li i {position: relative;}
+  #todo_list ol li i:before { /* checkmarks for completed items */
+    position: absolute;
+    left: -40px;
+    top: -7px;
+    font-size: 2em;
+  }
+  #todo_list ol + ol {margin-top: 20px;}
+  #todo_list ul {list-style: circle inside;}
 
 
 
 .concoction {
-  border-top: 1px solid;
-  margin-top: 100px;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  margin-top: 20px;
   padding-top: 20px;
+
 }
+  .concoction section {
+    min-height: 300px;
+  }
+  .concoction h4 {
+    color:rgb(30,115,157);
+    margin-bottom: 20px;
+  }
+  .concoction p {}

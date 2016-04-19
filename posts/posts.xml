@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<posts>
+	<!------------------- TEMPLATE -----
+	<post category="">
+		<date></date>
+		<title></title>
+		<embeded></embeded>
+		<content></content>
+		<tags><tag></tag></tags>
+		<links><link></link></links>
+	</post>
+	-------------------->
+	<post category="Web_Design">
+		<date>2015-12-22T22:08-05:00</date>
+		<title>A New Begining, A New Site</title>
+		<content>This is pretty boring, but lord knows I need some context to use as filler to work on perfecting the design. Nothing but a bunch of text junk pertaining to a more than likely pointless topic that I at some point, no doubt I was lit, was compelled to write down these worthless words of thoughts in hopes sharing them somehow attributes them value and worth. Rather, its more so the words are filler, creating a mere canvas for the artistic outlet of web development I so struggle with like a bought of diarrhea.
+		</content>
+		<tags>
+			<tag>Webdesign</tag>
+			<tag>Random</tag>
+		</tags>
+	</post>
+	<post category="ramble">
+		<date>2016-01-01T18:42:57-05:00</date>
+		<title>The Paradox Of Our Time</title>
+		<content>
+			<p>The paradox of our time in history is that we have taller buildings but shorter tempers, wider Freeways but narrower viewpoints. We spend more but have less, we buy more but enjoy less. We have bigger houses and smaller families, more conveniences but less time. We have more degrees but less sense, more knowledge but less judgment, more experts yet more problems, more medicine but less wellness.</p>
+			<p>We drink too much, smoke too much, spend too recklessly, laugh too little, drive too fast, get too angry, stay up too late, get up too tired, read too little, watch TV too much, and pray too seldom.</p>
+			<p>We have multiplied our possessions, but reduced our values. We talk too much, love too seldom, and hate too often.</p>
+			<p>We've learned how to make a living, but not a life. We've added years to life not life to years. We've been all the way to the moon and back, but have trouble crossing the street to meet a new neighbor. We conquered outer space but not inner space. We've done larger things, but not better things.</p>
+			<p>We've cleaned up the air, but polluted the soul. We've conquered the atom, but not our prejudice. We write more, but learn less. We plan more, but accomplish less. We've learned to rush, but not to wait. We build more computers to hold more information, to produce more copies than ever, but we communicate less and less.</p>
+			<p>These are the times of fast foods and slow digestion, big men and small character, steep profits and shallow relationships. These are the days of two incomes but more divorce, fancier houses, but broken homes. These are days of quick trips, disposable diapers, throwaway morality, one night stands, overweight bodies, and pills that do everything from cheer, to quiet, to kill. It is a time when there is much in the showroom window and nothing in the stockroom. A time when technology can bring this letter to you, and a time when you can choose either to share this insight, or to just hit delete.</p>
+			<p>Remember to spend some time with your loved ones, because they are not going to be around forever.</p>
+			<p>Remember, say a kind word to someone who looks up to you in awe, because that little person soon will grow up and leave your side.</p>
+			<p>Remember, to give a warm hug to the one next to you, because that is the only treasure you can give with your heart and it doesn't cost a cent.</p>
+			<p>Remember, to say, 'I love you' to your partner and your loved ones, but most of all mean it. A kiss and an embrace will mend hurt when it comes from deep inside of you.</p>
+			<p>Remember to hold hands and cherish the moment for someday that person will not be there again.</p>
+			<p>Give time to love, give time to speak! And give time to share the precious thoughts in your mind.</p>
+			<p>And always remember, life is not measured by the number of breaths we take, but by those moments that take our breath away.</p>
+		</content>
+		<tags>
+			<tag>Life</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-01-10T09:41:07-05:00</date>
+		<title>Zedd - Papercut feat. Troye Sivan (Grey Remix)</title>
+		<embeded type="soundcloud">233806678</embeded>
+		<tags>
+			<tag>Song of the Day</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-02-06T13:04:42-05:00</date>
+		<title>Flume - Never Be Like You feat. Kai</title>
+		<embeded type="soundcloud">242136202</embeded>
+		<content>This beat right here, damn. This will hold me over until Flume's sophomore album drops</content>
+		<tags>
+			<tag>Song of the Day</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-02-14T23:53:26-05:00</date>
+		<title>Tomorrowland - Dreamville</title>
+		<embeded type="youtube">yWnZ-RBn414</embeded>
+		<content>Such an accurate depiction of what is truly the most amazing experience of my life</content>
+		<tags>
+			<tag>EDM</tag>
+			<tag>Festival</tag>
+			<tag>Memories</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-02-24T13:02:04-05:00</date>
+		<title>The Chainsmokers - Don't Let Me Down (Illenium Remix)</title>
+		<embeded type="soundcloud">250711755</embeded>
+		<content>This man truly works wonders. Illenium turns this wonderfuly Chainsmokers hit into a slowerly, more melodic tune, definitely warranting a listen</content>
+		<tags>
+			<tag>Song of the Day</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-03-01T23:21:28-05:00</date>
+		<title>Sam Feldt - We Don't Walk We Fly</title>
+		<embeded type="soundcloud">249450473</embeded>
+		<content>This one, it just damn cute</content>
+		<tags>
+			<tag>Song of the Day</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-03-19T09:42:34-05:00</date>
+		<title>Martin Garrix Live @ Ultra Music Festival 2016</title>
+		<embeded type="youtube">4r1tq1XBN0w</embeded>
+		<content>
+			<h6>Tracklist</h6>
+			<ul>
+				<li><i>01</i>. Martin Garrix &amp; Third Party ft. John Martin - Lions In The Wild (Intro Edit)</li>
+				<li><i>02</i>. Martin Garrix ft. Ed Sheeran – Rewind Repeat It</li>
+				<li><i>03</i>. Martin Garrix vs. Jay Hardway – Poison vs. Wizard (Martin Garrix  Mashup)<br/>
+					w/ Mark Knight &amp; Koen Groeneveld  – Put Your Hands Up (Acappella)</li>
+				<li><i>04</i>. Afrojack &amp; Martin Garrix  – Turn Up The Speakers<br/>
+					w/ Martin Garrix &amp; MOTi  – Virus (How About Now) (Acappella)</li>
+				<li><i>05</i>. Martin Garrix &amp; Pierce Fulton ft. Mike Shinoda - Waiting for Tomorrow</li>
+				<li><i>06</i>. Martin Garrix ft. Simon Aldred - Falling Sun</li>
+				<li><i>07</i>. The Weekend  – Can’t Feel My Face (Martin Garrix  Remix)</li>
+				<li><i>08</i>. Martin Garrix &amp; Jay Hardway  – Spotless<br/>
+					w/ Mightyfools  – Footrocker (Get Your, Get Your Hands Up Acappella)</li>
+				<li><i>09</i>. Martin Garrix &amp; Avicii – Hold On Never Leave</li>
+				<li><i>10</i>. Sander Van Doorn &amp; Martin Garrix &amp; DVBBS  ft. Aleesia – Gold Skies</li>
+				<li><i>11</i>. Volt &amp; State vs. Martin Garrix ft. Usher – Sandcastles vs. Don’t Look Down (Nicky Romero  Mashup)</li>
+				<li><i>12</i>. Martin Garrix – Forbidden Voices</li>
+				<li><i>13</i>. Martin Garrix &amp; Matisse &amp; Sadko  – Dragon</li>
+				<li><i>14</i>. Martin Garrix &amp; Skrillex ft. Ludacris – We Did It</li>
+				<li><i>15</i>. Martin Garrix – ID</li>
+				<li><i>16</i>. Martin Garrix – ID</li>
+				<li><i>17</i>. Martin Garrix vs. Dimitri Vegas &amp; Like Mike  – Tremor (Sensation 2014 Anthem)<br/>
+					w/ Avicii &amp; Martin Garrix  ft. Simon Aldred – Waiting For Love (Acappella)</li>
+				<li><i>18</i>. Martin Garrix &amp; Marshmello ft. Bebe Rexha – In The Name Of Love</li>
+				<li><i>19</i>. Martin Garrix  ft. John &amp; Michel – Now That I’ve Found You</li>
+			</ul>
+		</content>
+		<tags>
+			<tag>EDM</tag>
+			<tag>Festival</tag>
+		</tags>
+		<links>
+			<link source="https://soundcloud.com/martingarrix/martin-garrix-live-at-ultra" text="Full Set on Soundcloud"></link>
+			<link source="http://instagram.com/MartinGarrix" text="Instagram"></link>
+			<link source="http://twitter.com/MartinGarrix" text="Twitter"></link>
+			<link source="http://youtube.com/MartinGarrix" text="YouTube"></link>
+		</links>
+	</post>
+	<post category="music">
+		<date>2016-03-20T22:03:01-05:00</date>
+		<title>Kaskade Live @ Ultra Music Festival 2016</title>
+		<embeded type="soundcloud">253394396</embeded>
+		<content>
+			<h6>Tracklist</h6>
+			<ul>
+			<li><i>01</i>. Kaskade &amp; deadmau5 vs. Sunny LAX - Move For Me Enceladus (Kaskade Mashup)</li>
+			<li><i>02</i>. Kaskade (feat. Ilsey) - Disarm You (Extended)</li>
+			<li><i>03</i>. Kaskade – Call My Name (Festi Edit)</li>
+			<li><i>04</i>. Kaskade vs. Ilan Bluestone - Last Chance Big Ben (Kaskade Mashup V.2)</li>
+			<li><i>05</i>. Kaskade &amp; CID – US (Extended)</li>
+			<li><i>06</i>. Promise Land - X-Press (Instrumental Mix)</li>
+			<li><i>07</i>. Burns - Beauty Queen</li>
+			<li><i>08</i>. Galantis – Runaway (Kaskade Remix)</li>
+			<li><i>09</i>. Kaskade (feat. Too Many Zooz) – ID</li>
+			<li><i>10</i>. Dirtcaps X Tom Piper – Rudeboi</li>
+			<li><i>11</i>. Missy Elliot – WTF (Brohug Rmx)</li>
+			<li><i>12</i>. Miike Snow - Genghis Khan (Hook N Sling MIx)</li>
+			<li><i>13</i>. Kaskade &amp; Galantis – Mercy (Extended)</li>
+			<li><i>14</i>. Kaskade – We Don’t Stop (Extended)</li>
+			<li><i>15</i>. Kaskade – Never Sleep Alone (Extended)</li>
+			<li><i>16</i>. Sgt. Slick – Bunker Groove</li>
+			<li><i>17</i>. Kaskade vs. Alex Guadino – I’ll Never Dream I’m In Love (Kaskade Mashup)</li>
+			</ul>
+		</content>
+		<tags>
+			<tag>EDM</tag>
+			<tag>Festival</tag>
+		</tags>
+		<links>
+			<link source="https://soundcloud.com/kaskade" text="Soundcloud"></link>
+			<link source="https://instagram.com/kaskade" text="Instagram"></link>
+			<link source="https://twitter.com/kaskade" text="Twitter"></link>
+		</links>
+	</post>
+	<post category="music">
+		<date>2016-03-21T23:18:23-05:00</date>
+		<title>UMF2016</title>
+		<embeded type="soundcloud_playlist">207287579</embeded>
+		<tags>
+			<tag>Festival</tag>
+			<tag>Playlist</tag>
+			<tag>EDM</tag>
+		</tags>
+		<links>
+			<link source="http://soundcloud.com/UMFLiveSets2016" text="UMF Live Sets"></link>
+		</links>
+	</post>
+	<post category="music">
+		<date>2016-03-23T16:20:20-05:00</date>
+		<title>The Chainsmokers - Don't Let Me Down (Lyric) ft. Daya</title>
+		<embeded type="vevo">USQX91600461</embeded>
+			<!--o0citpYDaVg</embeded>-->
+		<tags>
+			<tag>Music Video</tag>
+		</tags>
+		<links>
+			<link source="http://www.soundcloud.com/thechainsmokers" text="SoundCloud"></link>
+			<link source="http://youtube.com/ChainsmokersVEVO" text="YouTube"></link>
+			<link source="http://instagram.com/thechainsmokers" text="Instagram"></link>
+			<link source="http://www.twitter.com/thechainsmokers" text="Twitter"></link>
+			<link source="http://www.facebook.com/thechainsmokers" text="Facebook"></link>
+		</links>
+	</post>
+	<post category="ramble">
+		<title>Magic</title>
+		<date>2016-03-24T10:23:29-05:00</date>
+		<embeded type="photo">pics/rowling-magic.jpg</embeded>
+		<content>I will always idolize this woman and the way she influenced my youth so strongly.</content>
+		<tags>
+			<tag>Harry Potter</tag>
+		</tags>
+		<links>
+			<link source="http://pottermore.com" text="Pottermore"></link>
+		</links>
+	</post>
+	<post category="ramble">
+		<date>2016-03-25T14:31:29-05:00</date>
+		<title>The Power of Choice</title>
+		<content>
+			<blockquote>“Be miserable. Or motivate yourself. Whatever has to be done, it’s always your choice.” ~ <small>Dr. Wayne W. Dyer</small></blockquote>
+			<blockquote>“There are two primary choices in life: to accept conditions as they exist, or accept the responsibility for changing them.” ~ <small>Denis Waitley</small></blockquote>
+			<blockquote>“Destiny is not a matter of chance; it is a matter of choice. It is not a thing to be waited for, it is a thing to be achieved.” ~ <small>William Jennings Bryan</small></blockquote>
+			<blockquote>“When you make a choice, you change the future.”  ~ <small>Deepak Chopra</small></blockquote>
+			<blockquote>“What people have the capacity to choose, they have the ability to change.” ~ <small>Madeleine Albright</small></blockquote>
+			<blockquote>“Nothing in life, including our circumstances or potential, is fixed. Reality is bendable to our will.” ~ <small>Brendon Burchard, <cite>The Motivation Manifesto</cite></small></blockquote>
+			<blockquote>“Choices may be unbelievably hard but they’re never impossible. To say you have no choice is to release yourself from responsibility and that’s not how a person with integrity acts.” ~ <small>Patrick Ness, <cite>Monsters of Men</cite></small></blockquote>
+			<blockquote>“The spirit of a man is constructed out of his choices.” ~ <small>Irvin D. Yalom, <cite>When Nietzsche Wept</cite></small></blockquote>
+			<blockquote>“If you limit your choice only to what seems possible or reasonable, you disconnect yourself from what you truly want, and all that is left is a compromise.” ~ <small>Robert Fritz, <cite>The Path of Least Resistance</cite></small></blockquote>
+			<blockquote>“There are two paths of which one may choose in the walk of life; one we are born with, and the one we consciously blaze. One is naturally true, while the other is a perceptive illusion. Choose wisely at each fork in the road.” ~ <small>T.F. Hodge, <cite>From Within I Rise: Spiritual Triumph Over Death and Conscious Encounters with “The Divine Presence”</cite></small></blockquote>
+		</content>
+		<tags>
+			<tag>Quote</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-03-26T16:58:12-05:00</date>
+		<title>Niykee Heaton - Infinity (Illenium Remix)</title>
+		<embeded type="soundcloud">232461705</embeded>
+		<tags>
+			<tag>Remix</tag>
+			<tag>Song of the Day</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-03-27T18:23:52-05:00</date>
+		<title>Selena Gomez - Hands To Myself (GØLDN Remix)</title>
+		<embeded type="soundcloud">244343284</embeded>
+		<tags>
+			<tag>Remix</tag>
+			<tag>Song of the Day</tag>
+		</tags>
+	</post>
+	<post category="Bucket_List">
+		<date>2016-03-28T14:26:21-05:00</date>
+		<title>Venice</title>
+		<embeded type="photo">bucketlist/venice.jpg</embeded>
+		<content>I have always found Venice to be the most gorgeous place, I hope to one day see its beauty in person.</content>
+		<tags>
+			<tag>Travel</tag>
+		</tags>
+	</post>
+	<post category="humanity">
+		<date>2016-03-29T10:58:59-05:00</date>
+		<title>People React to Being Called Beautiful</title>
+		<embeded type="youtube">aW8BDgLpZkI</embeded>
+		<content>There is so much beauty in this world that we miss every day. Slow down and admire everything this planet has to offer.</content>
+		<tags>
+			<tag>Beauty</tag>
+		</tags>
+	</post>
+	<post category="ramble">
+		<date>2016-03-30T11:51:34-05:00</date>
+		<title>Mr. Robot</title>
+		<embeded type="photo">pics/MrE5.5.jpg</embeded>
+		<content>How I miss this show! This maddness. I can't wait for season two and to see what trouble Elliot will cause.</content>
+		<tags>
+			<tag>TV</tag>
+		</tags>
+		<links>
+			<link source="http://www.usanetwork.com/mrrobot" text="USA Network"></link>
+			<link source="http://www.imdb.com/title/tt4158110/" text="IMDb"></link>
+		</links>
+	</post>
+	<post category="Bucket_List">
+		<date>2016-04-01T16:44:23-05:00</date>
+		<title>See the Aurora Borealis</title>
+		<embeded type="photo">bucketlist/aurora-borealis.jpg</embeded>
+		<tags>
+			<tag>Travel</tag>
+			<tag>Nature</tag>
+			<tag>Beauty</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-04-02T14:21:28-05:00</date>
+		<title>Morgan Page ft. Angelika Vee - Safe Till Tomorrow (Pegboard Nerds Remix)</title>
+		<embeded type="soundcloud">256531089</embeded>
+		<content>The combination of Morgan Page's melodic happy house and the Pegboard Nerds perfect snappy bass is absolutely wonderful on this tune. I honestly love both these artists, even more so when they come together.</content>
+		<tags>
+			<tag>Remix</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-04-05T19:53:19-05:00</date>
+		<title>Vicetone - Don't You Run (feat. Raja Kumari)</title>
+		<embeded type="soundcloud">254993293</embeded>
+		<content>The latest release from Vicetone is a wonderful dance pop song with an almost tropical feel to it. Following an absolutely amazing <a href="https://www.youtube.com/watch?v=Sf10fZNJuhI">Ultra</a> set and having already released some songs this year, including the hit banger <a href="https://soundcloud.com/vicetone/pitch-black">Pitch Black</a>, the Vicetone guys are set to relase their full EP Aurora this Friday, April 8th.</content>
+		<tags>
+			<tag>Song of the Day</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-04-06T11:51:01-05:00</date>
+		<title>Seven Lions - Creation EP</title>
+		<embeded type="soundcloud_playlist">209300153</embeded>
+		<content>The beautful maigician himself has released a truly stacked EP. This release incluces your nasty, dirty hard-styles as well as the gorgeous melodic dance hits we have come to know and love from Seven Lions. This EP deserves a listens from all, if not for admiration of the beautiful beast that is Sevevn Lions, for nothing more then the array of musical styles taken on in this excelent release.</content>
+		<tags>
+			<tag>EP</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-04-07T11:04:59-05:00</date>
+		<title>Vicetone &amp; Tony Igy - Astronomia</title>
+		<embeded type="soundcloud">157980456</embeded>
+		<tags>
+			<tag>Throwback</tag>
+		<tags>
+	</post>
+	<post category="Bucket_List">
+		<date>2016-04-08T11:02:34-05:00</date>
+		<title>Ride the London Eye Ferris Wheel</title>
+		<embeded type="photo">bucketlist/londoneye.jpg</embeded>
+		<tags>
+			<tag>Travel</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-04-11T12:41:09-05:00</date>
+		<title>KSHMR - Wildcard (VIP Remix)</title>
+		<embeded type="soundcloud">258451209</embeded>
+		<content>As we have come to expect, KSHMR releases yet another big room banger hit with stunning female vocals to accompnay it. Sure to be heard on the festival circuit this summer, give it a listen.</content>
+		<tags>
+			<tag>EDM</tag>
+		</tags>
+	</post>
+	<post category="music">
+		<date>2016-04-13T16:45:59-05:00</date>
+		<title>Jay Hardway - Electric Elephants</title>
+		<embeded type="youtube">JLASUu1Ekqg</embeded>
+		<content>Its been months and I still can't get this beat out of my head</content>
+		<tags>
+			<tag>EDM</tag>
+			<tag>Music Video</tag>
+		</tags>
+	</post>
+	<post category="ramble">
+		<date>2016-04-14T15:03:28-05:00</date>
+		<title>Beach Daze</title>
+		<embeded type="photo">pics/beach.jpg</embeded>
+		<content>The time has come where I often dream of sandy beaches and crashing waves. I hope to at least have a trip to Charleston, SC this year, a personal favorite of mine.</content>
+		<tags>
+			<tag>Travel</tag>
+		</tags>
+		<links>
+			<link source="http://discoversouthcarolina.com" text="Discover South Carolina"></link>
+		</link>
+	</post>
+	<post category="music">
+		<date>2016-04-15T11:18:34-05:00</date>
+		<title>Kaskade &amp; deadmau5 (feat. Skylar Grey) - Beneath With Me V.3</title>
+		<embeded type="soundcloud">259026666</embeded>
+		<content>The legends themeselves have given us yet another collab, a rework done by Kaskade following up their massively successful 2008 hits. Though very different in their styles, these men still never disappoint.</content>
+		<tags>
+			<tag>EDM</tag>
+		</tags>
+	</post>
+	<post category="ramble">
+		<date>2016-04-17T17:51:28-05:00</date>
+		<title>Life Goals</title>
+		<embeded type="photo">pics/life-goals.jpg</embeded>
+		<content>I'm sure you've had those days, the ones that truly just make you feel so grateful for everything you have. Where in those moments everything just seems so perfect, like nothing could ever stop you. These moments tend to always makes me personally reflect, makes me wonder what changes I can make to maintain that euphoric feeling every day. Its a blissful thing, and I would love nothing more then life to constantly be filled with unexplainable inner peace and happiness.</content>
+		<tags>
+			<tag>Goals</tag>
+		</tags>
+	</post>
+</posts>
+<!--
+<date>2016-03-301T19:19:30-05:00</date>
+
+
+	<post type="bucket_list">
+
+	</post>
+<!--
+#1	Live in Spain
+#3	See the Wonders of the World
+#4	Participate in a Flashmob
+#5	Watch my children marry the ones they love
+#7	Ride the Ferris Wheel of London
+#8	Get to the top of the Eiffel Tower
+#9	Swim in the waters of Sydney
+#10	Drive on the Autobahns in German
+#11	Dance in the rain with my other half
+#12	Sing in front of a crowd
+#13	Watch a sunrise and a sunset over an ocean wrapped in my love
+#14	Learn Spanish and French
+#15	Base jump the grand canyon
+#16	Live in San Francisco
+#17	Ride an Elephant
+#18	Have a paint fight
+#19	Set of a floating lantern
+#20	Road Trip around the United States visiting 30 or more states
+#21	See a performance at Red Rocks Park and Amphitheatre in Colorado
+#22	Play hide and seek in Central Park
+#23	Vist The Wizarding World of Harry Potter
+#24	Trek through the jungle
+
+
+
+	<post category="humanity">
+		<date>?</date>
+		<title>First Kiss: When Strangers Are Asked to Kiss Each Other...</title>
+		<embeded type="youtube">KAkjSyrURig</embeded>
+		<content>This exempliefies how simple and beautiful we truly are as humans
+		<tags>
+			<tag></tag>
+		</tags>
+	</post>
+
+	<post category="humanity">
+		<date>2016-03-29T10:58:59T-05:00</date>
+		<title>Undress Me</title>
+		<embeded type="youtube">pKZa-Kb4Nng</embeded>
+		<content>This speaks in so many ways. The natural desire to touch another
+		</content>
+		<tags>
+			<tag>Passion</tag>
+		</tags>
+		<links>
+			<link source="https://youtu.be/pKZa-Kb4Nng" text="YouTube"></link>
+		</links>
+	</post>
+-->

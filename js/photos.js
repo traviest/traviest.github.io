@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  
+
   $('#sort_opt').hover(function() {
     $(this).find('span').fadeIn(150);
   }, function() {

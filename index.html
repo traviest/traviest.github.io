@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8"/>
@@ -8,102 +9,40 @@
 	<link rel="icon" type="image/png" href="imgs/icon.png" sizes="200x200">
 	<link rel="apple-touch-icon" href="imgs/icon.png" sizes="200x200">
 
-	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800">
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Kristi|Crushed">
 	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
 	<link type="text/css" rel="stylesheet" href="css/styles.css">
 	<link type="text/css" rel="stylesheet" href="css/home.css">
+	<link type="text/css" rel="stylesheet" href="css/white_theme.css" id="theme">
 
 	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/instafeed.js"></script>	<script type="text/javascript" src="js/dug.js"></script>
+	<script type="text/javascript" src="js/jquery.firefly.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
-
-
+	<script type="text/javascript" src="js/home.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
 
-
-		$('.fa-adjust').click(function() {
-			alert('this will eventually let you change the theme colors');
-		});
-		$('.fa-share-alt').click(function() {
-			alert('this will eventually allow you to spam my website on your social media');
-		});
-
-		// cycying pic
-		var pic_counter = 1, total_pics = 10,
-				pic_titles = [	"Mellow Muggin\'", "Lush at the Lake", "Festi Fanatic", "Kitty Cuddles", "Fancy Faker", "Rave Reactions", "Party Partners"	];
-
-
-		//set initial values - imgs/me/me
-		$('#my_pic_top').css('background-image', 'url(http://lorempixel.com/g/500/500/cats/' + pic_counter +')');
-		//$('#my_pic_inner_frame > p > span').empty().html( pic_titles[pic_counter]);
-
-		// interval function to transition pics
-		setInterval(function() {
-			pic_counter++
-			var top_pic = $('#my_pic_top'),
-					back_pic = $('#my_pic_back'); /*,
-					pic_title = $('#my_pic_inner_frame > p > span');*/
-			// set 'background' image
-			var last_pic = top_pic.css('background-image');
-			back_pic.css('background-image', last_pic);
-			top_pic.css({'opacity': 0});
-			// give top image new properties and animate in
-			var new_pic = 'url(http://lorempixel.com/g/500/500/cats/'+ pic_counter%total_pics +')';
-			top_pic.css('background-image', new_pic);
-			top_pic.animate({'opacity': 1}, 1000);
-			// adjust pic title
-			/*
-			var img_title = pic_titles[ pic_counter%total_pics ];
-			pic_title.css('opacity', 0).text(img_title).animate({'opacity': 1}, 750);
-			*/
-		}, 5*1000);
+		$('#elephant').delay(3000).fadeIn(1000);
 
 	});
 	</script>
-
 </head>
 <body>
 <!-- Site Header / Banner -->
-<header class="main">
-	<article id="site_icons">
-		<i class="fa fa-adjust"></i>
-		<i class="fa fa-share-alt"></i>
-	</article>
-
-	<section id="logo">
-		<div class="icon">
-			<!--
-			<i class="fa fa-star-o"></i>
-			<i class="fa fa-anchor"></i>
-			<i class="fa fa-bolt"></i>
-			<i class="fa fa-globe"></i>
-			<i class="fa fa-picture-o"></i>
-			<i class="fa fa-hand-peace-o"></i>
-			<i class="fa fa-barcode"></i>
-			<i class="fa fa-lightbulb-o"></i>
-			<i class="fa fa-key"></i>
-			<i class="fa fa-puzzle-piece"></i>
-			-->
-			<i class="fa fa-hand-peace-o fa-fw"></i>
-		</div>
-	  <h1>traviest</h1>
-	  <h5><i class="fa fa-code"></i>&nbsp;Full-Stack Developer&nbsp;<i class="fa fa-code"></i></h5>
-	</section>
-<!--line Nav -->
+<header>
+	<h1>traviest</h1>
+	<div id="elephant"><img src="imgs/elephant.svg" class="svg"/></div>
 </header>
-<!--  end header / start main page content  -->
-<main class="main">
+<!--  End Header / Start Main Page Content  -->
+<main>
 	<aside>
 
-		<section>
-			<div id="my_pic_back"></div>
-			<div id="my_pic_top"></div>
-			<div id="my_pic_inner_frame">
-				<p><span>shit tit damn</span></p>
-			</div>
-		</section>
-
-		<h5>Top Posts</h5>
+		
+		<h5>Recent Posts</h5>
 		<ul id="sidebar_posts">
 			<li><a href="">Post Title</a></li>
 			<li><a href="">Post Title</a></li>
@@ -118,30 +57,68 @@
 			<li><a href="">Tag</a></li>
 			<li><a href="">Tag</a></li>
 		</ul>
-
-		<h5>MOVE ITEMS HERE</h5>
-		<ul>
-			<li>Instagram Feed</li>
-			<li>Last.fm Scrobbles</li>
-		</ul>
-
 	</aside>
 	<!--  end sidebar / start main  -->
 	<section id="main">
 
+		<div class="blob_wrap">
+		  <div class="blob">
+		    <span class="blob-content">
+		      <h3>Welcome Y'all</h3>
+		      <span class="blob-connector"></span>
+		    </span>
+		  </div>
 
-		<h3>Welcome</h3>
+		  <div class="blob">
+		    <span class="blob-content">
+		      <p>Travis Leonard</p>
+		      <span class="blob-connector"></span>
+		    </span>
+		  </div>
 
-		<p>This is one of those 'dark places' of the internet. You will gain nothing here, well you may get an insight into who I am and that earn you a big fat 👍</p>
-		<p>
-			It is to your and my dismay that I share with you... I do have a <a href="blog.html">blog</a>, a collection of pointless things. I am also a huge <a href="music.html">music</a> fanatic, take some <a href="photos">pictures</a> from time to time, and will always enjoy learning and playing with code, all contained in my world class <a href="lab.html">lab</a>.
-		</p>
+		  <div class="blob">
+		    <span class="blob-content offset-right">
+		      <p>27 year old Tennessean Tech Nerd</p>
+		      <span class="blob-connector"></span>
+		    </span>
+		  </div>
 
+		  <div class="blob">
+		    <span class="blob-content offset-left">
+		      <p>Lorem ipsum dolor sit amet, suscipit oporteat ea nec</p>
+		      <span class="blob-connector"></span>
+		    </span>
+		  </div>
+
+		  <div class="blob">
+		    <span class="blob-content offset-right">
+		      <p>Ut ius lobortis pertinacia, vidisse sanctus an sed</p>
+		      <span class="blob-connector"></span>
+		    </span>
+		  </div>
+
+		  <div class="blob">
+		    <span class="blob-content">
+		      <p>Ne nec purto iuvaret</p>
+		    </span>
+		  </div>
+		</div>
+
+		<p>This is one of those 'dark places' of the internet. You will gain nothing here, well you may get an insight into who I am and that will earn you a big fat 👍</p>
+		<p>It is to your and my dismay that I share with you... I do have a <a href="blog.html">blog</a>, a collection of pointless things. I am also a huge <a href="music.html">music</a> fanatic, take some <a href="photos">pictures</a> from time to time, and will always enjoy learning and playing with code, all contained in my world class <a href="lab.html">lab</a>.</p>
+		<p>Oh, and if you are super bored, I even have an <a href="about.html">about</a> page where you can really learn something about who I am.</p>
+
+		<h3>Instagram Pics<a href="http://instagram.com/traviest">
+			<i class="ion-social-instagram"></i></a></h3>
+		<div id="instafeed"></div>
+
+		<h3>Recent Songs from Last.fm<a href="http://last.fm/users/traviest"><i class="fa fa-lastfm"></i></a></h3>
+		<div id="lastfmfeed"></div>
 
 	</section><!-- end main section -->
 </main>
-<!--  end main / start footer  -->
-<footer class="main">
+<!--  End Main / Start Footer  -->
+<footer>
 </footer>
 </body>
 </html>

@@ -1,0 +1,21 @@
+/***** ALT THEME ********************************************************/
+html {background: black;}
+body {
+  background: #333;
+  color: #CCC;
+}
+a {color: rgb(74,149,172);}
+a:visited {}
+a:hover {color: rgb(223,103,110);}
+a:active {color: rgb(32,70,118);}
+
+
+/***** Header *****/
+header {
+  padding: 0;
+  height: 50px;
+}
+  /*         will be removed once color theme is incorp          */
+  #logo {
+    display: none;
+  }

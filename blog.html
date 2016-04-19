@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8"/>
@@ -8,91 +9,116 @@
 	<link rel="icon" type="image/png" href="imgs/icon.png" sizes="200x200">
 	<link rel="apple-touch-icon" href="imgs/icon.png" sizes="200x200">
 
-	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800">
-
-	<link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800|Kristi">
 	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
 
 	<link type="text/css" rel="stylesheet" href="css/styles.css">
 	<link type="text/css" rel="stylesheet" href="css/blog.css">
+	<link type="text/css" rel="stylesheet" href="css/white_theme.css" id="theme">
 
 	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
+<script type="text/javascript" src="js/jquery.firefly.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
 	<script type="text/javascript" src="js/blog.js"></script>
 
 	<script>
-	$(document).ready(function() {
-	  // makes all posts array global.......
+	$(function() {
+
+		// makes all posts array global.......
 		var all_posts = [], start = 0, finish = 5;
-		loadPosts(all_posts, start, finish);
 
-		$('#load_more').click(function(e) {
-			alert(start+':start - '+finish+':finish');
+		// check url for tag and value
+		var getTag = getURLParameter('tag'),
+			getCategory = getURLParameter('category'),
+			getArchive = getURLParameter('archive');
 
-			start += finish; finish +=10; // load 10 more posts from array
-			buildPosts(all_posts,start,finish);
+		if (getTag != '' && getTag != undefined) {
+			loadThisTagsPosts(getTag);
+		} else if (getCategory != '' && getCategory != undefined){
+			loadThisCategoryPosts(getCategory);
+		} else if (getArchive != '' && getArchive != undefined) {
+			loadThisArchive(getArchive);
+		} else {
+			loadPosts(all_posts, start, finish);
+			$('<h4>').html('Recent Posts').prependTo('#main');
+		}
+
+		// load more click function
+		$('#load_more').click(function() {
+			start = finish; finish += 10; // load 10 more posts from array
+			buildPosts(all_posts, start, finish);
 		});
 
 		// load all sidebar information
 		loadSidebar();
 
 
-		setTimeout(function() {
-			$('#notice').slideUp(500);
-		}, 10000);
+	});// end doc ready
+
+
+
+
+
+
+	var preview_timer;
+	/* Click Functions */
+	$(document).on('click', '#featured_post img', function() {
+		var item = $(this);
+		buildPreview(item);
+		preview_timer = setTimeout(function (){
+			$('.wrap').fadeOut(500, function(){ $('.wrap').remove() });
+		}, 3*60*1000);
+	});
+	$(document).on('click', '.closer', function() {
+		clearTimeout(preview_timer);
+		$('.wrap').fadeOut(500, function(){ $('.wrap').remove() });
+	});
+	$(document).on('dblclick', '.wrap', function() {
+		clearTimeout(preview_timer);
+		$('.wrap').fadeOut(300, function(){ $('.wrap').remove() });
 	});
 
-	$(document).on('click', '#featured_post img', function(e) {
-		var source = $(this);
-		alert(source.toString());
-	});
+
+	/* build large image preview on click */
+	function buildPreview(pic) {
+	  var title = pic.siblings('figcaption').find('a').text(),
+	    date = pic.siblings('figcaption').find('time').attr('datetime'),
+	    img = $('<img>').attr('src', pic.attr('src')),
+	    info = $('<figcaption>').html('<time>'+convertDate(date) + '</time>' + ' ' + '<h4>' + title + '</h4>');
+
+	  var closer = $('<span>').addClass('closer');
+	  closer.append( '<i>&#xf12a;</i>' ).append( '<i>&#xf128;</i>' );
+
+	  var preview = $('<div>').addClass('preview');
+	  preview.append(img).append(info).append(closer);
+
+	  $('body').prepend( $('<div>').addClass('wrap').append(preview) );
+	}
+
+
 	</script>
-
 </head>
 <body>
-
-<header class="main">
-	<section id="logo">
-		<div class="icon"><i class="fa fa-puzzle-piece fa-fw"></i></div>
-	  <h1>traviest</h1>
-	  <h5><i class="fa fa-code"></i>&nbsp;Full-Stack Developer&nbsp;<i class="fa fa-code"></i></h5>
-	</section>
-
+<!-- Site Header / Banner -->
+<header>
+	<h1>traviest</h1>
+	<a id="load_all_posts" href="posts/all_posts.html">Show All</a>
 </header>
-
-<section id="notice">
-	<p>	This is mainly a collection of things I find interesting. There isn't much of a theme other then that, so sad.</p>
-</section>
-
-<main class="main">
+<!--  End Header / Start Main Page Content  -->
+<main>
 	<aside>
-		<h5>Featured</h5>
-		<article id="featured_post"></article>
-
+		<h5>Random</h5>
+		<article id="featured_post">Loading...</article>
 		<h5>Categories <i class="ion-folder"></i></h5>
-		<ul id="sidebar_categories">
-			<li>Web Development</li>
-			<li>Work</li>
-			<li>Music</li>
-			<li>Ramble</li>
-			<li>Humanity</li>
-			<li>Bucket List</li>
-		</ul>
-
-		<h5>All Tags <i class="ion-pricetags"></i></h5>
-		<ul id="sidebar_tags">
-			<li>Tag 1</li><li>Tag 2</li><li>Tag 3</li>
-		</ul>
-
+		<ul id="sidebar_categories">Loading...</ul>
+		<h5>Top Tags <i class="ion-pricetags"></i></h5>
+		<ul id="sidebar_tags">Loading...</ul>
 		<h5>Archive <i class="ion-archive"></i></h5>
-		<ul id="sidebar_archives">
-			<li>March - 9</li>
-			<li>February - 12</li>
-			<li>January - 15</li>
-		</ul>
-
-	</aside><!-- end sidebar -->
-
+		<ul id="sidebar_archives">Loading...</ul>
+	</aside>
+	<!-- end sidebar / start main -->
 	<section id="main">
 		<article class="fa-stack fa-fw fa-4x">
 			<i class="fa fa-spin fa-cog fa-stack-2x"></i>
@@ -100,19 +126,11 @@
 			<i class="fa fa-cog fa-stack-3x"></i>
 			<i class="fa fa-cog fa-stack-4x"></i>
 		</article>
-
 		<a id="load_more">Load More Posts</a>
-
 	</section><!-- end main section -->
 </main>
-<!--  end main / start footer  -->
-<footer class="main">
-	<h6>Travis Leonard<i class="fa fa-copyright"></i>2015</h6>
-	<p>Version 1 - Flat
-		&#8226; <a href="about.html#credits">Credits</a>
-		&#8226; <a href=""><i class="ion-html5"></i></a>
-		&#8226; <a href=""><i class="ion-css3"></i></a>
-	</p>
+<!--  End Main / Start Footer  -->
+<footer>
 </footer>
 
 </body>

@@ -1,44 +1,173 @@
-/* Site Icon Links */
-#site_icons {
-	position: absolute;
-	right: 20px; top: -50px;
-	padding: 20px 10px 20px;
-	text-shadow: black 0 1px;
-	background: rgba(0,0,100,0.2);
-	border: 1px solid #f1f1f1;
-	border-top: none;
-	border-radius: 0 0 5px 5px;
-	box-shadow: inset rgba(0,0,0,0.1) 0 1px,
-		rgba(0,0,0,0.1) 0 1px, rgba(0,0,0,0.2) 0 0 5px;
-	transition: all 0.3s ease-in-out;
-	opacity: 0.5;
-}
-	#site_icons:hover {
-		padding: 7px 10px;
-		top: 0px;
-		opacity: 1;
-		background: rgba(0,0,50,0.3);
-		box-shadow: inset rgba(0,0,0,0.2) 0 1px,
-			rgba(0,0,0,0.2) 0 1px, rgba(0,0,0,0.4) 0 0 5px;
-	}
-	#site_icons i {
-		color: #f1f1f1;
-		margin: 0 5px;
-		opacity: 0.5;
-		transition: opacity 0.3s ease;
-	}
-	#site_icons i:hover {opacity: 1;}
 
-/* Aside */
-/* Speicific Lists */
-ul#sidebar_posts {}
+
+/** testing **
+*
+* elephant
+*
+*/
+#elephant {
+	position: absolute;
+	bottom: 0px;
+	right: 1%;
+  animation: walk 120s linear 2s alternate forwards;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+}
+#elephant svg {
+	color: #95d3db;
+	fill: currentColor;
+	width: 200px;
+	height: 200px;
+}
+@keyframes walk {
+  0% {right: 1%} 10 {right: 20%} 20% {right: 40%}
+  30% {right: 60%} 40% {right: 80%} 49% {transform: rotateY(0);} 50% {right: 100%; transform: rotateY(180deg);} 60% {right: 75%} 70% {right: 50%} 80% {right: 25%} 90% {right: 0%} 99% {opacity: 1} 100% {right: -25%; transform: rotateY(180deg); opacity: 0;}
+}
+
+
+
+/***** Aside ************************************************************/
+main aside {}
+
+/* Sidebar Recent Posts */
+ul#sidebar_posts {
+
+}
+ul#sidebar_posts > li {
+	position: relative;
+	line-height: 1.3em;
+}
+ul#sidebar_posts > li:not(:last-of-type) {
+	border-bottom: 1px dotted rgba(0,0,0,0.2);
+}
+	ul#sidebar_posts li a {}
+	ul#sidebar_posts li span:after {
+		content:'•';
+		margin: 0 5px;
+		line-height: 1em;
+	}
+
+/* Sidebar Top Tags */
 ul#sidebar_tags {text-align: center;}
 	ul#sidebar_tags > li {display: inline-block; margin: 0 5px;}
 
 
-/* Main Content */
+/***** Main Content *****************************************************/
 /* home page preview articles */
 #main {}
 	#main > h3 {margin-bottom: 20px;}
   #main > p {text-indent: 20px;}
 	#main > p:not(:last-of-type) {margin-bottom: 20px;}
+	#main > p:last-of-type {margin-bottom: 40px;}
+	#main > p:hover a {text-decoration: underline;}
+
+	#main h3 a {float: right;}
+	#instafeed, #lastfmfeed {
+		text-align: center;
+		padding: 10px 5px 0;
+    background: rgba(0,0,0,0.2);
+    border-radius: 3px;
+    box-shadow: inset rgba(0,0,0,0.2) 0 0 2px,
+	      inset rgba(0,0,0,0.2) 0 3px 5px,
+	      rgba(255,255,255,0.5) 0 0 2px,
+	      rgba(255,255,255,0.25) 0 1px;
+	}
+  #instafeed article, #lastfmfeed article {
+		display: inline-block;
+		vertical-align: top;
+    width: 100px; height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 5px 10px;
+    padding: 0;
+		font-size: 0.8em;
+		line-height: 1.2;
+		box-shadow: rgba(0,0,0,0.25) 0 1px 1px;
+  }
+	#instafeed article > a, #lastfmfeed article > a {
+		display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+		padding: 5px;
+		color: #f1f1f1;
+		text-shadow: black 0 1px;
+		z-index: 1;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+	}
+	#instafeed article > img, #lastfmfeed article > img {width: 100%;}
+	#instafeed {margin-bottom: 40px;}
+	  #instafeed article > img {border: 1px solid white;}
+	  #instafeed article > a { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 90%); }
+		#instafeed article > a > img { width:40px; height:40px; border: 1px solid #111; border-radius: 50%; }
+	  #instafeed article > a > span {display: block;}
+	  #instafeed article > a > span.instauser {color: #e1e1e1; }
+		#instafeed article > a > span.instacaption {color: white }
+	  #instafeed article > a > span.instatime { color: #bbb; }
+	  #instafeed article > a:hover {opacity: 1;}
+
+	/* last.fm */
+	#lastfmfeed {}
+	  #lastfmfeed article:before {
+	    content: ''; display: block;
+	    position: absolute;
+	    height: 100%; width: 100%;
+	    border: 1px solid white;
+	    transition: border 0.3s linear;
+			z-index: 10;
+	  }
+	  #lastfmfeed article:hover:before {border: 3px solid white;}
+	  #lastfmfeed article > img { background: linear-gradient(65deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.65) 50%, rgba(255,255,255,0.15) ); }
+	  #lastfmfeed article > a {background: rgba(0,0,0,0.7);}
+	  #lastfmfeed article:hover > a {opacity: 1;}
+	  #lastfmfeed article > a > span {font-weight:800;} /* artist */
+	  #lastfmfeed article > a > span > i {font-weight:500}/* title */
+	  #lastfmfeed article > a > em {display: block;} /* time */
+	  #lastfmfeed > small {display:block; color: #888;}
+
+	.blob_wrap {
+		display: none;
+
+
+	  width:100%;
+		max-width: 500px;
+	  margin: 0 auto;
+	  text-align: center;
+	}
+	.blob {width: 100%; clear: both;}
+	.blob h3 {
+		color: rgb(32,70,118);
+	}
+	.blob-content {
+	  position: relative;
+	  display: inline-block;
+	  margin-bottom: 26px;
+	  padding: 1em 1.6em;
+	  border-radius: 50rem;
+		color: #333;
+	  font-family: sans-serif;
+	  text-align: center;
+	  background-color: #f1f1f1;
+	}
+	.blob-content > * {margin: 0;}
+	.blob-content.offset-right {float: right;}
+	.blob-content.offset-left {float: left;}
+
+	.blob-connector {
+	  position: absolute;
+	  overflow: hidden;
+	  bottom: -26px;
+	  left: calc(50% - 35px);
+	  width: 70px;
+	  height: 26px;
+	}
+	.blob-connector:before, .blob-connector:after {
+	  content: '';
+	  position: absolute;
+	  top: 0;
+	  width: 26px;
+	  height: 26px;
+	  background: transparent;
+	  box-shadow: 0 0 0 16px #f1f1f1;
+	}
+	.blob-connector:before {left: 0; border-radius: 0 50em 50em 0;}
+	.blob-connector:after {right: 0; border-radius: 50em 0 0 50em;}

@@ -9,88 +9,101 @@
 	<link rel="icon" type="image/png" href="imgs/icon.png" sizes="200x200"/>
 	<link rel="apple-touch-icon" href="imgs/icon.png" sizes="200x200"/>
 
-	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800"/>
-	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-	<link type="text/css" rel="stylesheet" href="css/styles.css"/>
-	<link type="text/css" rel="stylesheet" href="css/about.css"/>
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800|Kristi">
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+	<link type="text/css" rel="stylesheet" href="css/styles.css">
+	<link type="text/css" rel="stylesheet" href="css/about.css">
+	<link type="text/css" rel="stylesheet" href="css/white_theme.css" id="theme">
 
 	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
-	<script type="text/javascript" src="js/dug.js"></script>
+<script type="text/javascript" src="js/jquery.firefly.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
 	<script type="text/javascript" src="js/about.js"></script>
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-	  dug({
-	    endpoint: 'http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=traviest&api_key=1e4073c181a4694757f19048d0ca5228&limit=10&format=json',
-	    target: 'lastfm',
-	    template: '{{#recenttracks}}\
-	      <ul class="lastfm_photos">\
-	        {{#track}}\
-	          <li>\
-	            <img src="{{image.3.#text|dug.photo}}">\
-	            <a href="{{url}}">\
-	              <span>{{artist.#text}} - <i>{{name}}</i></span>\
-	              <em>{{date.#text|dug.ago}}</em>\
-	            </a>\
-	          </li>\
-	        {{/track}}\
-	      </ul>\
-	      {{/recenttracks}}\
-				<h6>{{recenttracks.@attr.user}}&apos;s Recent Last.fm Tracks</h6>\
-				<small>{{recenttracks.@attr.total|dug.total}} Tracks Scrobbled</small>'
-	  });
+
+		// cycying pic
+		var pic_counter = 0, total_pics = 7,
+				pic_titles = [	"Mellow Muggin\'", "Lush at the Lake", "Festi Fanatic", "Kitty Cuddles", "Fancy Faker", "Rave Reactions", "Party Partners"	];
+		//set initial values
+		var img_link = "url(imgs/me/me"+pic_counter+".jpg)";
+		$('#my_pic_top').css('background-image', img_link);
+		$('#my_pic_inner_frame > p > span').empty().html( pic_titles[pic_counter]);
+		// interval function to transition pics
+		setInterval(function() {
+			pic_counter++
+			var top_pic = $('#my_pic_top'),
+					back_pic = $('#my_pic_back'),
+					pic_title = $('#my_pic_inner_frame > p > span');
+			// set 'background' image
+			var last_pic = top_pic.css('background-image');
+			back_pic.css('background-image', last_pic);
+			top_pic.css({'opacity': 0});
+			// give top image new properties and animate in
+			var img_link = "url(imgs/me/me"+ pic_counter%total_pics +".jpg)";
+			top_pic.css('background-image', img_link);
+			top_pic.animate({'opacity': 1}, 1000);
+			// adjust pic title
+			var img_title = pic_titles[ pic_counter%total_pics ];
+			pic_title.css('opacity', 0).text(img_title).animate({'opacity': 1}, 750);
+		}, 5*1000);
+
+
+		// add class for hover effect on all social icons
+		$('#sidebar_social li').each(function(){ $(this).addClass('hvr-grow'); });
+
 	});
 	</script>
 
 </head>
 <body>
 <!-- Site Header / Banner -->
-<header class="main">
-	<section id="logo">
-		<div class="icon">
-			<i class="fa fa-info-circle fa-fw"></i>
-		</div>
-	  <h1>traviest</h1>
-	  <h5><i class="fa fa-code"></i>&nbsp;Full-Stack Developer&nbsp;<i class="fa fa-code"></i></h5>
-	</section>
-
+<header>
+	<h1>traviest</h1>
 </header>
-<!--			end header / main page content 		-->
+<!--  End Header / Start Main Page Content  -->
+<div id="profile">
+	<figure>
+		<section>
+			<article id="my_pic_back"></article>
+			<article id="my_pic_top"></article>
+			<article id="my_pic_inner_frame"><p><span>shit tit damn</span></p></article>
+		</section>
+		<figcaption>
+			<h2>Travis Leonard</h2>
+			<p>Something witty</p>
+		</figcaption>
+	</figure>
+</div>
 
-<figure id="profile">
-	<div></div>
-	<figcaption>
-		<h2>Travis Leonard</h2>
-		<p>Something witty</p>
-	</figcaption>
-</figure>
-
-<main class="main">
+<main>
 	<aside>
 		<h5>Socialize</h5>
 		<ul id="sidebar_social">
-			<li><a href=""><i class="fa fa-instagram"></i></a></li>
-			<li><a href=""><i class="fa fa-twitter"></i></a></li>
-			<li><a href=""><i class="fa fa-soundcloud"></i></a></li>
-			<li><a href=""><i class="fa fa-facebook-official"></i></a></li>
-			<li><a href=""><i class="fa fa-pinterest"></i></a></li>
-			<li><a href=""><i class="fa fa-youtube-play"></i></a></li>
-			<li><a href=""><i class="fa fa-get-pocket"></i></a></li>
-			<li><a href=""><i class="fa fa-github"></i></a></li>
-			<li><a href=""><i class="fa fa-codepen"></i></a></li>
-			<li><a href=""><i class="fa fa-dribbble"></i></a></li>
-			<li><a href=""><i class="fa fa-steam"></i></a></li>
-		</ul>
-
-		<h5>Recent Tunes <i class="fa fa-headphones"></i></h5>
-		<div id="lastfm">Loading...</div>
-
-		<h5>Instagram Feed</h5>
-		<ul>
-			<li>User ID: 357448</li>
-			<li>Username: traviest</li>
-			<li>Name: Travis</li>
+			<li><a href="http://linked.in/traviest" target="_blank">&#xf239;</a></li>
+			<li><a href="http://instagram.com/traviest" target="_blank">&#xf350;
+				<i class="fa fa-instagram"></i></a></li>
+			<li><a href="http://twitter.com/traviest" target="_blank">&#xf243;
+				<i class="fa fa-twitter"></i></a></li>
+			<li><a href="http://soundcloud.com/traviest" target="_blank">...
+				<i class="fa fa-soundcloud"></i></a></li>
+			<li><a href="http://facebook.com/traviest" target="_blank">&#xf231;
+				<i class="fa fa-facebook-official"></i></a></li>
+			<li><a href="http://pinterest.com/traviest" target="_blank">&#xf2b1;
+				<i class="fa fa-pinterest"></i></a></li>
+			<li><a href="http://youtube.com/traviest" target="_blank">&#xf24c;
+				<i class="fa fa-youtube-play"></i></a></li>
+			<li><a href="https://github.com/traviest" target="_blank">&#xf233;
+				<i class="fa fa-github"></i></a></li>
+			<li><a href="http://codepen.io/traviest" target="_blank">&#xf4dd;
+				<i class="fa fa-codepen"></i></a></li>
+			<li><a href="http://dribbble.com/traviest" target="_blank">&#xf22c;
+				<i class="fa fa-dribbble"></i></a></li>
+			<li><a href="https://steamcommunity.com/id/traviest/" target="_blank">&#xf30b;
+				<i class="fa fa-steam"></i></a></li>
 		</ul>
 
 		<h5>Fun Facts <i class="fa fa-hand-spock-o"></i></h5>
@@ -147,14 +160,14 @@
 			<section class="skills">
 				<h5>Master</h5>
 				<ul>
-					<li>HTML5</li>
-					<li>CSS3</li>
+					<li>HTML5 <i>&#xf4e2;</i></li>
+					<li>CSS3 <i>&#xf4de;</i></li>
 				</ul>
 			</section>
 			<section class="skills">
 				<h5>Proffecient</h5>
 				<ul>
-					<li>jQuery / Javascript</li>
+					<li>jQuery / Javascript <i>&#xf4e5;</i></li>
 					<li>PHP</li>
 					<li>XML</li>
 				</ul>
@@ -162,12 +175,13 @@
 			<section class="skills">
 				<h5>Learning</h5>
 				<ul>
-					<li>Mustache - templating</li>
 					<li>C++ / C#</li>
+					<li>Python <i>&#xf4e9;</i></li>
 					<li>Drupal</li>
 					<li>Ruby</li>
+					<li>Mustache</li>
 					<li>Haml</li>
-					<li>Sass &amp; Less</li>
+					<li>Sass <i>&#xf4ea;</i></li>
 					<li>Coffeescript</li>
 				</ul>
 			</section>
@@ -235,14 +249,8 @@
 
 	</section><!-- end main -->
 </main>
-<!--  end main / start footer  -->
-<footer class="main">
-	<h6>Travis Leonard<i class="fa fa-copyright"></i>2015</h6>
-	<p>Version 1 - Flat
-		&#8226; <a href="about.html#credits">Credits</a>
-		&#8226; <a href=""><i class="fa fa-html5"></i></a>
-		&#8226; <a href=""><i class="fa fa-css3"></i></a>
-	</p>
+<!-- End Main / Start Footer -->
+<footer>
 </footer>
 
 </body>

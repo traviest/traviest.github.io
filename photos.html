@@ -9,91 +9,67 @@
 	<link rel="icon" type="image/png" href="imgs/icon.png" sizes="200x200"/>
 	<link rel="apple-touch-icon" href="imgs/icon.png" sizes="200x200"/>
 
-	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800"/>
-	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-	<link type="text/css" rel="stylesheet" href="css/styles.css"/>
-	<link type="text/css" rel="stylesheet" href="css/photos.css"/>
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300|Oswald|Raleway:300,800|Kristi">
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+	<link type="text/css" rel="stylesheet" href="css/styles.css">
+	<link type="text/css" rel="stylesheet" href="css/media_pages.css">
+	<link type="text/css" rel="stylesheet" href="css/white_theme.css" id="theme">
 
 	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
-	<script type="text/javascript" src="js/instafeed.js"></script>
+	<script type="text/javascript" src="js/jquery.firefly.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
-	<script>
-	var userFeed = new Instafeed({
-		get: 'user',
-		userId: '357448',
-		clientId: '2d460779eb934209b6384ae31961e55f',
-		// resolution: 'standard_resolution',
-		limit: '5',
-		template: '<article>'
-			+ '<a href="{{link}}">'
-				+ '<span>{{caption}}</span>'
-				+ '<span class="instatime">{{model.created_time}}</span>'
-			+ '</a>'
-			+ '<img src="{{image}}" alt="{{caption}}" />'
-			+ '</article>',
-		after: function() {
-			$('.instatime').each(function(i,o) {
-				var date = new Date(parseInt( $(this).text() ) * 1000);
-				var newDate = convertMonthNum((date.getMonth()+1).toString())
-						+ ' ' + date.getDate()
-						+ ', \'' + date.getFullYear().toString().substring(2,4);
-				$(this).text(newDate);
-			});
-		}
-	 });
-	 userFeed.run();
-
+	<script type="text/javascript" src="js/photos.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		var photo_posts = [];
+		$.get("posts/posts.xml", function(posts){
+			$(posts).find('post').each(function(i) {
+				/* build array for featured post */
+				if ( $(this).find('embeded').attr('type') == 'photo' ) {
+					photo_posts.push({
+						'title' : $(this).find('title').text(),
+						'date' : $(this).find('date').text(),
+						'embed_type' : $(this).find('embeded').attr('type'),
+						'embeded' : $(this).find('embeded').text()
+					});
+				}
+			});// end each posts
+		}).complete(function() {
+			photo_posts.sort(date_sort_desc);
+			var all_photos = $('<section>').attr('id','allPhotos');
+			for (x = 0; x < photo_posts.length; x++) {
+				var photo = $('<article>').addClass('photo')
+						date = $('<time>').html( convertDate(photo_posts[x].date) ),
+						title = $('<h5>').html(photo_posts[x].title),
+						img = $('<img>').attr('src','posts/'+photo_posts[x].embeded);
+				all_photos.append( photo.append(date).append(title).append(img) );
+			}
+			$('main').append(all_photos);
+		});// end get & complete
+	});// end doc load function
 	</script>
-
 
 </head>
 <body>
 <!-- Site Header / Banner -->
-<header class="main">
-	<section id="logo">
-		<div class="icon">
-			<i class="fa fa-camera-retro fa-fw"></i>
-		</div>
-	  <h1>traviest</h1>
-	  <h5><i class="fa fa-code"></i>&nbsp;Full-Stack Developer&nbsp;<i class="fa fa-code"></i></h5>
-	</section>
-
+<header>
+	<h1>traviest</h1>
 </header>
-<!--			end header
-					main page body and content 		-->
-<main class="main">
+<!--  End Header / Start Main Page Content  -->
+<main>
+	<div id="page_nav">
+		<nav>
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+		</nav>
+	</div>
 
-	<aside>
-		<h5>Instagram Feed</h5>
-
-		<div id="instafeed"></div>
-
-		<a href="http://instagram.com/traviest">
-			<i class="fa fa-instagram fa-fw"></i></a>
-
-	</aside><!-- end sidebar -->
-
-	<section id="main">
-
-		<span id="sort_opt" class="sort_alpha">
-			<small></small>
-			<span>alphabetical</span>
-		</span>
-
-
-
-
-	</section><!-- end main -->
 </main>
-<!--  end main / start footer  -->
-<footer class="main">
-	<h6>Travis Leonard<i class="fa fa-copyright"></i>2015</h6>
-	<p>Version 1 - Flat
-		&#8226; <a href="about.html#credits">Credits</a>
-		&#8226; <a href=""><i class="fa fa-html5"></i></a>
-		&#8226; <a href=""><i class="fa fa-css3"></i></a>
-	</p>
+<!-- End Main / Start Footer -->
+<footer>
 </footer>
-
 </body>
 </html>
