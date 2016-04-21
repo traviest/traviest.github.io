@@ -84,20 +84,19 @@ ul.trail a:hover {color: rgb(74,149,172);}
 
 /***** Main Body Elements **********************/
 /* size and spacing */
-header, main, footer, #page_nav, .trail {width: 100%;}
-header {}
+header, main, footer,
+#featured, #profile {width: 100%; max-width: 1000px;
+margin: 0 auto;}
 main {display: table; padding: 40px; min-width: 400px;}
-main, #page_nav, .trail {max-width: 1200px; margin: 0 auto;}
-#page_nav, .trail {margin-bottom: 40px;}
+#page_nav, .trail {width: 100%; margin-bottom: 40px;}
 main > #main, main > aside {display: table-cell; vertical-align: top;}
 main > #main {width: 70%; padding-left: 40px;}
 main > aside {width: 30%;}
-main, footer {}
-footer {margin: 0 auto; padding: 20px;}
+footer {padding: 20px;}
 
 
 /***** Fonts ***********************************/
-h2, h3, h4, h5, h6 {font-family: 'Crushed','Oswald', Arial, sans-serif; } /*font-weight:bold */
+h2, h3, h4, h5, h6 {font-family: 'Oswald', Arial, sans-serif; } /*font-weight:bold */
 h1 {font-family: 'Kristi'; font-size: 10em; line-height: 1em;}
 h2 {font-size: 2em;}
 h3 {font-size: 1.75em; line-height: 110%;}
@@ -118,14 +117,14 @@ header h1 {
   text-shadow: rgba(0,0,0,0.2) 0 1px 1px;
   z-index: 50;
 }
-/* icon to change themes */
+/* icon to change themes *
 #settings_icons {
 	position: absolute;
 	top: 25px; right: 25px;
 	padding: 2px 5px 1px;
 	font-size: 25px;
 	color: color: rgb(74,149,172);
-	background: rgba(255,255,255,0.85);
+	background-color: rgba(255,255,255,0.85);
 	border-radius: 3px;
 	box-shadow: rgba(0,0,0,0.5) 0 1px 3px;
 	transition: all 0.3s;
@@ -134,8 +133,42 @@ header h1 {
 #settings_icons:hover {
 	color: rgb(32,70,118);
 	top: 20px; right: 20px;
-	padding: 7px 10px 6px;
+	padding: 7px 10px 6px;*/
+#settings_icons {
+	display: block;
+	position: absolute;
+	top: 20px; right: 20px;
+	height: 30px; width: 30px;
+
+		/* main theme styles */
+		background-color: rgba(255,255,255,0.85);
+		border-radius: 3px;
+		box-shadow: rgba(0,0,0,0.5) 0 1px 3px;
+
+
+	z-index: 100;
 }
+#settings_icons span {
+	display: block;
+	height: 20px; width: 20px;
+	position: absolute;
+	top: 5px; left: 5px;
+	transition: opacity 0.3s;
+}
+#settings_icons span:first-of-type {
+	background: url('../imgs/theme-light.png') no-repeat center;
+	background-size: cover;
+}
+#settings_icons span:nth-of-type(2) {
+	background: url('../imgs/theme-dark.png') no-repeat center;
+	background-size: cover;
+	opacity: 0;
+}
+#settings_icons:hover span:first-of-type {opacity: 0;}
+#settings_icons:hover span:nth-of-type(2) {opacity: 1;}
+
+
+
 /* main site nav */
 #line_nav {
 	position: relative;
@@ -143,7 +176,7 @@ header h1 {
 	padding: 0 40px;
 	text-transform: uppercase;
 	background: #f1f1f1;
-	background: linear-gradient(#fff, #ddd);
+	background: linear-gradient(#fff, #eee);
 	border-top: 3px solid rgb(74,149,172);
 	border-bottom: 3px solid rgb(74,149,172);
 	box-shadow: rgba(0,0,0,0.2) 0 -1px 5px,

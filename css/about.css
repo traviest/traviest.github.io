@@ -7,30 +7,42 @@ $nightblue = #204676 - rgb(32,70,118);
 */
 /***** Main Profile ****************************/
 #profile {
+  position: relative;
   display: block;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
-
   background: white;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+
+
 #profile > figure {
   width: 80%;
-  max-width: 800px;
   margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: rgba(0,0,0,0.2) 0 0 0 1px;
+}
+
+/* Profile - About Info */
+#profile > figure {
   padding: 20px;
   background: #e1e1e1;
+  display: flex;
+  justify-content: space-between;
+
+  /*
   border-radius: 3px;
   box-shadow: inset rgba(0,0,0,0.2) 0 0 2px,
-    inset rgba(0,0,0,0.2) 0 3px 5px;
+    inset rgba(0,0,0,0.2) 0 3px 5px;          */
 }
-  #profile section, #profile figcaption {display: table-cell;}
+  #profile section, #profile figcaption {
+    display: inline-block;
+    width: 48%;
+  }
   #profile section {
     position: relative;
-    width: 250px;
-    height: 250px;
+    height: 300px;
     color: #f1f1f1;
     border: 3px solid #f1f1f1;
     box-shadow: rgba(0,0,0,0.5) 0 1px 5px;
@@ -47,13 +59,57 @@ $nightblue = #204676 - rgb(32,70,118);
     text-align: center;
     background: rgba(0,0,0,0.7);
   }
-  #profile figcaption {text-align: center; padding: 10px;}
+  #profile figcaption {
+    text-align: center;
+    position: relative;
+  }
   #profile figcaption > h2 {
-    margin: 0 auto 10px;
     color: white;
     text-shadow: rgba(0,0,0,0.1) 0 1px 1px;
   }
-  #profile figcaption > p {}
+  #profile figcaption > p {
+    margin: 10px auto;
+  }
+
+/* Profile - Map */
+#profile_resizer {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(../imgs/resizer.png) center center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 40px;
+  z-index: 10;
+}
+  #profile_resizer:hover {
+    background-image: url(../imgs/resizer_dark.png);
+  }
+
+#googleMap {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 220px;
+
+  border-radius: 3px;
+  box-shadow: rgba(0,0,0,0.2) 0 0 0 1px;
+}
+.marker_label {
+    display:block;
+    height: 20px;
+    width: 20px;
+    background: red;
+    border: 3px solid orange;
+    box-shadow: purple 0 3px 4px 1px;
+  }
+  #map_about {
+    max-width: 250px;
+  }
+    #map_about p:not(:first-of-type) {margin-top: 10px}
+    #map_about p:last-of-type {text-align: right; font-style: italic;}
+    #map_about p:last-of-type a {font-style: normal;}
 
 
 /***** Aside ************************************/

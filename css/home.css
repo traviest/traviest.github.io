@@ -1,30 +1,77 @@
 
 
-/** testing **
-*
-* elephant
-*
-*/
-#elephant {
-	position: absolute;
-	bottom: 0px;
-	right: 1%;
-  animation: walk 120s linear 2s alternate forwards;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+
+#featured {
+
+	background: white;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px auto;
+
+	box-shadow: rgba(0,0,0,0.2) 0 3px 7px;
+
 }
-#elephant svg {
-	color: #95d3db;
-	fill: currentColor;
-	width: 200px;
-	height: 200px;
-}
-@keyframes walk {
-  0% {right: 1%} 10 {right: 20%} 20% {right: 40%}
-  30% {right: 60%} 40% {right: 80%} 49% {transform: rotateY(0);} 50% {right: 100%; transform: rotateY(180deg);} 60% {right: 75%} 70% {right: 50%} 80% {right: 25%} 90% {right: 0%} 99% {opacity: 1} 100% {right: -25%; transform: rotateY(180deg); opacity: 0;}
-}
+	.featured_item {
+		position: relative;
+		flex-grow: 1;
+		margin: 0;
+		padding: 10px;
+		width: 250px;
+		min-height: 250px;
+		background-color: #777;
+		background-size: cover;
+		background-position: center;
+		overflow: hidden;
+	}
+		.featured_item:before {
+			content: '';
+			display: none;
+			position: absolute;
+			top: 20px; bottom: 20px;
+			left: 20px; right: 20px;
+			border: 1px solid rgba(255,255,255,0.8);
+			box-shadow: rgba(255,255,255,0.5) 0 0 0 20px;
+		}
+		.featured_item p {
+			position: absolute; display: block;
+			bottom: 20px; left: 20px; right: 20px;
+			background: rgba(255,255,255,0.7);
+			padding: 10px;
+			color: white;
+			text-shadow: rgba(0,0,0,0.5) 0 0 3px;
+			font-weight: bold;
+			border: 1px solid white;
+			box-shadow: rgba(255,255,255,0.5) 0 0 0 5px;
+		}
+
+		@keyframes fadeInfo {
+			0% {bottom: -100%; }
+			100% {bottom: 20px;}
+		}
+
+
+		.featured_item small {
+			letter-spacing: 3px;
+		}
+		.featured_item h4 {
+			color: white;
+			margin-top: 5px;
+		}
+		.featured_item span {
+
+		}
 
 
 
+	.featured_item:nth-of-type(1) {
+	}
+	.featured_item:nth-of-type(2) {
+	}
+	.featured_item:nth-of-type(3) {
+	}
+	.featured_item:nth-of-type(4) {
+	}
 /***** Aside ************************************************************/
 main aside {}
 

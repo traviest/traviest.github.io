@@ -15,6 +15,7 @@ $nightblue = #204676 - rgb(32,70,118);
 	height: 100%;
 	background: rgba(0,0,0,0.8);
 	z-index: 1000;
+	opacity: 0;
 }
 	.wrap .preview {
 		width: 80%;
@@ -73,12 +74,13 @@ ul#sidebar_archives {}
 /***** Featured Post *****/
 .feat_refresh {
 	position: absolute;
-	top: -35px;
+	top: -33px;
 	right: 3px;
 	font-size: 20px;
+	line-height: 20px;
 	color: rgb(30,115,157);
 	cursor: pointer;
-	animation: color 0.2s;
+	animation: all 0.2s;
 }
 	.feat_refresh:hover {color: rgb(32,70,118);}
 
@@ -130,7 +132,7 @@ ul#sidebar_archives {}
 
 /* Sidebar Categories */
 ul#sidebar_categories {}
-		ul#sidebar_categories li {text-transform: capitalize;}
+		ul#sidebar_categories li {}
 		ul#sidebar_categories li a {}
 
 /* Sidebar Tags */
@@ -158,7 +160,7 @@ ul#sidebar_tags {text-align: center;}
 ul#sidebar_archives {}
 	ul#sidebar_archives li {}
 	ul#sidebar_archives a {}
-	ul#sidebar_archives a i {margin-left: 5px;}
+	ul#sidebar_archives a i {margin-left: 5px; opacity: 0.8}
 	ul#sidebar_archives a i:before {content: '\'';}
 	ul#sidebar_archives a span {}
 
@@ -354,6 +356,27 @@ main > section#main > article.post {position: relative;}
 		.post > article > blockquote:not(:last-of-type) {margin-bottom: 20px;}
 		.post > article > blockquote > small {font-weight: 400;}
 		.post > article > blockquote > small > cite {font-style: italic;}
+
+
+	.post > .star_rating {
+		float: right;
+		display: inline-block;
+
+		background: red
+
+	}
+		.star_rating li {
+			display: inline-block;
+			height: 1em;
+			width: 1em;
+			margin-left: 5px;
+			background: yellow;
+		}
+		.star_rating:after {
+			content: ''; display: block; width: 100%; clear: both;
+		}
+
+
 	/* links */
 	.post > .post_links {
 		margin-top: 20px;
@@ -386,20 +409,5 @@ main > section#main > article.post {position: relative;}
 	.post_links a[href*="soundcloud"]:before {content: '\f1be';}
 	.post_links a[href*="facebook"]:before {content: '\f230';}
 	.post_links a[href*="twitter"]:before {content: '\f099';}
-	.post_links a[href*="youtu"]:before,
+	.post_links a[href*="youtu.be"]:before,
 	.post a[href*="youtube"]:before {content: '\f16a';}
-
-
-	/* link on long posts to read in full */
-	.read_full {
-		margin-top: 10px;
-		display: block;
-	}
-	.read_full a:after {
-		content: '\f0da';
-		font-family: 'FontAwesome';
-		font-size: 1.3em;
-		margin-left: 5px;
-		position: relative;
-		top: 2px;
-	}

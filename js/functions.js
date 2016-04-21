@@ -1,16 +1,17 @@
-$(document).ready(function() {
+$(function() {
 
 	// variables and functions to build page
 	var main_pages = ['index','blog','portfolio','about',
 				'music','photos','lab'],
 			alt_pages = ['resume'],
 			sub_pages = ['all_posts','tags','categories','archives'],
-			cur_page = window.location.pathname.split("/").pop().split(".")[0];
-			pages_info = {main_pages, alt_pages, sub_pages, cur_page}
+			cur_page = window.location.pathname.split("/").pop().split(".")[0],
+			pages_info = {main_pages, alt_pages, sub_pages, cur_page};
 
 	buildNav(pages_info).attr('id', 'line_nav').appendTo('header');
 	lineNav(pages_info);
 	buildFooter(pages_info);
+	setupThemes(pages_info);
 
 	// set up firefly images on header
 	var fireflyPics = ['imgs/star1.png', 'imgs/star2.png', 'imgs/star3.png', 'imgs/star5.png', 'imgs/star_1.png',  'imgs/star_5.png'];
@@ -39,37 +40,44 @@ $(document).ready(function() {
 		$("body,html").animate({scrollTop: 0}, 750); return false;
 	});
 
-	// add settings icons (theme)
-	var theme = $('<div>').attr('id','settings_icons').addClass('ion-android-settings');
-	$('header').append(theme.addClass('color-theme'));
-
 });// end document ready
 
 
-/***** Click Functions *****/
-$(document).on('click', '.white-theme', function() {
-	var cur_page = window.location.pathname.split("/").pop().split(".")[0];
-	if (cur_page=='tags' || cur_page=='categories' || cur_page=='archives' || cur_page=='all_posts') {
-		$('#theme').attr('href', '../css/white_theme.css');
-		console.log('change to white theme - from sub page');
-	} else {
-		$('#theme').attr('href', 'css/white_theme.css');
-		console.log('change to white theme - from main page');
-	}
-	$(this).removeClass('white-theme').addClass('color-theme');
-});
-$(document).on('click', '.color-theme', function() {
-	var cur_page = window.location.pathname.split("/").pop().split(".")[0];
-	if (cur_page=='tags' || cur_page=='categories' || cur_page=='archives' || cur_page=='all_posts') {
-		$('#theme').attr('href', '../css/color_theme.css');
-		console.log('change to color theme - from sub page');
-	} else {
-		$('#theme').attr('href', 'css/color_theme.css');
-		console.log('change to color theme - from main page');
-	}
-	$(this).removeClass('color-theme').addClass('white-theme');
-});
+/***** Set Up Icon and Click Function for Changing Themes ***************/
+function setupThemes(all_pages) {
 
+	var theme = $('<div>').attr('id','settings_icons')
+				.append( $('<span>') )
+				.append( $('<span>') );
+				//.addClass('ion-android-settings');
+	$('header').append(theme.addClass('color-theme'));
+
+	theme.click(function() {
+
+		var	icon = $(this), theme_css = $('#theme'),
+			is_sub_page = (all_pages.sub_pages.indexOf(all_pages.cur_page) >= 0) ? true : false;
+
+		if (icon.hasClass('white-theme')) {
+			if (is_sub_page) {
+				theme_css.attr('href', '../css/white_theme.css');
+				console.log('change to white theme - from sub page');
+			} else {
+				theme_css.attr('href', 'css/white_theme.css');
+				console.log('change to white theme - from main page');
+			}
+			icon.removeClass('white-theme').addClass('color-theme');
+		} else if (icon.hasClass('color-theme')) {
+			if (is_sub_page) {
+				theme_css.attr('href', '../css/color_theme.css');
+				console.log('change to color theme - from sub page');
+			} else {
+				theme_css.attr('href', 'css/color_theme.css');
+				console.log('change to color theme - from main page');
+			}
+			icon.removeClass('color-theme').addClass('white-theme');
+		}
+	});
+}
 
 
 /***** Build Navigation *************************************************/
@@ -203,10 +211,9 @@ function buildPostObj(post) {
 
   var post_links = [];
   post.find('links').find('link').each(function() {
-    var link = [];
-    link['link_text'] = $(this).attr('text');
-    link['source'] = $(this).attr('source');
-    post_links.push(link);
+    post_links.push({
+			'link_text' : $(this).attr('text'), 'source' : $(this).attr('source')
+		});
   });
 
   var postObj = {
@@ -237,12 +244,13 @@ function buildPostHTML(post,is_sub_page) {
 			tags				= post.tags,
 			links				= post.links;
 
+	console.log(title+ ' '+date);
 	// Start Post
 	var post_html = $('<article>').addClass('post').addClass(category);
 	// Category
 	var cat_link = $('<a>').html(category.replace(/_/g," ").capFirstLetter());
-	if(is_sub_page) cat_link.attr('href','../blog.html?category='+category)
-	else cat_link.attr('href', 'blog.html?category='+category)
+	if(is_sub_page) cat_link.attr('href','../blog.html?category='+category);
+	else cat_link.attr('href', 'blog.html?category='+category);
 	post_html.append( $('<small>').html(cat_link) );
 	// Date
 	var date_html = convertDate(date);
@@ -254,34 +262,35 @@ function buildPostHTML(post,is_sub_page) {
 		for (var x = 0; x < tags.length; x++) {
 			var link = $('<a>').html(tags[x].capFirstLetter()),
 					link_url = 'blog.html?tag='+tags[x].replace(/ /g,'_');
-			if(is_sub_page) link.attr('href','../'+link_url)
+			if(is_sub_page) link.attr('href','../'+link_url);
 			else link.attr('href',link_url);
 			post_tags.append( $('<li>').append(link) );
 		}
 		post_html.append(post_tags);
 	}
 	// Title
-	if (title != '' && title != undefined) post_html.append( $('<h3>').html( title ) );
+	if (title != '' && title != undefined)
+		post_html.append( $('<h3>').html( title ) );
 	// Embeded Elements
 	switch (embed_type) {
 		case 'soundcloud':
 			var post_embed = buildSoundCloud(embed, false, false);
-			post_html.append( $('<section>').html(post_embed) );
+			post_html.append( $('<section>').append(post_embed) );
 			break;
 		case 'soundcloud_playlist':
 			var post_embed = buildSoundCloud(embed, true, true);
-			post_html.append( $('<section>').html(post_embed) );
+			post_html.append( $('<section>').append(post_embed) );
 			break;
 		case 'youtube':
-			post_html.append( $('<section>').html(buildYouTube(embed)) );
+			post_html.append( $('<section>').append(buildYouTube(embed)) );
 			break;
 		case 'vevo':
-			post_html.append( $('<section>').html(buildVevo(embed)) );
+			post_html.append( $('<section>').append(buildVevo(embed)) );
 			break;
 		case 'photo':
 			var img = $('<img>').attr('alt',title);
-			if(is_sub_page) img.attr('src','../posts/'+embed)
-			else img.attr('src','posts/'+embed)
+			if(is_sub_page) img.attr('src','../posts/'+embed);
+			else img.attr('src','posts/'+embed);
 			post_html.append( $('<section>').append(img) );
 			break;
 		//default:
@@ -290,11 +299,19 @@ function buildPostHTML(post,is_sub_page) {
 	if (content) {
 		post_html.append( $('<article>').html(content) );
 	}
+
+
+	// star rating **** work in progress ****
+	var stars = $('<ul>').addClass('star_rating');
+	for (x=0; x<5; x++) stars.append( $('<li>').addClass('fa fa-star') );
+	post_html.append(stars);
+
+
 	// Links
 	if (links != undefined && links.length > 0) {
 		var post_links = $('<ul>').addClass('post_links');
 		for (var x = 0; x < links.length; x++) {
-			var the_link = '<a href="' + links[x]['source'] + '">'
+			var the_link = '<a href="' + links[x]['source'] + '" target="_blank">'
 						+ links[x]['link_text'] + '</a>';
 			post_links.append( $('<li>').append(the_link) );
 		}
@@ -307,46 +324,59 @@ function buildPostHTML(post,is_sub_page) {
 
 /***** Build SoundCloud  ************************************************/
 function buildSoundCloud(id, visual, playlist) {
-
-	var song_html = '<iframe scrolling="no" frameborder="no" width="100%"';
-	song_html+= (playlist) ? ' height="450"' : ' height="166"';
-	song_html+= 'src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/';
-	song_html+= (playlist) ? 'playlists/'+id : 'tracks/'+id;
-	song_html+= '&amp;color=1E739D'; //f1f1f1';
-	if (visual) song_html+= '&amp;visual=true&amp;show_user=false&amp;buying=false&amp;sharing=false&amp;download=false&amp;liking=false';
-	song_html+= '&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_reposts=false"></iframe>';
-
-	return song_html;
+	var song_frame = $('<iframe>').attr({
+		scrolling : 'no', frameborder : 'no',
+		width : '100%', height : ((playlist) ? '450px':'166px')
+	});
+	var song_src = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/'
+		+ ((playlist) ? 'playlists/'+id : 'tracks/'+id)
+		+'&amp;color=1E739D&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_reposts=false';
+	if (visual) {
+		song_src+='&amp;visual=true&amp;show_user=false&amp;buying=false&amp;sharing=false&amp;download=false&amp;liking=false';
+	}
+	return song_frame.attr('src',song_src);
 }
 
 /***** Build YouTube ****************************************************/
 function buildYouTube(id) {
-	var video_html = '<iframe class="youtube_embed" width="100%" height="360" src="https://www.youtube.com/embed/' + id + '?color=white&showinfo=0&controls=1&iv_load_policy=3" frameborder="0" allowfullscreen></iframe>';
-
-	return video_html;
+	var video_frame = $('<iframe>').attr({
+		width : '100%', height : '360',
+		src : 'https://www.youtube.com/embed/' + id + '?color=white&showinfo=0&controls=1&iv_load_policy=3',
+		frameborder : 0,
+		allowfullscreen : 'allowfullscreen'
+	}).addClass('youtube_embed');
+	return video_frame;
 }
 
 /***** Build Vevo *******************************************************/
 function buildVevo(id) {
-	var video_html = '<iframe width="100%" height="360" src="http://cache.vevo.com/assets/html/embed.html?video=' + id + '&autoplay=0" frameborder="0" allowfullscreen></iframe>';
-
-	return video_html;
+	var video_frame = $('<iframe>').attr({
+		width : '100%', height : '360',
+		src : 'http://cache.vevo.com/assets/html/embed.html?video=' + id + '&autoplay=0',
+		frameborder : 0,
+		allowfullscreen : 'allowfullscreen'
+	});
+	return video_frame;
 }
 
 
-/***** Prototype Functions *****/
+
 // general function to capitalize first letter
 String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
+
 String.prototype.capAllWords = function() {
-	if (this.indexOf('_') >= 0) {
-		var allWords = this.replace(/_/g,' ').split(' '), capPhrase = []
-		for (i = 0; i<allWords.length; i++)
-			capPhrase.push(allWords[i].capFirstLetter());
+	if (this.indexOf(' ') >= 0) {
+		var allWords = this.split(' '), capPhrase = [];
+		console.log(allWords.length);
+		for (i = 0; i<allWords.length; i++) {
+			capPhrase.push( allWords[i].trim().capFirstLetter() );
+		}
 		return capPhrase.join(' ');
+	} else {
+		return this.capFirstLetter();
 	}
-	else return this;
 }
 
 /***** Post Object Sort Functions ***************************************/
@@ -400,13 +430,13 @@ function convertDate(date) {
 			date_time = date_arr[2].split('T')[1];
 			date_hour = date_time.split(':')[0].replace(/^0+/, '');
 			date_min = date_time.split(':')[1];
-			date_ampm = ( date_hour - 12 < 0 ) ? "AM" : "PM";
+			date_ampm = ( date_hour - 12 < 0 ) ?'AM' : 'PM';
 	// build date string	var dteNow = new Date();
-	if (date_ampm > 12) date_hour-=12;
+	if (date_hour > 12) date_hour-=12;
 	var currDate = new Date();
 	var date_html = date_month+" "+date_day;
-	if (date_year != currDate.getFullYear()) date_html += ", " + date_year;
-	date_html += " @ " + date_hour + ":" + date_min + " " + date_ampm;
+	if (date_year != currDate.getFullYear()) date_html += ', ' + date_year;
+	date_html += ' @ ' + date_hour + ':' + date_min + ' ' + date_ampm;
 	return date_html;
 }
 function convertMonth(monthName) {

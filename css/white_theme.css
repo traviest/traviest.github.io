@@ -55,13 +55,18 @@ header h1 {
   header h1:after {right:-30%;}
 
 
-#settings_icons {position: fixed; top: 10px;}
-#settings_icons:hover {top: 5px;}
+#settings_icons {
+  background-color: transparent;
+  border-radius: none;
+  box-shadow: none;
+	top: 9px; right: 40px;
+}
+#settings_icons:hover {}
 
 
 #line_nav {
   text-align: left;
-  position: fixed;
+  position: absolute;
   top: 0;
   border: none;
   box-shadow: rgba(0,0,0,0.1) 0 1px, rgba(0,0,0,0.3) 0 1px 3px;
@@ -139,16 +144,17 @@ li.hvr-bounce-to-right a:before {background: white;}
 #main h4 span {color: #777;} /* specific posts loaded header count */
 
 .post {
-  background: white;
+  background: #fafafa;
+  box-shadow: rgba(0,0,0,0.1) 0 0 0 1px;
 }
   .post > h3 {}
   .post > small {background: #f1f1f1;}
-  .post > section > img {border: 3px solid #e1e1e1;}
 
 
 /***** Posts Sub Pages ****/
 #show_post_nav {color: #555;text-shadow: white 0 1px;}
 #show_post_nav.showing{background: white;}
+#show_post_nav.showing:after {background: white;}
 .sub_nav {background: white;}
 .sub_nav h6, .sub_nav a.current {color: rgb(32,70,118);}
 

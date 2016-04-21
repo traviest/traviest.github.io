@@ -22,15 +22,13 @@
   <script type="text/javascript" src="../js/jquery.firefly.js"></script>
   <script type="text/javascript" src="../js/functions.js"></script>
   <script type="text/javascript" src="posts.js"></script>
-
   <script>
-  getAllPosts();
+  $(function() {
 
-  $(document).ready(function() {
-
-    $('#all_posts').delay(2000).addClass('poo?').css({'display' : 'block', 'opacity' : 0})
-      .animate({'opacity': 1});
-
+    // fade all content in after loading
+    $('main').css('opacity', 0);
+    // timeout function called in posts load function
+    getAllPosts();
 
   });// end doc ready
   </script>

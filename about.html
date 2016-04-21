@@ -17,40 +17,35 @@
 	<link type="text/css" rel="stylesheet" href="css/about.css">
 	<link type="text/css" rel="stylesheet" href="css/white_theme.css" id="theme">
 
-	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
-<script type="text/javascript" src="js/jquery.firefly.js"></script>
-	<script type="text/javascript" src="js/functions.js"></script>
-	<script type="text/javascript" src="js/about.js"></script>
-
-	<script type="text/javascript">
+	<script src="js/jquery-v2.2.2.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAlTe5e5xLTPaNSTgmRYE280kUNk7bQ4WA"></script>
+	<script src="js/jquery.firefly.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/about.js"></script>
+	<script>
 	$(document).ready(function() {
 
-		// cycying pic
-		var pic_counter = 0, total_pics = 7,
-				pic_titles = [	"Mellow Muggin\'", "Lush at the Lake", "Festi Fanatic", "Kitty Cuddles", "Fancy Faker", "Rave Reactions", "Party Partners"	];
-		//set initial values
-		var img_link = "url(imgs/me/me"+pic_counter+".jpg)";
-		$('#my_pic_top').css('background-image', img_link);
-		$('#my_pic_inner_frame > p > span').empty().html( pic_titles[pic_counter]);
-		// interval function to transition pics
-		setInterval(function() {
-			pic_counter++
-			var top_pic = $('#my_pic_top'),
-					back_pic = $('#my_pic_back'),
-					pic_title = $('#my_pic_inner_frame > p > span');
-			// set 'background' image
-			var last_pic = top_pic.css('background-image');
-			back_pic.css('background-image', last_pic);
-			top_pic.css({'opacity': 0});
-			// give top image new properties and animate in
-			var img_link = "url(imgs/me/me"+ pic_counter%total_pics +".jpg)";
-			top_pic.css('background-image', img_link);
-			top_pic.animate({'opacity': 1}, 1000);
-			// adjust pic title
-			var img_title = pic_titles[ pic_counter%total_pics ];
-			pic_title.css('opacity', 0).text(img_title).animate({'opacity': 1}, 750);
-		}, 5*1000);
+		initProfilePic();
 
+		initMap();
+
+	  var size_counter = 3,
+	    sizes = ['60%', '70%', '80%', '90%', '100%'],
+			resizer =  $('<span>',{'id':'profile_resizer'}).prependTo('#profile');
+	  resizer.click(function() {
+			var new_size = sizes[size_counter%sizes.length];
+	    $('#profile').find('figure').animate({'width': new_size}, function() {
+	      console.log('after animate function');
+	    });
+			switch (new_size) {
+				case '60%': $(this).animate({'right': '70px'}); break;
+				case '70%': $(this).animate({'right': '55px'}); break;
+				case '80%': $(this).animate({'right': '40px'}); break;
+				case '90%': $(this).animate({'right': '25px'}); break;
+				case '100%': $(this).animate({'right': '10px'});	 break;
+			}
+	    size_counter++;
+	  });
 
 		// add class for hover effect on all social icons
 		$('#sidebar_social li').each(function(){ $(this).addClass('hvr-grow'); });
@@ -75,8 +70,12 @@
 		<figcaption>
 			<h2>Travis Leonard</h2>
 			<p>Something witty</p>
+
+			<div id="googleMap"></div>
 		</figcaption>
 	</figure>
+
+	<img src="pointer.svg"/>
 </div>
 
 <main>

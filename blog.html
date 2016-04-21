@@ -52,18 +52,30 @@
 		});
 
 		// load all sidebar information
-		loadSidebar();
+		loadSidebar()
+
+
+		$('#featured_post img').click(function(e) {
+
+
+		});
 
 
 	});// end doc ready
 
 
+	$.fn.centerElm = function () {
+		this.css({
+			position: 'absolute',
+			top : ( $(window).height() - this.height() ) / 2 + $(window).scrollTop() + "px",
+			left : ( $(window).width() - this.width() ) / 2 + $(window).scrollLeft() + "px"
+		});
+		return this;
+	}
 
-
-
-
+/*
 	var preview_timer;
-	/* Click Functions */
+	/* Click Functions *
 	$(document).on('click', '#featured_post img', function() {
 		var item = $(this);
 		buildPreview(item);
@@ -86,15 +98,15 @@
 	  var title = pic.siblings('figcaption').find('a').text(),
 	    date = pic.siblings('figcaption').find('time').attr('datetime'),
 	    img = $('<img>').attr('src', pic.attr('src')),
-	    info = $('<figcaption>').html('<time>'+convertDate(date) + '</time>' + ' ' + '<h4>' + title + '</h4>');
-
-	  var closer = $('<span>').addClass('closer');
-	  closer.append( '<i>&#xf12a;</i>' ).append( '<i>&#xf128;</i>' );
-
-	  var preview = $('<div>').addClass('preview');
-	  preview.append(img).append(info).append(closer);
-
-	  $('body').prepend( $('<div>').addClass('wrap').append(preview) );
+	    info = $('<figcaption>').html('<time>' + convertDate(date) + '</time>'
+				+ ' ' + '<h4>' + title + '</h4>'),
+			closer = $('<span>').addClass('closer')
+				.append( '<i>&#xf12a;</i>' ).append( '<i>&#xf128;</i>' );
+	  var preview = $('<div>').addClass('preview').append(img).append(info).append(closer);
+		var wrapper = $('<div>').addClass('wrap').append(preview);
+	  $('body').prepend( wrapper );
+		preview.centerElm();
+		wrapper.animate({'opacity':1});
 	}
 
 
@@ -113,7 +125,7 @@
 		<article id="featured_post">Loading...</article>
 		<h5>Categories <i class="ion-folder"></i></h5>
 		<ul id="sidebar_categories">Loading...</ul>
-		<h5>Top Tags <i class="ion-pricetags"></i></h5>
+		<h5>All Tags... <i class="ion-pricetags"></i></h5>
 		<ul id="sidebar_tags">Loading...</ul>
 		<h5>Archive <i class="ion-archive"></i></h5>
 		<ul id="sidebar_archives">Loading...</ul>

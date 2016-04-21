@@ -199,7 +199,7 @@
 	<post category="ramble">
 		<title>Magic</title>
 		<date>2016-03-24T10:23:29-05:00</date>
-		<embeded type="photo">pics/rowling-magic.jpg</embeded>
+		<embeded type="photo" words="true">pics/rowling-magic.jpg</embeded>
 		<content>I will always idolize this woman and the way she influenced my youth so strongly.</content>
 		<tags>
 			<tag>Harry Potter</tag>
@@ -266,7 +266,7 @@
 	<post category="ramble">
 		<date>2016-03-30T11:51:34-05:00</date>
 		<title>Mr. Robot</title>
-		<embeded type="photo">pics/MrE5.5.jpg</embeded>
+		<embeded type="photo" words="true">pics/MrE5.5.jpg</embeded>
 		<content>How I miss this show! This maddness. I can't wait for season two and to see what trouble Elliot will cause.</content>
 		<tags>
 			<tag>TV</tag>
@@ -372,11 +372,16 @@
 	<post category="ramble">
 		<date>2016-04-17T17:51:28-05:00</date>
 		<title>Life Goals</title>
-		<embeded type="photo">pics/life-goals.jpg</embeded>
+		<embeded type="photo" words="true">pics/life-goals.jpg</embeded>
 		<content>I'm sure you've had those days, the ones that truly just make you feel so grateful for everything you have. Where in those moments everything just seems so perfect, like nothing could ever stop you. These moments tend to always makes me personally reflect, makes me wonder what changes I can make to maintain that euphoric feeling every day. Its a blissful thing, and I would love nothing more then life to constantly be filled with unexplainable inner peace and happiness.</content>
 		<tags>
 			<tag>Goals</tag>
 		</tags>
+	</post>
+	<post category="ramble">
+		<date>2016-04-20T07:24:32-05:00</date>
+		<title>Happy Holidaze</title>
+		<embeded type="photo">pics/holidaze.jpg</embeded>
 	</post>
 </posts>
 <!--

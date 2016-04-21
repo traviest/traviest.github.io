@@ -16,29 +16,13 @@
 	<link type="text/css" rel="stylesheet" href="css/styles.css">
 	<link type="text/css" rel="stylesheet" href="css/lab.css">
 	<link type="text/css" rel="stylesheet" href="css/white_theme.css" id="theme">
-
-	<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
-	<script type="text/javascript" src="js/jquery.firefly.js"></script>
-	<script type="text/javascript" src="js/functions.js"></script>
-
-	<script type="text/javascript">
-	$(document).ready(function() {
-
-
-		$('#page_nav a').click(function() {
-			var position = $($(this).attr('href')).offset().top
-						- $('#line_nav').height();
-			$('html,body').animate({scrollTop: parseInt(position)}, 1000);
-			return false;
-		});
-
-	});
-	</script>
 </head>
 <body>
 <!-- Site Header / Banner -->
-<header>
-	<h1><i class="ion-code-working"></i>traviest<i class="ion-code-working"></i></h1></header>
+<header class="rainbow-fade">
+	<h1><i class="ion-code-working"></i>traviest<i class="ion-code-working"></i></h1>
+	<div id="elephant"><img src="imgs/elephant.svg" class="svg"/></div>
+</header>
 <!--  End Header / Start Main Page Content  -->
 <main>
 	<div id="page_nav">
@@ -56,7 +40,7 @@
 			<li>Rework icons - IonIcons vs FontAwesome</li>
 			<li>Incorporate use of <code>Cookies()</code></li>
 			<li>Resizing - make sure two column (home, blog, portfolio, about) and single column (music, photos, lab, resume, tags, categories, archives) windows show well on all screens</li>
-			<li>Wrapper - Include to stop page stretch for extra large screens</li>
+			<li>Position / Width - Include wrapper to stop page stretch for extra large screens? Fix sizing for screens over 1200px</li>
 			<li>CSS Media Queries - Research to adjust site based on window width (only use wrapper for large screen?)</li>
 			<li>RESUMÉ - finish stylinge</li>
 
@@ -78,7 +62,7 @@
 					<li><i class="ion-ios-checkmark-empty"></i>LAB: AT TOP - list of 'concoctions' (click scroll to)</li>
 				</ul>
 			</li>
-
+			<li>Tags &amp; Categories - perfect issues with spaces / underscores</li>
 			<li><i class="ion-ios-checkmark-empty"></i>Blog Page: link in header to 'All' Posts (with works/posts.html page?)</li>
 			<li>Blog Page: under featured?? - add links to load all photos or all music (soundcloud - playable songs, not just category)</li>
 		</ol>
@@ -95,30 +79,63 @@
 
 
 	<article class="concoction" id="con1">
-		<section>
 			<h4><a href="http://codepen.io/traviest/pen/MyENjy/" target="_blank">Cycle Photo Fade</a> on <a href="http://codepen.io" target="_blank">CodePen</a></h4>
 
 			<p data-height="360" data-theme-id="22821" data-slug-hash="MyENjy" data-default-tab="result" data-user="traviest" class="codepen">See the Pen <a href="http://codepen.io/traviest/pen/MyENjy/">Cycle Photo Fade</a> by Travis (<a href="http://codepen.io/traviest">@traviest</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 			<script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
-		</section>
 	</article>
 	<article class="concoction" id="con2">
-		<section>
 			<h4>concoction 2</h4>
 
-		</section>
 	</article>
 	<article class="concoction" id="con3">
-		<section>
 			<h4>concoction 3</h4>
 
-		</section>
 	</article>
 
 </main>
 <!-- End Main / Start Footer -->
 <footer>
 </footer>
+
+
+<script type="text/javascript" src="js/jquery-v2.2.2.js"></script>
+<script type="text/javascript" src="js/jquery.firefly.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/lab.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	replaceSvgImg();
+
+	var elephant = $('#elephant').delay(2000).fadeIn(1000);
+	var elephantTimer = setInterval(randomElephantColor, 1000);
+	setTimeout(function() {
+		clearInterval(elephantTimer);
+		randomElephantColor('#fff');
+	}, 60*1000);
+	function randomElephantColor(color){
+		if (!color) {
+			r = Math.floor(Math.random() * (256));
+			g = Math.floor(Math.random() * (256));
+			b = Math.floor(Math.random() * (256));
+			elephant.find('svg').css({'fill':'rgb('+r+','+g+','+b+')'});
+		} else {
+			elephant.find('svg').css({'fill':color});
+		}
+	}
+
+
+
+	$('#page_nav a').click(function() {
+		var position = $($(this).attr('href')).offset().top
+					- $('#line_nav').height();
+		$('html,body').animate({scrollTop: parseInt(position)}, 1000);
+		return false;
+	});
+
+});
+</script>
 
 </body>
 </html>
